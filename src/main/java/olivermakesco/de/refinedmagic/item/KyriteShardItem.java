@@ -1,4 +1,4 @@
-package olivermakesco.de.refinedmagic.Item;
+package olivermakesco.de.refinedmagic.item;
 
 import net.minecraft.item.Item;
 

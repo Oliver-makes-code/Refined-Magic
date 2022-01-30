@@ -4,6 +4,9 @@
   "package": "olivermakesco.de.refinedmagic.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "LingeringPotionMixin",
+    "PotionItemMixin",
+    "SplashPotionItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

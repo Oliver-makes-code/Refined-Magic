@@ -23,7 +23,7 @@
       "olivermakesco.de.refinedmagic.ModClient"
     ]
   },
-  "_mixins": [
+  "mixins": [
     "refmagic.mixins.json"
   ],
 
