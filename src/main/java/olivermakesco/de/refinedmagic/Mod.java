@@ -1,6 +1,7 @@
 package olivermakesco.de.refinedmagic;
 
-import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.ModContainer;
+import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 import net.minecraft.util.Identifier;
 import olivermakesco.de.refinedmagic.registry.RefinedMagicRegistry;
 import org.slf4j.Logger;
@@ -11,10 +12,8 @@ public class Mod implements ModInitializer {
 	public static final Logger logger = LoggerFactory.getLogger(modid);
 
 	@Override
-	public void onInitialize() {
-		info("Initializing Refined Magic!");
+	public void onInitialize(ModContainer mod) {
 		RefinedMagicRegistry.register();
-		info("Refined Magic initialized!");
 	}
 
 	public static Identifier id(String name) {

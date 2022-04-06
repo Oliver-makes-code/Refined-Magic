@@ -6,7 +6,8 @@
   "mixins": [
     "LingeringPotionMixin",
     "PotionItemMixin",
-    "SplashPotionItemMixin"
+    "SplashPotionItemMixin",
+    "invoker.BrewingRecipeRegistryInvoker"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -8,7 +8,15 @@ pluginManagement {
 	  maven {
 	      name = 'Cotton'
 	      url = 'https://server.bbkr.space/artifactory/libs-release/'
-	  } 
+	  }
+        maven {
+            name 'Quilt'
+            url 'https://maven.quiltmc.org/repository/snapshot'
+        }
+        maven {
+            name 'Quilt Release'
+            url 'https://maven.quiltmc.org/repository/release'
+        }
         mavenCentral()
         gradlePluginPortal()
     }
