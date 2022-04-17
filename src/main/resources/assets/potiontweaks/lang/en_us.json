@@ -1,13 +1,32 @@
 {
+  "itemGroup.potiontweaks.items": "Oliver's Potion Tweaks items",
+
   "block.potiontweaks.kyrite_ore": "Kyrite Ore",
   "item.potiontweaks.kyrite_shard": "Kyrite Shard",
-  "itemGroup.potiontweaks.items": "Oliver's Potion Tweaks items",
+  "block.potiontweaks.topaz_ore": "Topaz Ore",
+  "item.potiontweaks.topaz": "Topaz",
+
+
+  "potiontweaks.effects.smelting": "Smelting Aura",
+
+  "item.minecraft.potion.effect.smelting_aura": "Potion of Smelting",
+  "item.minecraft.tipped_arrow.effect.smelting_aura": "Arrow of Smelting",
+  "item.minecraft.splash_potion.effect.smelting_aura": "Splash Potion of Smelting",
+  "item.minecraft.lingering_potion.effect.smelting_aura": "Lingering Potion of Smelting",
+
+  "item.minecraft.potion.effect.long_smelting_aura": "Potion of Smelting",
+  "item.minecraft.tipped_arrow.effect.long_smelting_aura": "Arrow of Smelting",
+  "item.minecraft.splash_potion.effect.long_smelting_aura": "Splash Potion of Smelting",
+  "item.minecraft.lingering_potion.effect.long_smelting_aura": "Lingering Potion of Smelting",
+
+
   "item.minecraft.potion.effect.levitation_potion": "Potion of Levitation",
-  "item.minecraft.potion.effect.long_levitation_potion": "Potion of Levitation",
-  "item.minecraft.tipped_arrow.effect.levitation_potion": "Arrow of Levitation",
-  "item.minecraft.tipped_arrow.effect.long_levitation_potion": "Arrow  of Levitation",
-  "item.minecraft.splash_potion.effect.levitation_potion": "Splash Potion of Levitation",
-  "item.minecraft.splash_potion.effect.long_levitation_potion": "Splash Potion of Levitation",
   "item.minecraft.lingering_potion.effect.levitation_potion": "Lingering Potion of Levitation",
-  "item.minecraft.lingering_potion.effect.long_levitation_potion": "Lingering Potion of Levitation"
+  "item.minecraft.splash_potion.effect.levitation_potion": "Splash Potion of Levitation",
+  "item.minecraft.tipped_arrow.effect.levitation_potion": "Arrow of Levitation",
+
+  "item.minecraft.potion.effect.long_levitation_potion": "Potion of Levitation",
+  "item.minecraft.splash_potion.effect.long_levitation_potion": "Splash Potion of Levitation",
+  "item.minecraft.lingering_potion.effect.long_levitation_potion": "Lingering Potion of Levitation",
+  "item.minecraft.tipped_arrow.effect.long_levitation_potion": "Arrow  of Levitation"
 }

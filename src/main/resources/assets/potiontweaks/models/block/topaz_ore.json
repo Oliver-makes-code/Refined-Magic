@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "potiontweaks:block/topaz_ore",
+    "particle": "potiontweaks:block/topaz_ore"
+  }
+}
