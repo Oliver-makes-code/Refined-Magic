@@ -5,12 +5,14 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import olivermakesco.de.potiontweaks.Mod;
+import olivermakesco.de.potiontweaks.block.KyriteOreBlock;
 
 public class Blocks {
-    static Block kyriteOre = new OreBlock(
+    public static Block kyriteOre = new KyriteOreBlock(
             AbstractBlock.Settings
                     .of(Material.STONE,MapColor.PALE_YELLOW)
                     .sounds(BlockSoundGroup.STONE)
+                    .solidBlock((blockState, blockView, blockPos) -> true)
     );
 
     public static void register() {
