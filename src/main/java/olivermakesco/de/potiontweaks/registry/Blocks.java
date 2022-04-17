@@ -12,7 +12,6 @@ public class Blocks {
             AbstractBlock.Settings
                     .of(Material.STONE,MapColor.PALE_YELLOW)
                     .sounds(BlockSoundGroup.STONE)
-                    .solidBlock((blockState, blockView, blockPos) -> true)
     );
 
     public static void register() {

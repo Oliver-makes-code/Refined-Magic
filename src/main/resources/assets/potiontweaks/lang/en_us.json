@@ -1,6 +1,13 @@
 {
   "block.potiontweaks.kyrite_ore": "Kyrite Ore",
   "item.potiontweaks.kyrite_shard": "Kyrite Shard",
+  "itemGroup.potiontweaks.items": "Oliver's Potion Tweaks items",
   "item.minecraft.potion.effect.levitation_potion": "Potion of Levitation",
-  "item.minecraft.potion.effect.long_levitation_potion": "Potion of Levitation"
+  "item.minecraft.potion.effect.long_levitation_potion": "Potion of Levitation",
+  "item.minecraft.tipped_arrow.effect.levitation_potion": "Arrow of Levitation",
+  "item.minecraft.tipped_arrow.effect.long_levitation_potion": "Arrow  of Levitation",
+  "item.minecraft.splash_potion.effect.levitation_potion": "Splash Potion of Levitation",
+  "item.minecraft.splash_potion.effect.long_levitation_potion": "Splash Potion of Levitation",
+  "item.minecraft.lingering_potion.effect.levitation_potion": "Lingering Potion of Levitation",
+  "item.minecraft.lingering_potion.effect.long_levitation_potion": "Lingering Potion of Levitation"
 }
