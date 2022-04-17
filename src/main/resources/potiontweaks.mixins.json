@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "olivermakesco.de.potiontweaks.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "LingeringPotionMixin",
+    "PotionItemMixin",
+    "SplashPotionItemMixin",
+    "invoker.BrewingRecipeRegistryInvoker"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
