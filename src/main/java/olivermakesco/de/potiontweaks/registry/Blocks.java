@@ -5,7 +5,6 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import olivermakesco.de.potiontweaks.Mod;
-import olivermakesco.de.potiontweaks.block.KyriteOreBlock;
 
 public class Blocks {
     static Block kyriteOre = new OreBlock(
