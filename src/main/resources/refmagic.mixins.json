@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "olivermakesco.de.refmagic.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BlockMixin",
+    "BrewingRecipeRegistryMixin",
+    "LingeringPotionMixin",
+    "PotionItemMixin",
+    "PotionSlotMixin",
+    "SplashPotionItemMixin",
+    "invoker.BrewingRecipeRegistryInvoker"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

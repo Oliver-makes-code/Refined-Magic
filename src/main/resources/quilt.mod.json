@@ -2,14 +2,15 @@
   "schema_version": 1,
   "quilt_loader": {
     "group": "olivermakesco.de",
-    "id": "potiontweaks",
+    "id": "refmagic",
     "version": "${version}",
 
     "metadata": {
       "name": "Refined Magic",
       "description": "A Vanilla style mod implementing various magical features",
       "contributors": {
-        "Oliver": "author"
+        "Oliver": "author",
+        "@Reoseah#7934": "artist"
       },
       "contact": {
         "sources": "https://github.com/Oliver-makes-code/refined-magic"
@@ -20,10 +21,10 @@
 
     "entrypoints": {
       "init": [
-        "olivermakesco.de.potiontweaks.Mod"
+        "olivermakesco.de.refmagic.Mod"
       ],
       "client_init": [
-        "olivermakesco.de.potiontweaks.ModClient"
+        "olivermakesco.de.refmagic.ModClient"
       ]
     },
     "depends": [
@@ -35,6 +36,6 @@
     "intermediate_mappings": "net.fabricmc:intermediary"
   },
   "mixin": [
-    "potiontweaks.mixins.json"
+    "refmagic.mixins.json"
   ]
 }
