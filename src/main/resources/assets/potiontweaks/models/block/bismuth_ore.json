@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "potiontweaks:block/bismuth_ore",
+    "particle": "potiontweaks:block/bismuth_ore"
+  }
+}

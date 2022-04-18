@@ -5,6 +5,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import olivermakesco.de.potiontweaks.Mod;
+import olivermakesco.de.potiontweaks.block.BismuthOreBlock;
 import olivermakesco.de.potiontweaks.block.KyriteOreBlock;
 import olivermakesco.de.potiontweaks.block.TopazOreBlock;
 
@@ -19,10 +20,16 @@ public class Blocks {
                     .of(Material.STONE,MapColor.DULL_RED)
                     .sounds(BlockSoundGroup.STONE)
     );
+    public static Block bismuthOre = new BismuthOreBlock(
+            AbstractBlock.Settings
+                    .of(Material.STONE,MapColor.GRAY)
+                    .sounds(BlockSoundGroup.STONE)
+    );
 
     public static void register() {
         register(kyriteOre, Mod.id("kyrite_ore"));
         register(topazOre, Mod.id("topaz_ore"));
+        register(bismuthOre, Mod.id("bismuth_ore"));
     }
 
     public static void register(Block block, Identifier id) {
