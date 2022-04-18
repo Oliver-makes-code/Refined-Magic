@@ -5,10 +5,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import olivermakesco.de.refmagic.Mod;
-import olivermakesco.de.refmagic.block.BismuthOreBlock;
-import olivermakesco.de.refmagic.block.CitrineOreBlock;
-import olivermakesco.de.refmagic.block.KyriteOreBlock;
-import olivermakesco.de.refmagic.block.TopazOreBlock;
+import olivermakesco.de.refmagic.block.*;
 
 public class RefinedMagicBlocks {
     public static Block kyriteOre = new KyriteOreBlock(
@@ -24,11 +21,21 @@ public class RefinedMagicBlocks {
     public static Block bismuthOre = new BismuthOreBlock(
             AbstractBlock.Settings
                     .of(Material.STONE,MapColor.GRAY)
-                    .sounds(BlockSoundGroup.STONE)
+                    .sounds(BlockSoundGroup.BASALT)
     );
     public static Block citrineOre = new CitrineOreBlock(
             AbstractBlock.Settings
                     .of(Material.STONE,MapColor.GRAY)
+                    .sounds(BlockSoundGroup.STONE)
+    );
+    public static Block opalOre = new OpalOreBlock(
+            AbstractBlock.Settings
+                    .of(Material.STONE,MapColor.PALE_YELLOW)
+                    .sounds(BlockSoundGroup.STONE)
+    );
+    public static Block roseQuartzOre = new RoseQuartzOreBlock(
+            AbstractBlock.Settings
+                    .of(Material.STONE,MapColor.PALE_YELLOW)
                     .sounds(BlockSoundGroup.STONE)
     );
 
@@ -37,6 +44,8 @@ public class RefinedMagicBlocks {
         register(topazOre, Mod.id("topaz_ore"));
         register(bismuthOre, Mod.id("bismuth_ore"));
         register(citrineOre, Mod.id("citrine_ore"));
+        register(opalOre, Mod.id("opal_ore"));
+        register(roseQuartzOre, Mod.id("rose_quartz_ore"));
     }
 
     public static void register(Block block, Identifier id) {

@@ -16,6 +16,10 @@ public class RefinedMagicItems {
     public static Item bismuthOre = new BlockItem(RefinedMagicBlocks.bismuthOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item citrine = new CitrineItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item citrineOre = new BlockItem(RefinedMagicBlocks.citrineOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
+    public static Item opal = new OpalItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
+    public static Item opalOre = new BlockItem(RefinedMagicBlocks.opalOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
+    public static Item roseQuartz = new RoseQuartzItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
+    public static Item roseQuartzOre = new BlockItem(RefinedMagicBlocks.roseQuartzOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
 
     public static Item dimensionalTotem = new DimensionalTotemItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
 
@@ -28,6 +32,10 @@ public class RefinedMagicItems {
         register(bismuthOre, Mod.id("bismuth_ore"));
         register(citrine, Mod.id("citrine"));
         register(citrineOre, Mod.id("citrine_ore"));
+        register(opal, Mod.id("opal"));
+        register(opalOre, Mod.id("opal_ore"));
+        register(roseQuartz, Mod.id("rose_quartz"));
+        register(roseQuartzOre, Mod.id("rose_quartz_ore"));
 
         register(dimensionalTotem, Mod.id("dimensional_totem"));
     }
