@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "refmagic:block/citrine_ore",
+    "particle": "refmagic:block/citrine_ore"
+  }
+}

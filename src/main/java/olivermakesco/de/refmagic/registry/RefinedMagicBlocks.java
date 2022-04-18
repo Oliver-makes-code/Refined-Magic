@@ -6,6 +6,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import olivermakesco.de.refmagic.Mod;
 import olivermakesco.de.refmagic.block.BismuthOreBlock;
+import olivermakesco.de.refmagic.block.CitrineOreBlock;
 import olivermakesco.de.refmagic.block.KyriteOreBlock;
 import olivermakesco.de.refmagic.block.TopazOreBlock;
 
@@ -25,11 +26,17 @@ public class RefinedMagicBlocks {
                     .of(Material.STONE,MapColor.GRAY)
                     .sounds(BlockSoundGroup.STONE)
     );
+    public static Block citrineOre = new CitrineOreBlock(
+            AbstractBlock.Settings
+                    .of(Material.STONE,MapColor.GRAY)
+                    .sounds(BlockSoundGroup.STONE)
+    );
 
     public static void register() {
         register(kyriteOre, Mod.id("kyrite_ore"));
         register(topazOre, Mod.id("topaz_ore"));
         register(bismuthOre, Mod.id("bismuth_ore"));
+        register(citrineOre, Mod.id("citrine_ore"));
     }
 
     public static void register(Block block, Identifier id) {

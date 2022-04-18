@@ -10,6 +10,6 @@ public class SmeltingAura extends StatusEffect {
 
     @Override
     public String getTranslationKey() {
-        return "potiontweaks.effects.smelting";
+        return "refmagic.effects.smelting";
     }
 }
