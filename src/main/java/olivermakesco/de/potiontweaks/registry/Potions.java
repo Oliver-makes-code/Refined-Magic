@@ -23,7 +23,7 @@ public class Potions {
 
     public static StatusEffect smeltingAura = new SmeltingAura();
     public static Potion smeltingAuraPotion = new Potion(new StatusEffectInstance(smeltingAura, 2400, 1, false, true, true));
-    public static Potion longSmeltingAuraPotion = new Potion(new StatusEffectInstance(smeltingAura, 4800, 1, false, true, true));
+    public static Potion longSmeltingAuraPotion = new Potion(new StatusEffectInstance(smeltingAura, 4800, 0, false, true, true));
 
     public static void register() {
         register(levitationPotion, Mod.id("levitation_potion"));
