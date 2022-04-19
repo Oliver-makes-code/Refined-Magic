@@ -9,8 +9,8 @@
       "name": "Refined Magic",
       "description": "A Vanilla style mod implementing various magical features",
       "contributors": {
-        "Oliver": "author",
-        "@Reoseah#7934": "artist"
+        "author": "Oliver",
+        "artist": "@Reoseah#7934"
       },
       "contact": {
         "sources": "https://github.com/Oliver-makes-code/refined-magic"
@@ -31,6 +31,10 @@
       {
         "id": "minecraft",
         "version": "1.18.2"
+      },
+      {
+        "id": "qsl",
+        "version": "*"
       }
     ],
     "intermediate_mappings": "net.fabricmc:intermediary"

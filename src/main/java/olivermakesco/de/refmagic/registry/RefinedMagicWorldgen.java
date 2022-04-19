@@ -28,11 +28,11 @@ public class RefinedMagicWorldgen {
             new OreFeatureConfig(
                     END_STONE_RULE_TEST,
                     RefinedMagicBlocks.kyriteOre.getDefaultState(),
-                    4
+                    8
             )
     );
     public static final Holder<PlacedFeature> kyriteOrePlacedFeature = PlacedFeatureUtil.register(Mod.id("kyrite_ore").toString(),kyriteOreConfiguredFeature,
-            CountPlacementModifier.create(15),
+            CountPlacementModifier.create(30),
             InSquarePlacementModifier.getInstance(),
             HeightRangePlacementModifier.createUniform(YOffset.fixed(1), YOffset.fixed(256))
     );
@@ -41,11 +41,11 @@ public class RefinedMagicWorldgen {
             new OreFeatureConfig(
                     END_STONE_RULE_TEST,
                     RefinedMagicBlocks.opalOre.getDefaultState(),
-                    4
+                    8
             )
     );
     public static final Holder<PlacedFeature> opalOrePlacedFeature = PlacedFeatureUtil.register(Mod.id("opal_ore").toString(),opalOreConfiguredFeature,
-            CountPlacementModifier.create(15),
+            CountPlacementModifier.create(30),
             InSquarePlacementModifier.getInstance(),
             HeightRangePlacementModifier.createUniform(YOffset.fixed(1), YOffset.fixed(128))
     );
@@ -54,11 +54,11 @@ public class RefinedMagicWorldgen {
             new OreFeatureConfig(
                     END_STONE_RULE_TEST,
                     RefinedMagicBlocks.roseQuartzOre.getDefaultState(),
-                    4
+                    8
             )
     );
     public static final Holder<PlacedFeature> roseOrePlacedFeature = PlacedFeatureUtil.register(Mod.id("rose_ore").toString(),roseOreConfiguredFeature,
-            CountPlacementModifier.create(15),
+            CountPlacementModifier.create(30),
             InSquarePlacementModifier.getInstance(),
             HeightRangePlacementModifier.createUniform(YOffset.fixed(1), YOffset.fixed(128))
     );
@@ -69,11 +69,11 @@ public class RefinedMagicWorldgen {
             new OreFeatureConfig(
                     BASALT_RULE_TEST,
                     RefinedMagicBlocks.bismuthOre.getDefaultState(),
-                    4
+                    8
             )
     );
     public static final Holder<PlacedFeature> bismuthOrePlacedFeature = PlacedFeatureUtil.register(Mod.id("bismuth_ore").toString(),bismuthOreConfiguredFeature,
-            CountPlacementModifier.create(15),
+            CountPlacementModifier.create(30),
             InSquarePlacementModifier.getInstance(),
             HeightRangePlacementModifier.createUniform(YOffset.fixed(1), YOffset.fixed(128))
     );
@@ -82,11 +82,11 @@ public class RefinedMagicWorldgen {
             new OreFeatureConfig(
                     BLACKSTONE_RULE_TEST,
                     RefinedMagicBlocks.citrineOre.getDefaultState(),
-                    4
+                    8
             )
     );
     public static final Holder<PlacedFeature> citrineOrePlacedFeature = PlacedFeatureUtil.register(Mod.id("citrine_ore").toString(),citrineOreConfiguredFeature,
-            CountPlacementModifier.create(15),
+            CountPlacementModifier.create(30),
             InSquarePlacementModifier.getInstance(),
             HeightRangePlacementModifier.createUniform(YOffset.fixed(1), YOffset.fixed(128))
     );
@@ -95,11 +95,11 @@ public class RefinedMagicWorldgen {
             new OreFeatureConfig(
                     GRANITE_RULE_TEST,
                     RefinedMagicBlocks.topazOre.getDefaultState(),
-                    4
+                    8
             )
     );
     public static final Holder<PlacedFeature> topazOrePlacedFeature = PlacedFeatureUtil.register(Mod.id("topaz_ore").toString(),topazOreConfiguredFeature,
-            CountPlacementModifier.create(15),
+            CountPlacementModifier.create(30),
             InSquarePlacementModifier.getInstance(),
             HeightRangePlacementModifier.createUniform(YOffset.fixed(1), YOffset.fixed(128))
     );
