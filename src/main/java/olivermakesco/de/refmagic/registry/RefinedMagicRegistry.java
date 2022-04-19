@@ -10,5 +10,6 @@ public class RefinedMagicRegistry {
         RefinedMagicPotions.register();
         RefinedMagicBlocks.register();
         RefinedMagicItems.register();
+        RefinedMagicWorldgen.register();
     }
 }

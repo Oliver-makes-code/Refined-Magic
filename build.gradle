@@ -1,5 +1,5 @@
 plugins {
-	id 'org.quiltmc.loom' version '0.12.+'
+	id 'org.quiltmc.loom' version '0.12.23'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -37,7 +37,11 @@ dependencies {
 	})
 	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
 
-	modImplementation("org.quiltmc.qsl:qsl:${qsl_version}+${minecraft_version}-SNAPSHOT")
+	modImplementation "org.quiltmc:qsl:${qsl_version}+${minecraft_version}-SNAPSHOT"
+	modImplementation include("org.quiltmc.quilted-fabric-api:fabric-api-base:2.0.0+${minecraft_version}-SNAPSHOT")
+	modImplementation include("org.quiltmc.quilted-fabric-api:fabric-registry-sync-v0:1.0.0+${minecraft_version}-SNAPSHOT")
+	modImplementation include("org.quiltmc.quilted-fabric-api:fabric-networking-api-v1:3.0.0+${minecraft_version}-SNAPSHOT")
+	modImplementation include("org.quiltmc.quilted-fabric-api:fabric-biome-api-v1:0.1.0+${minecraft_version}-SNAPSHOT")
 }
 
 processResources {
