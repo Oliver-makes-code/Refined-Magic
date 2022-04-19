@@ -9,8 +9,8 @@
       "name": "Refined Magic",
       "description": "A Vanilla style mod implementing various magical features",
       "contributors": {
-        "author": "Oliver",
-        "artist": "@Reoseah#7934"
+        "Oliver": "author",
+        "@Reoseah#7934": "artist"
       },
       "contact": {
         "sources": "https://github.com/Oliver-makes-code/refined-magic"
