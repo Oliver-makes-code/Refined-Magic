@@ -8,6 +8,8 @@ targetCompatibility = JavaVersion.VERSION_17
 archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
+qsl_version = project.qsl_version
+qfapi_version = project.qfapi_version
 
 repositories {
 	// Quilt maven
@@ -26,6 +28,13 @@ repositories {
 	// for more information about repositories.
 }
 
+String qsl(String name) {
+	return "org.quiltmc.qsl.${name}:${qsl_version}+${minecraft_version}-SNAPSHOT"
+}
+
+String qfapi(String name) {
+	return "org.quiltmc.quilted-fabric-api:${name}:${qfapi_version}-${minecraft_version}-SNAPSHOT"
+}
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -37,17 +46,17 @@ dependencies {
 	})
 	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
 
-	modImplementation include("org.quiltmc.qsl.core:qsl_base:${qsl_version}+${minecraft_version}-SNAPSHOT")
-	modImplementation include("org.quiltmc.qsl.core:registry:${qsl_version}+${minecraft_version}-SNAPSHOT")
-	modImplementation include("org.quiltmc.qsl.core:lifecycle_events:${qsl_version}+${minecraft_version}-SNAPSHOT")
-	modImplementation include("org.quiltmc.qsl.core:networking:${qsl_version}+${minecraft_version}-SNAPSHOT")
-	modImplementation include("org.quiltmc.qsl.core:resource_loader:${qsl_version}+${minecraft_version}-SNAPSHOT")
-	modImplementation include("org.quiltmc.qsl.item:item_group:${qsl_version}+${minecraft_version}-SNAPSHOT")
-	modImplementation include("org.quiltmc.qsl.block:block_extensions:${qsl_version}+${minecraft_version}-SNAPSHOT")
-	modImplementation include("org.quiltmc.quilted-fabric-api:fabric-api-base:${qfapi_version}-${minecraft_version}-SNAPSHOT")
-	modImplementation include("org.quiltmc.quilted-fabric-api:fabric-registry-sync-v0:${qfapi_version}-${minecraft_version}-SNAPSHOT")
-	modImplementation include("org.quiltmc.quilted-fabric-api:fabric-networking-api-v1:${qfapi_version}-${minecraft_version}-SNAPSHOT")
-	modImplementation include("org.quiltmc.quilted-fabric-api:fabric-biome-api-v1:${qfapi_version}-${minecraft_version}-SNAPSHOT")
+	modImplementation include(qsl("core:qsl_base"))
+	modImplementation include(qsl("core:registry"))
+	modImplementation include(qsl("core:lifecycle_events"))
+	modImplementation include(qsl("core:networking"))
+	modImplementation include(qsl("core:resource_loader"))
+	modImplementation include(qsl("item:item_group"))
+	modImplementation include(qsl("block:block_extensions"))
+	modImplementation include(qfapi("fabric-api-base"))
+	modImplementation include(qfapi("fabric-registry-sync-v0"))
+	modImplementation include(qfapi("fabric-networking-api-v1"))
+	modImplementation include(qfapi("fabric-biome-api-v1"))
 }
 
 processResources {
