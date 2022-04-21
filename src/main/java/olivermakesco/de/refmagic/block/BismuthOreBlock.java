@@ -5,6 +5,6 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class BismuthOreBlock extends OreBlock {
     public BismuthOreBlock(Settings settings) {
-        super(settings, UniformIntProvider.create(1, 3));
+        super(settings, UniformIntProvider.create(1, 2));
     }
 }

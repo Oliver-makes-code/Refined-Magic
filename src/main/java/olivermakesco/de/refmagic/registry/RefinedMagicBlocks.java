@@ -6,37 +6,44 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import olivermakesco.de.refmagic.Mod;
 import olivermakesco.de.refmagic.block.*;
+import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class RefinedMagicBlocks {
     public static Block kyriteOre = new KyriteOreBlock(
-            AbstractBlock.Settings
-                    .of(Material.STONE,MapColor.PALE_YELLOW)
+            QuiltBlockSettings
+                    .copyOf(Blocks.END_STONE)
                     .sounds(BlockSoundGroup.STONE)
+                    .requiresTool()
     );
     public static Block topazOre = new TopazOreBlock(
-            AbstractBlock.Settings
-                    .of(Material.STONE,MapColor.DULL_RED)
+            QuiltBlockSettings
+                    .copyOf(Blocks.GRANITE)
                     .sounds(BlockSoundGroup.STONE)
+                    .requiresTool()
     );
     public static Block bismuthOre = new BismuthOreBlock(
-            AbstractBlock.Settings
-                    .of(Material.STONE,MapColor.GRAY)
+            QuiltBlockSettings
+                    .copyOf(Blocks.BASALT)
                     .sounds(BlockSoundGroup.BASALT)
+                    .requiresTool()
     );
     public static Block citrineOre = new CitrineOreBlock(
-            AbstractBlock.Settings
-                    .of(Material.STONE,MapColor.GRAY)
+            QuiltBlockSettings
+                    .copyOf(Blocks.BLACKSTONE)
                     .sounds(BlockSoundGroup.STONE)
+                    .requiresTool()
     );
     public static Block opalOre = new OpalOreBlock(
-            AbstractBlock.Settings
-                    .of(Material.STONE,MapColor.PALE_YELLOW)
+            QuiltBlockSettings
+                    .copyOf(Blocks.END_STONE)
                     .sounds(BlockSoundGroup.STONE)
+                    .requiresTool()
     );
     public static Block roseQuartzOre = new RoseQuartzOreBlock(
-            AbstractBlock.Settings
-                    .of(Material.STONE,MapColor.PALE_YELLOW)
+            QuiltBlockSettings
+                    .copyOf(Blocks.END_STONE)
                     .sounds(BlockSoundGroup.STONE)
+                    .requiresTool()
     );
 
     public static void register() {

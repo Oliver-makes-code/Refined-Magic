@@ -5,6 +5,6 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class KyriteOreBlock extends OreBlock {
     public KyriteOreBlock(Settings settings) {
-        super(settings, UniformIntProvider.create(1, 5));
+        super(settings, UniformIntProvider.create(1, 2));
     }
 }

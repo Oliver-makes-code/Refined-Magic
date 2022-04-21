@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "refmagic:kyrite_ore",
+    "refmagic:topaz_ore",
+    "refmagic:bismuth_ore",
+    "refmagic:citrine_ore",
+    "refmagic:opal_ore",
+    "refmagic:rose_quartz_ore"
+  ]
+}
