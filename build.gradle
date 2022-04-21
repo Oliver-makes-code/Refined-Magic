@@ -33,7 +33,7 @@ String qsl(String name) {
 }
 
 String qfapi(String name) {
-	return "org.quiltmc.quilted-fabric-api:${name}:${qfapi_version}-${minecraft_version}-SNAPSHOT"
+	return "org.quiltmc.quilted-fabric-api:fabric-${name}:${qfapi_version}-${minecraft_version}-SNAPSHOT"
 }
 dependencies {
 	// To change the versions see the gradle.properties file
@@ -53,10 +53,10 @@ dependencies {
 	modImplementation include(qsl("core:resource_loader"))
 	modImplementation include(qsl("item:item_group"))
 	modImplementation include(qsl("block:block_extensions"))
-	modImplementation include(qfapi("fabric-api-base"))
-	modImplementation include(qfapi("fabric-registry-sync-v0"))
-	modImplementation include(qfapi("fabric-networking-api-v1"))
-	modImplementation include(qfapi("fabric-biome-api-v1"))
+	modImplementation include(qfapi("api-base"))
+	modImplementation include(qfapi("registry-sync-v0"))
+	modImplementation include(qfapi("networking-api-v1"))
+	modImplementation include(qfapi("biome-api-v1"))
 }
 
 processResources {
