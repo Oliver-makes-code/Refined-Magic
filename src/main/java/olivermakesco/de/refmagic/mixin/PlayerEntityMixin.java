@@ -1,8 +1,12 @@
 package olivermakesco.de.refmagic.mixin;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Hand;
+import net.minecraft.world.World;
 import olivermakesco.de.refmagic.item.DimensionalTotemItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -11,21 +15,25 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerEntity.class)
-public abstract class PlayerEntityMixin {
-    @Shadow protected abstract void vanishCursedItems();
+public abstract class PlayerEntityMixin extends LivingEntity {
+
+    protected PlayerEntityMixin(EntityType<? extends LivingEntity> entityType, World world) {
+        super(entityType, world);
+    }
 
     @Shadow public abstract PlayerInventory getInventory();
 
+    @Shadow protected abstract void vanishCursedItems();
+
     @Inject(at = @At("HEAD"), method = "dropInventory", cancellable = true)
     private void dropInjection(CallbackInfo ci) {
-        var inv = getInventory();
-        if (inv.getStack(inv.selectedSlot).getItem() instanceof DimensionalTotemItem) {
-            inv.removeStack(inv.selectedSlot);
+        if (getStackInHand(Hand.MAIN_HAND).getItem() instanceof DimensionalTotemItem) {
             vanishCursedItems();
+            world.sendEntityStatus(this, (byte)35);
             ci.cancel();
-        } else if (inv.getStack(45).getItem() instanceof DimensionalTotemItem) {
-            inv.removeStack(45);
+        } else if (getStackInHand(Hand.OFF_HAND).getItem() instanceof DimensionalTotemItem) {
             vanishCursedItems();
+            world.sendEntityStatus(this, (byte)35);
             ci.cancel();
         }
     }

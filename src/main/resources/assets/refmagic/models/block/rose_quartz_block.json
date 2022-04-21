@@ -1,7 +1,8 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "end": "refmagic:block/rose_quartz_bottom",
-    "side": "refmagic:block/rose_quartz_side"
+    "side": "refmagic:block/rose_quartz_side",
+    "top": "refmagic:block/rose_quartz_side",
+    "bottom": "refmagic:block/rose_quartz_bottom"
   }
 }

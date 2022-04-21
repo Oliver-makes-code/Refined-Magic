@@ -10,6 +10,7 @@
     "PlayerEntityMixin",
     "PotionItemMixin",
     "PotionSlotMixin",
+    "ServerPlayerEntityMixin",
     "SplashPotionItemMixin",
     "invoker.BrewingRecipeRegistryInvoker"
   ],
