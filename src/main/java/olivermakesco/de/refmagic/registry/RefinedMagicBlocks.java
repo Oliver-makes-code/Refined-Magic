@@ -26,6 +26,11 @@ public class RefinedMagicBlocks {
                     .sounds(BlockSoundGroup.STONE)
                     .requiresTool()
     );
+    public static Block topazBlock = new Block(
+            QuiltBlockSettings
+                    .copyOf(Blocks.AMETHYST_BLOCK)
+                    .requiresTool()
+    );
     public static Block bismuthOre = new BismuthOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.BASALT)
@@ -77,6 +82,7 @@ public class RefinedMagicBlocks {
         register(kyriteOre, Mod.id("kyrite_ore"));
         register(kyriteBlock, Mod.id("kyrite_block"));
         register(topazOre, Mod.id("topaz_ore"));
+        register(topazBlock, Mod.id("topaz_block"));
         register(bismuthOre, Mod.id("bismuth_ore"));
         register(citrineOre, Mod.id("citrine_ore"));
         register(citrineBlock, Mod.id("citrine_block"));

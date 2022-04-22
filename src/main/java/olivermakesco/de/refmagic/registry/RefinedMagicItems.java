@@ -13,6 +13,7 @@ public class RefinedMagicItems {
     public static Item kyriteBlock = new BlockItem(RefinedMagicBlocks.kyriteBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item topaz = new TopazItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item topazOre = new BlockItem(RefinedMagicBlocks.topazOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
+    public static Item topazBlock = new BlockItem(RefinedMagicBlocks.topazBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item bismuth = new BismuthItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item bismuthOre = new BlockItem(RefinedMagicBlocks.bismuthOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item citrine = new CitrineItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
@@ -34,6 +35,7 @@ public class RefinedMagicItems {
         register(kyriteBlock, Mod.id("kyrite_block"));
         register(topaz, Mod.id("topaz"));
         register(topazOre, Mod.id("topaz_ore"));
+        register(topazBlock, Mod.id("topaz_block"));
         register(bismuth, Mod.id("bismuth"));
         register(bismuthOre, Mod.id("bismuth_ore"));
         register(citrine, Mod.id("citrine"));

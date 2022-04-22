@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "refmagic:block/topaz_block",
+    "particle": "refmagic:block/topaz_block"
+  }
+}
