@@ -6,6 +6,12 @@
     "refmagic:bismuth_ore",
     "refmagic:citrine_ore",
     "refmagic:opal_ore",
-    "refmagic:rose_quartz_ore"
+    "refmagic:rose_quartz_ore",
+    "refmagic:kyrite_block",
+    "refmagic:topaz_block",
+    "refmagic:bismuth_block",
+    "refmagic:citrine_block",
+    "refmagic:opal_block",
+    "refmagic:rose_quartz_block"
   ]
 }
