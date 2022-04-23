@@ -9,6 +9,7 @@ import olivermakesco.de.refmagic.Mod;
 
 public class RefinedMagicItems {
     public static Item kyriteShard = new KyriteShardItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
+    public static Item kyritePowder = new KyritePowderItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item kyriteOre = new BlockItem(RefinedMagicBlocks.kyriteOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item kyriteBlock = new BlockItem(RefinedMagicBlocks.kyriteBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item topaz = new TopazItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
@@ -25,12 +26,12 @@ public class RefinedMagicItems {
     public static Item roseQuartz = new RoseQuartzItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item roseQuartzOre = new BlockItem(RefinedMagicBlocks.roseQuartzOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item roseQuartzBlock = new BlockItem(RefinedMagicBlocks.roseQuartzBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item smoothRoseQuartzBlock = new BlockItem(RefinedMagicBlocks.smoothRoseQuartzBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
 
     public static Item dimensionalTotem = new DimensionalTotemItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup).maxCount(1));
 
     public static void register() {
         register(kyriteShard, Mod.id("kyrite_shard"));
+        register(kyritePowder, Mod.id("kyrite_powder"));
         register(kyriteOre, Mod.id("kyrite_ore"));
         register(kyriteBlock, Mod.id("kyrite_block"));
         register(topaz, Mod.id("topaz"));
@@ -47,7 +48,6 @@ public class RefinedMagicItems {
         register(roseQuartz, Mod.id("rose_quartz"));
         register(roseQuartzOre, Mod.id("rose_quartz_ore"));
         register(roseQuartzBlock, Mod.id("rose_quartz_block"));
-        register(smoothRoseQuartzBlock, Mod.id("smooth_rose_quartz_block"));
 
         register(dimensionalTotem, Mod.id("dimensional_totem"));
     }

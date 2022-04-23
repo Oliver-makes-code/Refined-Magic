@@ -71,12 +71,6 @@ public class RefinedMagicBlocks {
                     .copyOf(Blocks.QUARTZ_BLOCK)
                     .requiresTool()
     );
-    public static Block smoothRoseQuartzBlock = new Block(
-            QuiltBlockSettings
-                    .copyOf(Blocks.QUARTZ_BLOCK)
-                    .sounds(BlockSoundGroup.STONE)
-                    .requiresTool()
-    );
 
     public static void register() {
         register(kyriteOre, Mod.id("kyrite_ore"));
@@ -90,7 +84,6 @@ public class RefinedMagicBlocks {
         register(opalBlock, Mod.id("opal_block"));
         register(roseQuartzOre, Mod.id("rose_quartz_ore"));
         register(roseQuartzBlock, Mod.id("rose_quartz_block"));
-        register(smoothRoseQuartzBlock, Mod.id("smooth_rose_quartz_block"));
     }
 
     public static void register(Block block, Identifier id) {
