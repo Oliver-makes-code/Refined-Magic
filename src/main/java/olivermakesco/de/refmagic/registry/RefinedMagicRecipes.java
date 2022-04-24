@@ -44,5 +44,13 @@ public class RefinedMagicRecipes {
                 RefinedMagicItems.topaz.getDefaultStack(),
                 RefinedMagicItems.fireNecklace.getDefaultStack()
         ));
+        altarRecipes.put(Mod.id("aqua_necklace_recipe"), new AltarRecipe(
+                Mod.id("aqua_necklace_recipe"),
+                RefinedMagicItems.baseNecklace.getDefaultStack(),
+                RefinedMagicItems.bismuth.getDefaultStack(),
+                RefinedMagicItems.opal.getDefaultStack(),
+                RefinedMagicItems.roseQuartz.getDefaultStack(),
+                RefinedMagicItems.aquaNecklace.getDefaultStack()
+        ));
     }
 }

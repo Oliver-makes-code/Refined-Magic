@@ -20,13 +20,17 @@
   "block.refmagic.rose_quartz_ore": "Rose Quartz Ore",
   "block.refmagic.rose_quartz_block": "Rose Quartz Block",
   "item.refmagic.rose_quartz": "Rose Quartz",
+
   "block.refmagic.altar": "Altar",
+
   "item.refmagic.necklace": "Necklace",
   "item.refmagic.fire_necklace": "Fire Necklace",
+  "item.refmagic.aqua_necklace": "Aqua Necklace",
 
   "item.refmagic.dimensional_totem": "Dimensional Totem",
 
 
+  "refmagic.kyrite.tooltip": "Try crushing me with an anvil!",
   "refmagic.effects.smelting": "Smelting Aura",
 
   "item.minecraft.potion.effect.smelting_aura": "Potion of Smelting",

@@ -32,6 +32,7 @@ public class RefinedMagicItems {
     public static Item dimensionalTotem = new DimensionalTotemItem(new Item.Settings().group(RefinedMagicRegistry.group).maxCount(1));
     public static Item baseNecklace = new BaseNecklaceItem(new Item.Settings().group(RefinedMagicRegistry.group).maxCount(1));
     public static Item fireNecklace = new FireNecklaceItem(new Item.Settings().group(RefinedMagicRegistry.group).maxCount(1));
+    public static Item aquaNecklace = new AquaNecklaceItem(new Item.Settings().group(RefinedMagicRegistry.group).maxCount(1));
 
     public static void register() {
         register(kyriteShard, Mod.id("kyrite_shard"));
@@ -57,6 +58,7 @@ public class RefinedMagicItems {
         register(dimensionalTotem, Mod.id("dimensional_totem"));
         register(baseNecklace, Mod.id("necklace"));
         register(fireNecklace, Mod.id("fire_necklace"));
+        register(aquaNecklace, Mod.id("aqua_necklace"));
     }
 
     public static void register(Item item, Identifier id) {

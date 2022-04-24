@@ -25,7 +25,7 @@ import olivermakesco.de.refmagic.registry.RefinedMagicItems;
 import olivermakesco.de.refmagic.registry.RefinedMagicRecipes;
 import org.jetbrains.annotations.Nullable;
 
-public class AltarTableBlock extends BlockWithEntity implements Waterloggable {
+public class AltarTableBlock extends BlockWithEntity {
     public AltarTableBlock(Settings settings) {
         super(settings);
     }
