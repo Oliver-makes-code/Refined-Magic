@@ -98,7 +98,6 @@ public class AltarTableBlock extends BlockWithEntity implements Waterloggable {
         int a = x < 0.5? 0b00: 0b01;
         int b = z < 0.5? 0b00: 0b10;
         int c = a+b;
-        world.playSound(null,pos,SoundEvents.BLOCK_END_PORTAL_FRAME_FILL,SoundCategory.BLOCKS,10,0);
         if (entity.getSlot(c) == ItemStack.EMPTY) {
             if (player.getStackInHand(hand).isEmpty())
                 return ActionResult.PASS;
@@ -107,7 +106,7 @@ public class AltarTableBlock extends BlockWithEntity implements Waterloggable {
             player.getStackInHand(hand).decrement(1);
             entity.setSlot(c,next);
             update(pos, serverWorld);
-
+            world.playSound(null,pos,SoundEvents.BLOCK_END_PORTAL_FRAME_FILL,SoundCategory.BLOCKS,10,0);
             return ActionResult.SUCCESS;
         }
         var stackToSet = ItemStack.EMPTY;
@@ -119,6 +118,7 @@ public class AltarTableBlock extends BlockWithEntity implements Waterloggable {
         player.getInventory().insertStack(next);
         entity.setSlot(c, stackToSet);
         update(pos, serverWorld);
+        world.playSound(null,pos,SoundEvents.BLOCK_END_PORTAL_FRAME_FILL,SoundCategory.BLOCKS,10,0);
         return ActionResult.SUCCESS;
     }
 
