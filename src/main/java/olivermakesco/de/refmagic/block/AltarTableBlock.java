@@ -81,7 +81,7 @@ public class AltarTableBlock extends BlockWithEntity implements Waterloggable {
                     player.getStackInHand(hand).decrement(1);
                     update(pos, serverWorld);
                     world.playSound(null,pos,SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE,SoundCategory.BLOCKS,10,0);
-                    serverWorld.spawnParticles(ParticleTypes.EXPLOSION_EMITTER, pos.getX(), pos.getY()+0.5, pos.getZ(), 15, 1, 1, 1, 1);
+                    serverWorld.spawnParticles(ParticleTypes.EXPLOSION, pos.getX(), pos.getY()+0.5, pos.getZ(), 15, 1, 1, 1, 1);
                     return ActionResult.SUCCESS;
                 }
             }
