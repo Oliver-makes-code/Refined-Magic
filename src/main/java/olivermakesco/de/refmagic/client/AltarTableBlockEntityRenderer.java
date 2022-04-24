@@ -8,7 +8,6 @@ import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.Vec3f;
 import olivermakesco.de.refmagic.block.entity.AltarTableBlockEntity;
-import olivermakesco.de.refmagic.registry.RefinedMagicItems;
 
 public class AltarTableBlockEntityRenderer implements BlockEntityRenderer<AltarTableBlockEntity> {
 
