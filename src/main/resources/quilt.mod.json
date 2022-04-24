@@ -32,6 +32,14 @@
       {
         "id": "minecraft",
         "version": "1.18.2"
+      },
+      {
+        "id": "trinkets",
+        "version": ">=3.3.0"
+      },
+      {
+        "id": "quilted_fabric_api",
+        "version": "*"
       }
     ],
     "intermediate_mappings": "net.fabricmc:intermediary"

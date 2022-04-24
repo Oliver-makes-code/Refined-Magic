@@ -28,5 +28,21 @@ public class RefinedMagicRecipes {
                 RefinedMagicItems.topaz.getDefaultStack(),
                 RefinedMagicItems.dimensionalTotem.getDefaultStack()
         ));
+        altarRecipes.put(Mod.id("necklace_recipe"), new AltarRecipe(
+                Mod.id("necklace_recipe"),
+                Items.CHAIN.getDefaultStack(),
+                Items.IRON_NUGGET.getDefaultStack(),
+                Items.IRON_NUGGET.getDefaultStack(),
+                Items.IRON_INGOT.getDefaultStack(),
+                RefinedMagicItems.baseNecklace.getDefaultStack()
+        ));
+        altarRecipes.put(Mod.id("fire_necklace_recipe"), new AltarRecipe(
+                Mod.id("fire_necklace_recipe"),
+                RefinedMagicItems.baseNecklace.getDefaultStack(),
+                RefinedMagicItems.bismuth.getDefaultStack(),
+                RefinedMagicItems.citrine.getDefaultStack(),
+                RefinedMagicItems.topaz.getDefaultStack(),
+                RefinedMagicItems.fireNecklace.getDefaultStack()
+        ));
     }
 }

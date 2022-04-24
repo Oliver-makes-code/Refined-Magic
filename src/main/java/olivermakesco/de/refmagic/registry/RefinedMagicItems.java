@@ -6,29 +6,32 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import olivermakesco.de.refmagic.item.*;
 import olivermakesco.de.refmagic.Mod;
+import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 public class RefinedMagicItems {
-    public static Item kyriteShard = new KyriteShardItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item kyritePowder = new KyritePowderItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item kyriteOre = new BlockItem(RefinedMagicBlocks.kyriteOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item kyriteBlock = new BlockItem(RefinedMagicBlocks.kyriteBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item topaz = new TopazItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item topazOre = new BlockItem(RefinedMagicBlocks.topazOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item topazBlock = new BlockItem(RefinedMagicBlocks.topazBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item bismuth = new BismuthItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item bismuthOre = new BlockItem(RefinedMagicBlocks.bismuthOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item citrine = new CitrineItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item citrineOre = new BlockItem(RefinedMagicBlocks.citrineOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item citrineBlock = new BlockItem(RefinedMagicBlocks.citrineBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item opal = new OpalItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item opalOre = new BlockItem(RefinedMagicBlocks.opalOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item opalBlock = new BlockItem(RefinedMagicBlocks.opalBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item roseQuartz = new RoseQuartzItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item roseQuartzOre = new BlockItem(RefinedMagicBlocks.roseQuartzOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item roseQuartzBlock = new BlockItem(RefinedMagicBlocks.roseQuartzBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
-    public static Item altarBlock = new BlockItem(RefinedMagicBlocks.altarBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
+    public static Item kyriteShard = new KyriteShardItem(new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item kyritePowder = new KyritePowderItem(new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item kyriteOre = new BlockItem(RefinedMagicBlocks.kyriteOre, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item kyriteBlock = new BlockItem(RefinedMagicBlocks.kyriteBlock, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item topaz = new TopazItem(new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item topazOre = new BlockItem(RefinedMagicBlocks.topazOre, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item topazBlock = new BlockItem(RefinedMagicBlocks.topazBlock, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item bismuth = new BismuthItem(new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item bismuthOre = new BlockItem(RefinedMagicBlocks.bismuthOre, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item citrine = new CitrineItem(new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item citrineOre = new BlockItem(RefinedMagicBlocks.citrineOre, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item citrineBlock = new BlockItem(RefinedMagicBlocks.citrineBlock, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item opal = new OpalItem(new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item opalOre = new BlockItem(RefinedMagicBlocks.opalOre, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item opalBlock = new BlockItem(RefinedMagicBlocks.opalBlock, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item roseQuartz = new RoseQuartzItem(new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item roseQuartzOre = new BlockItem(RefinedMagicBlocks.roseQuartzOre, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item roseQuartzBlock = new BlockItem(RefinedMagicBlocks.roseQuartzBlock, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item altarBlock = new BlockItem(RefinedMagicBlocks.altarBlock, new Item.Settings().group(RefinedMagicRegistry.group));
 
-    public static Item dimensionalTotem = new DimensionalTotemItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup).maxCount(1));
+    public static Item dimensionalTotem = new DimensionalTotemItem(new Item.Settings().group(RefinedMagicRegistry.group).maxCount(1));
+    public static Item baseNecklace = new BaseNecklaceItem(new Item.Settings().group(RefinedMagicRegistry.group).maxCount(1));
+    public static Item fireNecklace = new FireNecklaceItem(new Item.Settings().group(RefinedMagicRegistry.group).maxCount(1));
 
     public static void register() {
         register(kyriteShard, Mod.id("kyrite_shard"));
@@ -52,6 +55,8 @@ public class RefinedMagicItems {
         register(altarBlock, Mod.id("altar"));
 
         register(dimensionalTotem, Mod.id("dimensional_totem"));
+        register(baseNecklace, Mod.id("necklace"));
+        register(fireNecklace, Mod.id("fire_necklace"));
     }
 
     public static void register(Item item, Identifier id) {
