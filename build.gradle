@@ -28,13 +28,6 @@ repositories {
 	// for more information about repositories.
 }
 
-String qsl(String name) {
-	return "org.quiltmc.qsl.${name}:${qsl_version}+${minecraft_version}-SNAPSHOT"
-}
-
-String qfapi(String name) {
-	return "org.quiltmc.quilted-fabric-api:fabric-${name}:${qfapi_version}-${minecraft_version}-SNAPSHOT"
-}
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -46,20 +39,7 @@ dependencies {
 	})
 	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
 
-	modImplementation include(qsl("core:qsl_base"))
-	modImplementation include(qsl("core:registry"))
-	modImplementation include(qsl("core:lifecycle_events"))
-	modImplementation include(qsl("core:networking"))
-	modImplementation include(qsl("core:resource_loader"))
-	modImplementation include(qsl("item:item_group"))
-	modImplementation include(qsl("block:block_extensions"))
-	modImplementation include(qsl("gui:tooltip"))
-	modImplementation include(qfapi("api-base"))
-	modImplementation include(qfapi("registry-sync-v0"))
-	modImplementation include(qfapi("networking-api-v1"))
-	modImplementation include(qfapi("biome-api-v1"))
-	modImplementation include(qfapi("object-builder-api-v1"))
-	modImplementation include(qfapi("rendering-v1"))
+	modImplementation include("org.quiltmc.quilted-fabric-api:quilted-fabric-api:${qfapi_version}-${minecraft_version}-SNAPSHOT")
 }
 
 processResources {
