@@ -26,6 +26,7 @@ public class RefinedMagicItems {
     public static Item roseQuartz = new RoseQuartzItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item roseQuartzOre = new BlockItem(RefinedMagicBlocks.roseQuartzOre, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
     public static Item roseQuartzBlock = new BlockItem(RefinedMagicBlocks.roseQuartzBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
+    public static Item altarBlock = new BlockItem(RefinedMagicBlocks.altarBlock, new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup));
 
     public static Item dimensionalTotem = new DimensionalTotemItem(new Item.Settings().group(RefinedMagicRegistry.potionTweaksGroup).maxCount(1));
 
@@ -48,6 +49,7 @@ public class RefinedMagicItems {
         register(roseQuartz, Mod.id("rose_quartz"));
         register(roseQuartzOre, Mod.id("rose_quartz_ore"));
         register(roseQuartzBlock, Mod.id("rose_quartz_block"));
+        register(altarBlock, Mod.id("altar"));
 
         register(dimensionalTotem, Mod.id("dimensional_totem"));
     }

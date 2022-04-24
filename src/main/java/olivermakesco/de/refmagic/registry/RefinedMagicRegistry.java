@@ -9,7 +9,9 @@ public class RefinedMagicRegistry {
     public static void register() {
         RefinedMagicPotions.register();
         RefinedMagicBlocks.register();
+        RefinedMagicBlockEntities.register();
         RefinedMagicItems.register();
         RefinedMagicWorldgen.register();
+        RefinedMagicRecipes.register();
     }
 }
