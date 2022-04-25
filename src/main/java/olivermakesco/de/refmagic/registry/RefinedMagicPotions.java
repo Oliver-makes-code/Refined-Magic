@@ -35,6 +35,7 @@ public class RefinedMagicPotions {
         register(longLevitationPotion, Mod.id("long_levitation_potion"));
         register(levitationPotion, Items.REDSTONE, longLevitationPotion);
 
+        register(smeltingAura, Mod.id("smelting_aura"));
         register(smeltingAuraPotion, Mod.id("smelting_aura"));
         register(Potions.MUNDANE, RefinedMagicItems.topaz, smeltingAuraPotion);
 
@@ -42,6 +43,10 @@ public class RefinedMagicPotions {
         register(smeltingAuraPotion, Items.REDSTONE, longSmeltingAuraPotion);
     }
 
+
+    public static void register(StatusEffect potion, Identifier id) {
+        Registry.register(Registry.STATUS_EFFECT, id, potion);
+    }
     public static void register(Potion potion, Identifier id) {
         Registry.register(Registry.POTION, id, potion);
         potionsToAdd.add(potion);
