@@ -1,12 +1,4 @@
-# Quilt Example Mod
-Forked from Fabric Example Mod to use Quilt tools
+# Refined Magic!
+## A mod that aims to expand the magical scope of Minecraft!
 
-**Note: This is unofficial and you're not likely to get support for this.**
-
-## Setup
-
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+## [Wiki](https://olivermakesco.de/rm) <sup>Under construction</sup>
