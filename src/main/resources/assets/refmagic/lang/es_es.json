@@ -1,0 +1,56 @@
+{
+  "itemGroup.refmagic.items": "Refined Magic",
+
+  "block.refmagic.kyrite_ore": "Mena de kirita",
+  "block.refmagic.kyrite_block": "Bloque de kirita",
+  "item.refmagic.kyrite_shard": "Fragmento de kirita",
+  "item.refmagic.kyrite_powder": "Polvo de kirita",
+  "block.refmagic.topaz_ore": "Mena de topacio",
+  "block.refmagic.topaz_block": "Bloque de topacio",
+  "item.refmagic.topaz": "Topacio",
+  "block.refmagic.bismuth_ore": "Mena de bismuto",
+  "block.refmagic.bismuth_block": "Bloque de bismuto",
+  "item.refmagic.bismuth": "Bismuto",
+  "block.refmagic.citrine_ore": "Mena de citrino",
+  "block.refmagic.citrine_block": "Bloque de citrino",
+  "item.refmagic.citrine": "Citrino",
+  "block.refmagic.opal_ore": "Mena de ópalo",
+  "block.refmagic.opal_block": "Bloque de ópalo",
+  "item.refmagic.opal": "Ópalo",
+  "block.refmagic.rose_quartz_ore": "Mena de cuarzo rosa",
+  "block.refmagic.rose_quartz_block": "Bloque de cuarzo rosa",
+  "item.refmagic.rose_quartz": "Cuarzo rosa",
+
+  "block.refmagic.altar": "Altar",
+
+  "item.refmagic.necklace": "Collar",
+  "item.refmagic.fire_necklace": "Collar de fuego",
+  "item.refmagic.aqua_necklace": "Collar de agua",
+
+  "item.refmagic.dimensional_totem": "Tótem dimensional",
+
+
+  "refmagic.kyrite.tooltip": "¡Trata triturarme con yunque!",
+  "refmagic.effects.smelting": "Aura de fundición",
+
+  "item.minecraft.potion.effect.smelting_aura": "Poción de fundición",
+  "item.minecraft.tipped_arrow.effect.smelting_aura": "Flecha de fundición",
+  "item.minecraft.splash_potion.effect.smelting_aura": "Poción arrojadiza de fundición",
+  "item.minecraft.lingering_potion.effect.smelting_aura": "Poción persistente de fundición",
+
+  "item.minecraft.potion.effect.long_smelting_aura": "Poción de fundición",
+  "item.minecraft.tipped_arrow.effect.long_smelting_aura": "Flecha de fundición",
+  "item.minecraft.splash_potion.effect.long_smelting_aura": "Poción arrojadiza de fundición",
+  "item.minecraft.lingering_potion.effect.long_smelting_aura": "Poción persistente de fundición",
+
+
+  "item.minecraft.potion.effect.levitation_potion": "Poción de levitación",
+  "item.minecraft.lingering_potion.effect.levitation_potion": "Poción persistente de levitación",
+  "item.minecraft.splash_potion.effect.levitation_potion": "Poción arrojadiza de levitación",
+  "item.minecraft.tipped_arrow.effect.levitation_potion": "Flecha de levitación",
+
+  "item.minecraft.potion.effect.long_levitation_potion": "Poción de levitación",
+  "item.minecraft.splash_potion.effect.long_levitation_potion": "Poción arrojadiza de levitación",
+  "item.minecraft.lingering_potion.effect.long_levitation_potion": "Poción persistente de levitación",
+  "item.minecraft.tipped_arrow.effect.long_levitation_potion": "Flecha de levitación"
+}
