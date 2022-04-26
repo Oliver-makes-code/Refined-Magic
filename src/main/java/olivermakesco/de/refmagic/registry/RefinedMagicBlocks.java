@@ -37,6 +37,12 @@ public class RefinedMagicBlocks {
                     .sounds(BlockSoundGroup.BASALT)
                     .requiresTool()
     );
+    public static Block bismuthBlock = new BismuthOreBlock(
+            QuiltBlockSettings
+                    .copyOf(Blocks.IRON_BLOCK)
+                    .sounds(BlockSoundGroup.METAL)
+                    .requiresTool()
+    );
     public static Block citrineOre = new CitrineOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.BLACKSTONE)
@@ -46,7 +52,7 @@ public class RefinedMagicBlocks {
     public static Block citrineBlock = new Block(
             QuiltBlockSettings
                     .copyOf(Blocks.AMETHYST_BLOCK)
-                    .sounds(BlockSoundGroup.STONE)
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)
                     .requiresTool()
     );
     public static Block opalOre = new OpalOreBlock(
@@ -69,6 +75,7 @@ public class RefinedMagicBlocks {
     public static Block roseQuartzBlock = new Block(
             QuiltBlockSettings
                     .copyOf(Blocks.QUARTZ_BLOCK)
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)
                     .requiresTool()
     );
     public static Block altarBlock = new AltarTableBlock(
@@ -83,6 +90,7 @@ public class RefinedMagicBlocks {
         register(topazOre, Mod.id("topaz_ore"));
         register(topazBlock, Mod.id("topaz_block"));
         register(bismuthOre, Mod.id("bismuth_ore"));
+        register(bismuthBlock, Mod.id("bismuth_block"));
         register(citrineOre, Mod.id("citrine_ore"));
         register(citrineBlock, Mod.id("citrine_block"));
         register(opalOre, Mod.id("opal_ore"));

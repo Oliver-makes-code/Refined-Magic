@@ -1,8 +1,7 @@
 {
-  "parent": "minecraft:block/cube_bottom_top",
+  "parent": "block/cube_all",
   "textures": {
-    "side": "refmagic:block/rose_quartz_side",
-    "top": "refmagic:block/rose_quartz_side",
-    "bottom": "refmagic:block/rose_quartz_bottom"
+    "all": "refmagic:block/rose_quartz_block",
+    "particle": "refmagic:block/rose_quartz_block"
   }
 }

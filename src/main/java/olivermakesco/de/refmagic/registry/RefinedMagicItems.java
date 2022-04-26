@@ -18,6 +18,7 @@ public class RefinedMagicItems {
     public static Item topazBlock = new BlockItem(RefinedMagicBlocks.topazBlock, new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item bismuth = new BismuthItem(new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item bismuthOre = new BlockItem(RefinedMagicBlocks.bismuthOre, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item bismuthBlock = new BlockItem(RefinedMagicBlocks.bismuthBlock, new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item citrine = new CitrineItem(new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item citrineOre = new BlockItem(RefinedMagicBlocks.citrineOre, new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item citrineBlock = new BlockItem(RefinedMagicBlocks.citrineBlock, new Item.Settings().group(RefinedMagicRegistry.group));
@@ -44,6 +45,7 @@ public class RefinedMagicItems {
         register(topazBlock, Mod.id("topaz_block"));
         register(bismuth, Mod.id("bismuth"));
         register(bismuthOre, Mod.id("bismuth_ore"));
+        register(bismuthBlock, Mod.id("bismuth_block"));
         register(citrine, Mod.id("citrine"));
         register(citrineOre, Mod.id("citrine_ore"));
         register(citrineBlock, Mod.id("citrine_block"));
