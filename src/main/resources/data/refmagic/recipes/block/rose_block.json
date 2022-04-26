@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "refmagic:rose_quartz"
+    }
+  },
+  "result": {
+    "item": "refmagic:rose_quartz_block",
+    "count": 1
+  }
+}

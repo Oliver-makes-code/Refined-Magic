@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "refmagic:bismuth"
+    }
+  },
+  "result": {
+    "item": "refmagic:bismuth_block",
+    "count": 1
+  }
+}

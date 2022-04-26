@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "refmagic:kyrite_shard"
+    }
+  },
+  "result": {
+    "item": "refmagic:kyrite_block",
+    "count": 1
+  }
+}

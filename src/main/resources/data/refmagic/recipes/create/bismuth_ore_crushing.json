@@ -1,0 +1,26 @@
+{
+  "type": "create:crushing",
+  "group": "minecraft:misc",
+  "ingredients": [
+    {
+      "item": "refmagic:bismuth_ore"
+    }
+  ],
+  "results": [
+    {
+      "item": "refmagic:bismuth",
+      "count": 2
+    },
+    {
+      "item": "refmagic:bismuth",
+      "count": 1,
+      "chance": 0.25
+    },
+    {
+      "item": "minecraft:basalt",
+      "count": 1,
+      "chance": 0.12
+    }
+  ],
+  "processingTime": 350
+}

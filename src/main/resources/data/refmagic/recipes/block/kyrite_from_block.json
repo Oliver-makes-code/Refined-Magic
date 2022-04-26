@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "refmagic:kyrite_block"
+    }
+  ],
+  "result": {
+    "item": "refmagic:kyrite_shard",
+    "count": 9
+  }
+}

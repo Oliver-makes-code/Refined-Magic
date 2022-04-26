@@ -1,0 +1,26 @@
+{
+  "type": "create:crushing",
+  "group": "minecraft:misc",
+  "ingredients": [
+    {
+      "item": "refmagic:topaz_ore"
+    }
+  ],
+  "results": [
+    {
+      "item": "refmagic:topaz",
+      "count": 2
+    },
+    {
+      "item": "refmagic:topaz",
+      "count": 1,
+      "chance": 0.25
+    },
+    {
+      "item": "minecraft:granite",
+      "count": 1,
+      "chance": 0.12
+    }
+  ],
+  "processingTime": 350
+}
