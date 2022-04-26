@@ -2,11 +2,14 @@ package olivermakesco.de.refmagic.block;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.packet.s2c.play.InventoryS2CPacket;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.command.ParticleCommand;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -79,7 +82,7 @@ public class AltarTableBlock extends BlockWithEntity {
                     player.getInventory().insertStack(result);
                     entity.clear();
                     player.getStackInHand(hand).decrement(1);
-                    update(pos, serverWorld);
+                    update(pos, serverWorld, (ServerPlayerEntity)player);
                     world.playSound(null,pos,SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE,SoundCategory.BLOCKS,10,0);
                     serverWorld.spawnParticles(ParticleTypes.EXPLOSION, pos.getX(), pos.getY()+0.5, pos.getZ(), 15, 1, 1, 1, 1);
                     return ActionResult.SUCCESS;
@@ -105,7 +108,7 @@ public class AltarTableBlock extends BlockWithEntity {
             var next = player.getStackInHand(hand).getItem().getDefaultStack();
             player.getStackInHand(hand).decrement(1);
             entity.setSlot(c,next);
-            update(pos, serverWorld);
+            update(pos, serverWorld, (ServerPlayerEntity)player);
             world.playSound(null,pos,SoundEvents.BLOCK_END_PORTAL_FRAME_FILL,SoundCategory.BLOCKS,10,0);
             return ActionResult.SUCCESS;
         }
@@ -117,13 +120,27 @@ public class AltarTableBlock extends BlockWithEntity {
         var next = entity.getSlot(c);
         player.getInventory().insertStack(next);
         entity.setSlot(c, stackToSet);
-        update(pos, serverWorld);
+        update(pos, serverWorld, (ServerPlayerEntity)player);
         world.playSound(null,pos,SoundEvents.BLOCK_END_PORTAL_FRAME_FILL,SoundCategory.BLOCKS,10,0);
         return ActionResult.SUCCESS;
     }
 
-    public void update(BlockPos pos, ServerWorld world) {
+    public void update(BlockPos pos, ServerWorld world, ServerPlayerEntity entity) {
         world.getChunkManager().markForUpdate(pos);
+        entity.getInventory().markDirty();
     }
 
+    @Override
+    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        super.onBreak(world, pos, state, player);
+        var entity = (AltarTableBlockEntity) world.getBlockEntity(pos);
+        var itemEntity0 = new ItemEntity(world, pos.getX(),pos.getY(),pos.getZ(), entity.getSlot(0));
+        world.spawnEntity(itemEntity0);
+        var itemEntity1 = new ItemEntity(world, pos.getX(),pos.getY(),pos.getZ(), entity.getSlot(1));
+        world.spawnEntity(itemEntity1);
+        var itemEntity2 = new ItemEntity(world, pos.getX(),pos.getY(),pos.getZ(), entity.getSlot(2));
+        world.spawnEntity(itemEntity2);
+        var itemEntity3 = new ItemEntity(world, pos.getX(),pos.getY(),pos.getZ(), entity.getSlot(3));
+        world.spawnEntity(itemEntity3);
+    }
 }
