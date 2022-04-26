@@ -80,7 +80,7 @@ public class RefinedMagicBlocks {
     );
     public static Block altarBlock = new AltarTableBlock(
             QuiltBlockSettings
-                    .copyOf(Blocks.QUARTZ_BLOCK)
+                    .copyOf(Blocks.SPRUCE_PLANKS)
                     .requiresTool()
     );
 
