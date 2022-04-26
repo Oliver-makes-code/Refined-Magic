@@ -1,0 +1,35 @@
+{
+  "itemGroup.refmagic.items": "Magia refinada",
+
+  "block.refmagic.kyrite_ore": "Minério de kirita",
+  "block.refmagic.kyrite_block": "Bloco de kirita",
+  "item.refmagic.kyrite_shard": "Fragmento de kirita",
+  "item.refmagic.kyrite_powder": "Pó de kirita",
+  "block.refmagic.topaz_ore": "Minério de topázio",
+  "block.refmagic.topaz_block": "Bloco de topázio",
+  "item.refmagic.topaz": "Topázio",
+  "block.refmagic.bismuth_ore": "Minério de bismuto",
+  "block.refmagic.bismuth_block": "Bloco de bismuto",
+  "item.refmagic.bismuth": "Bismuto",
+  "block.refmagic.citrine_ore": "Minério de citrino",
+  "block.refmagic.citrine_block": "Bloco de citrino",
+  "item.refmagic.citrine": "Citrino",
+  "block.refmagic.opal_ore": "Minério de opala",
+  "block.refmagic.opal_block": "Bloco de opala",
+  "item.refmagic.opal": "Opala",
+  "block.refmagic.rose_quartz_ore": "Minério de quartzo rosa",
+  "block.refmagic.rose_quartz_block": "Bloco de quartzo rosa",
+  "item.refmagic.rose_quartz": "Quartzo rosa",
+
+  "block.refmagic.altar": "Altar",
+
+  "item.refmagic.necklace": "Colar",
+  "item.refmagic.fire_necklace": "Colar de fogo",
+  "item.refmagic.aqua_necklace": "Colar de água",
+
+  "item.refmagic.dimensional_totem": "Totem dimensional",
+
+
+  "refmagic.kyrite.tooltip": "Tente me esmagar com uma bigorna!",
+  "refmagic.effects.smelting": "Aura de fundição"
+}
