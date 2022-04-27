@@ -105,7 +105,8 @@ public class AltarTableBlock extends BlockWithEntity {
             if (player.getStackInHand(hand).isEmpty())
                 return ActionResult.PASS;
 
-            var next = player.getStackInHand(hand).getItem().getDefaultStack();
+            var next = player.getStackInHand(hand).copy();
+            next.setCount(1);
             player.getStackInHand(hand).decrement(1);
             entity.setSlot(c,next);
             update(pos, serverWorld, (ServerPlayerEntity)player);
@@ -114,7 +115,8 @@ public class AltarTableBlock extends BlockWithEntity {
         }
         var stackToSet = ItemStack.EMPTY;
         if (!player.getStackInHand(hand).isEmpty() && player.getStackInHand(hand).getItem() != entity.getSlot(c).getItem()) {
-            stackToSet = player.getStackInHand(hand).getItem().getDefaultStack();
+            stackToSet = player.getStackInHand(hand).copy();
+            stackToSet.setCount(1);
             player.getStackInHand(hand).decrement(1);
         }
         var next = entity.getSlot(c);

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "wSw",
+    "s s"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    "w": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "refmagic:altar",
+    "count": 1
+  }
+}
