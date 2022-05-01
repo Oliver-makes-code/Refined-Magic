@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "refmagic:kyrite_ore_overworld",
+    "refmagic:kyrite_ore_nether",
+    "refmagic:kyrite_ore_end"
+  ]
+}

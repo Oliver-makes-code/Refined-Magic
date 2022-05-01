@@ -3,7 +3,7 @@
   "group": "minecraft:misc",
   "ingredients": [
     {
-      "item": "refmagic:rose_quartz_ore"
+      "tag": "c:rose_quartz_ores"
     }
   ],
   "results": [

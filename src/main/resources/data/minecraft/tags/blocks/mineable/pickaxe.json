@@ -1,9 +1,12 @@
 {
   "replace": false,
   "values": [
-    "refmagic:kyrite_ore",
+    "refmagic:kyrite_ore_nether",
+    "refmagic:kyrite_ore_overworld",
+    "refmagic:kyrite_ore_end",
     "refmagic:topaz_ore",
-    "refmagic:bismuth_ore",
+    "refmagic:bismuth_ore_overworld",
+    "refmagic:bismuth_ore_nether",
     "refmagic:citrine_ore",
     "refmagic:opal_ore",
     "refmagic:rose_quartz_ore",

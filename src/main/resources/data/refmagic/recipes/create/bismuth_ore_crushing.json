@@ -3,7 +3,7 @@
   "group": "minecraft:misc",
   "ingredients": [
     {
-      "item": "refmagic:bismuth_ore"
+      "tag": "c:bismuth_ores"
     }
   ],
   "results": [

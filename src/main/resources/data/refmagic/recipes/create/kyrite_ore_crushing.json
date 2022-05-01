@@ -3,7 +3,7 @@
   "group": "minecraft:misc",
   "ingredients": [
     {
-      "item": "refmagic:kyrite_ore"
+      "tag": "c:kyrite_ores"
     }
   ],
   "results": [

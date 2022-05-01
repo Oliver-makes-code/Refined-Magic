@@ -3,7 +3,7 @@
   "group": "minecraft:misc",
   "ingredients": [
     {
-      "item": "refmagic:citrine_ore"
+      "tag": "c:citrine_ores"
     }
   ],
   "results": [

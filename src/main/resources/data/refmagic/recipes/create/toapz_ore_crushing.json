@@ -3,7 +3,7 @@
   "group": "minecraft:misc",
   "ingredients": [
     {
-      "item": "refmagic:topaz_ore"
+      "tag": "c:topaz_ores"
     }
   ],
   "results": [
