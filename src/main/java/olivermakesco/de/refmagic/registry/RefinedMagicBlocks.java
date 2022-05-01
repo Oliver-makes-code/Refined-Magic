@@ -9,10 +9,22 @@ import olivermakesco.de.refmagic.block.*;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class RefinedMagicBlocks {
-    public static Block kyriteOre = new KyriteOreBlock(
+    public static Block kyriteOreEnd = new KyriteOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.END_STONE)
                     .sounds(BlockSoundGroup.STONE)
+                    .requiresTool()
+    );
+    public static Block kyriteOreOverworld = new KyriteOreBlock(
+            QuiltBlockSettings
+                    .copyOf(Blocks.STONE)
+                    .sounds(BlockSoundGroup.STONE)
+                    .requiresTool()
+    );
+    public static Block kyriteOreNether = new KyriteOreBlock(
+            QuiltBlockSettings
+                    .copyOf(Blocks.NETHERRACK)
+                    .sounds(BlockSoundGroup.NETHERRACK)
                     .requiresTool()
     );
     public static Block kyriteBlock = new Block(
@@ -31,10 +43,16 @@ public class RefinedMagicBlocks {
                     .copyOf(Blocks.AMETHYST_BLOCK)
                     .requiresTool()
     );
-    public static Block bismuthOre = new BismuthOreBlock(
+    public static Block bismuthOreNether = new BismuthOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.BASALT)
                     .sounds(BlockSoundGroup.BASALT)
+                    .requiresTool()
+    );
+    public static Block bismuthOreOverworld = new BismuthOreBlock(
+            QuiltBlockSettings
+                    .copyOf(Blocks.DEEPSLATE)
+                    .sounds(BlockSoundGroup.DEEPSLATE)
                     .requiresTool()
     );
     public static Block bismuthBlock = new BismuthOreBlock(
@@ -84,11 +102,12 @@ public class RefinedMagicBlocks {
     );
 
     public static void register() {
-        register(kyriteOre, Mod.id("kyrite_ore"));
+        register(kyriteOreEnd, Mod.id("kyrite_ore_end"));
         register(kyriteBlock, Mod.id("kyrite_block"));
         register(topazOre, Mod.id("topaz_ore"));
         register(topazBlock, Mod.id("topaz_block"));
-        register(bismuthOre, Mod.id("bismuth_ore"));
+        register(bismuthOreNether, Mod.id("bismuth_ore_nether"));
+        register(bismuthOreOverworld, Mod.id("bismuth_ore_overworld"));
         register(bismuthBlock, Mod.id("bismuth_block"));
         register(citrineOre, Mod.id("citrine_ore"));
         register(citrineBlock, Mod.id("citrine_block"));

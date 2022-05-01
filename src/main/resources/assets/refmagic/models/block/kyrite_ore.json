@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "refmagic:block/kyrite_ore",
-    "particle": "refmagic:block/kyrite_ore"
-  }
-}

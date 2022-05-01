@@ -11,13 +11,16 @@ import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 public class RefinedMagicItems {
     public static Item kyriteShard = new KyriteShardItem(new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item kyritePowder = new KyritePowderItem(new Item.Settings().group(RefinedMagicRegistry.group));
-    public static Item kyriteOre = new BlockItem(RefinedMagicBlocks.kyriteOre, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item kyriteOreEnd = new BlockItem(RefinedMagicBlocks.kyriteOreEnd, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item kyriteOreOverworld = new BlockItem(RefinedMagicBlocks.kyriteOreOverworld, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item kyriteOreNether = new BlockItem(RefinedMagicBlocks.kyriteOreNether, new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item kyriteBlock = new BlockItem(RefinedMagicBlocks.kyriteBlock, new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item topaz = new TopazItem(new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item topazOre = new BlockItem(RefinedMagicBlocks.topazOre, new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item topazBlock = new BlockItem(RefinedMagicBlocks.topazBlock, new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item bismuth = new BismuthItem(new Item.Settings().group(RefinedMagicRegistry.group));
-    public static Item bismuthOre = new BlockItem(RefinedMagicBlocks.bismuthOre, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item bismuthOreNether = new BlockItem(RefinedMagicBlocks.bismuthOreNether, new Item.Settings().group(RefinedMagicRegistry.group));
+    public static Item bismuthOreOverworld = new BlockItem(RefinedMagicBlocks.bismuthOreOverworld, new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item bismuthBlock = new BlockItem(RefinedMagicBlocks.bismuthBlock, new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item citrine = new CitrineItem(new Item.Settings().group(RefinedMagicRegistry.group));
     public static Item citrineOre = new BlockItem(RefinedMagicBlocks.citrineOre, new Item.Settings().group(RefinedMagicRegistry.group));
@@ -38,13 +41,16 @@ public class RefinedMagicItems {
     public static void register() {
         register(kyriteShard, Mod.id("kyrite_shard"));
         register(kyritePowder, Mod.id("kyrite_powder"));
-        register(kyriteOre, Mod.id("kyrite_ore"));
+        register(kyriteOreOverworld, Mod.id("kyrite_ore_overworld"));
+        register(kyriteOreNether, Mod.id("kyrite_ore_nether"));
+        register(kyriteOreEnd, Mod.id("kyrite_ore_end"));
         register(kyriteBlock, Mod.id("kyrite_block"));
         register(topaz, Mod.id("topaz"));
         register(topazOre, Mod.id("topaz_ore"));
         register(topazBlock, Mod.id("topaz_block"));
         register(bismuth, Mod.id("bismuth"));
-        register(bismuthOre, Mod.id("bismuth_ore"));
+        register(bismuthOreOverworld, Mod.id("bismuth_ore_overworld"));
+        register(bismuthOreNether, Mod.id("bismuth_ore_nether"));
         register(bismuthBlock, Mod.id("bismuth_block"));
         register(citrine, Mod.id("citrine"));
         register(citrineOre, Mod.id("citrine_ore"));

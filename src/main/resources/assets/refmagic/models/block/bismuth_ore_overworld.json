@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "refmagic:block/bismuth_ore_overworld",
+    "particle": "refmagic:block/bismuth_ore_overworld"
+  }
+}
