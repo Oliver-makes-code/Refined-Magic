@@ -22,25 +22,16 @@ public record AltarRecipe(Identifier id, Ingredient catalyst, Ingredient[] input
 
     @Override
     public boolean matches(AltarTableBlockEntity inventory, World world) {
-        if (!catalyst.test(inventory.catalyst)) {
+        if (!catalyst.test(inventory.catalyst))
             return false;
-        }
         boolean[] met = new boolean[4];
-        for (int i = 0; i < inventory.size(); i++) {
-            ItemStack stack = inventory.getStack(i);
-            for (int j = 0; j < inputs.length; j++) {
-                if (!met[j]) {
-                    if (inputs[j].test(stack)) {
-                        met[j] = true;
-                    }
-                }
-            }
-        }
-        for (boolean b : met) {
-            if (!b) {
+        for (int i = 0; i < inventory.size(); i++)
+            for (int j = 0; j < inputs.length; j++)
+                if (!met[j])
+                    met[j] = inputs[j].test(inventory.getStack(i));
+        for (boolean b : met)
+            if (!b)
                 return false;
-            }
-        }
         return true;
     }
 

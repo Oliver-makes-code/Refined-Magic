@@ -80,9 +80,8 @@ public class AltarTableBlock extends BlockWithEntity {
             entity.catalyst = player.getStackInHand(hand).copy();
             Optional<AltarRecipe> optional = world.getRecipeManager().getFirstMatch(AltarRecipe.Type.INSTANCE, entity, world);
             entity.catalyst = null;
-            if (optional.isEmpty()) {
+            if (optional.isEmpty())
                 return ActionResult.PASS;
-            }
             AltarRecipe match = optional.get();
             player.getStackInHand(hand).decrement(1);
             player.getInventory().offerOrDrop(match.result().copy());
