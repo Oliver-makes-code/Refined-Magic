@@ -24,9 +24,12 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import olivermakesco.de.refmagic.Mod;
 import olivermakesco.de.refmagic.block.entity.AltarTableBlockEntity;
+import olivermakesco.de.refmagic.recipe.AltarRecipe;
 import olivermakesco.de.refmagic.registry.RefinedMagicItems;
 import olivermakesco.de.refmagic.registry.RefinedMagicRecipes;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class AltarTableBlock extends BlockWithEntity {
     public AltarTableBlock(Settings settings) {
@@ -68,28 +71,26 @@ public class AltarTableBlock extends BlockWithEntity {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (world.isClient) return ActionResult.SUCCESS;
-        var serverWorld = (ServerWorld)world;
+        var serverWorld = (ServerWorld) world;
         if (player.isSneaking()) return ActionResult.PASS;
         var entity = (AltarTableBlockEntity) world.getBlockEntity(pos);
         assert entity != null;
 
-
-        if (player.getStackInHand(hand).getItem() == RefinedMagicItems.kyritePowder) {
-            for (var recipe : RefinedMagicRecipes.altarRecipes.entrySet()) {
-                Mod.info(String.valueOf(entity.test(recipe.getValue().a, recipe.getValue().b, recipe.getValue().c, recipe.getValue().d)));
-                if (entity.test(recipe.getValue().a, recipe.getValue().b, recipe.getValue().c, recipe.getValue().d)) {
-                    var result = recipe.getValue().craft(entity);
-                    player.getInventory().insertStack(result);
-                    entity.clear();
-                    player.getStackInHand(hand).decrement(1);
-                    update(pos, serverWorld, (ServerPlayerEntity)player);
-                    world.playSound(null,pos,SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE,SoundCategory.BLOCKS,10,0);
-                    serverWorld.spawnParticles(ParticleTypes.EXPLOSION, pos.getX(), pos.getY()+0.5, pos.getZ(), 15, 1, 1, 1, 1);
-                    return ActionResult.SUCCESS;
-                }
+        if (!player.getStackInHand(hand).isEmpty() && entity.isFull()) {
+            entity.catalyst = player.getStackInHand(hand).copy();
+            Optional<AltarRecipe> optional = world.getRecipeManager().getFirstMatch(AltarRecipe.Type.INSTANCE, entity, world);
+            entity.catalyst = null;
+            if (optional.isEmpty()) {
+                return ActionResult.PASS;
             }
-
-            return ActionResult.PASS;
+            AltarRecipe match = optional.get();
+            player.getStackInHand(hand).decrement(1);
+            player.getInventory().offerOrDrop(match.result().copy());
+            entity.clear();
+            update(pos, serverWorld, (ServerPlayerEntity) player);
+            world.playSound(null, pos, SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE, SoundCategory.BLOCKS, 10, 0);
+            serverWorld.spawnParticles(ParticleTypes.EXPLOSION, pos.getX(), pos.getY()+0.5, pos.getZ(), 15, 1, 1, 1, 1);
+            return ActionResult.SUCCESS;
         }
 
         var x = hit.getPos().x % 1;
