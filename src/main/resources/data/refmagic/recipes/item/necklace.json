@@ -1,0 +1,20 @@
+{
+  "type": "refmagic:altar",
+  "inputs": [
+    {
+      "item": "minecraft:chain"
+    },
+    {
+      "item": "minecraft:iron_nugget"
+    },
+    {
+      "item": "minecraft:iron_nugget"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "item": "refmagic:necklace"
+  }
+}

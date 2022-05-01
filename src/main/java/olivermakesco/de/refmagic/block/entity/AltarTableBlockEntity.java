@@ -12,12 +12,15 @@ import net.minecraft.nbt.NbtList;
 import net.minecraft.network.Packet;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.math.BlockPos;
 import olivermakesco.de.refmagic.registry.RefinedMagicBlockEntities;
 
 import javax.annotation.Nullable;
 
 public class AltarTableBlockEntity extends BlockEntity implements Inventory {
+
+    public ItemStack catalyst = null;
     public ItemStack[] slots = {ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY};
 
     public AltarTableBlockEntity(BlockPos blockPos, BlockState blockState) {
@@ -27,9 +30,19 @@ public class AltarTableBlockEntity extends BlockEntity implements Inventory {
     public ItemStack getSlot(int slot) {
         return slots[slot];
     }
+
     public void setSlot(int slot, ItemStack stack) {
         slots[slot] = stack;
         markDirty();
+    }
+
+    public boolean isFull() {
+        for (ItemStack stack : slots) {
+            if (stack.isEmpty()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
@@ -101,25 +114,8 @@ public class AltarTableBlockEntity extends BlockEntity implements Inventory {
 
     @Override
     public void clear() {
-        slots = new ItemStack[]{ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY};
-    }
-
-    public boolean test(ItemStack a, ItemStack b, ItemStack c, ItemStack d) {
-        boolean amatch = false;
-        boolean bmatch = false;
-        boolean cmatch = false;
-        boolean dmatch = false;
-        for (var item : slots) {
-            if (item.getItem() == a.getItem() && !amatch)
-                amatch = true;
-            else if (item.getItem() == b.getItem() && !bmatch)
-                bmatch = true;
-            else if (item.getItem() == c.getItem() && !cmatch)
-                cmatch = true;
-            else if (item.getItem() == d.getItem() && !dmatch)
-                dmatch = true;
-
+        for (int i = 0; i < size(); i++) {
+            setSlot(i, ItemStack.EMPTY);
         }
-        return amatch && bmatch && cmatch && dmatch;
     }
 }

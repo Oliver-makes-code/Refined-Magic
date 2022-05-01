@@ -1,0 +1,20 @@
+{
+  "type": "refmagic:altar",
+  "inputs": [
+    {
+      "item": "minecraft:totem_of_undying"
+    },
+    {
+      "item": "refmagic:bismuth"
+    },
+    {
+      "item": "refmagic:kyrite_shard"
+    },
+    {
+      "item": "refmagic:topaz"
+    }
+  ],
+  "result": {
+    "item": "refmagic:dimensional_totem"
+  }
+}

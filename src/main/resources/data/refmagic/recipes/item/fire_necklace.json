@@ -1,0 +1,20 @@
+{
+  "type": "refmagic:altar",
+  "inputs": [
+    {
+      "item": "refmagic:necklace"
+    },
+    {
+      "item": "refmagic:bismuth"
+    },
+    {
+      "item": "refmagic:citrine"
+    },
+    {
+      "item": "refmagic:topaz"
+    }
+  ],
+  "result": {
+    "item": "refmagic:fire_necklace"
+  }
+}
