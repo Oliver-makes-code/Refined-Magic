@@ -103,6 +103,8 @@ public class RefinedMagicBlocks {
 
     public static void register() {
         register(kyriteOreEnd, Mod.id("kyrite_ore_end"));
+        register(kyriteOreOverworld, Mod.id("kyrite_ore_overworld"));
+        register(kyriteOreNether, Mod.id("kyrite_ore_nether"));
         register(kyriteBlock, Mod.id("kyrite_block"));
         register(topazOre, Mod.id("topaz_ore"));
         register(topazBlock, Mod.id("topaz_block"));
