@@ -95,11 +95,11 @@ public class RefinedMagicWorldgen {
             new OreFeatureConfig(
                     GRANITE_RULE_TEST,
                     RefinedMagicBlocks.topazOre.getDefaultState(),
-                    8
+                    16
             )
     );
     public static final Holder<PlacedFeature> topazOrePlacedFeature = PlacedFeatureUtil.register(Mod.id("topaz_ore").toString(),topazOreConfiguredFeature,
-            CountPlacementModifier.create(30),
+            CountPlacementModifier.create(50),
             InSquarePlacementModifier.getInstance(),
             HeightRangePlacementModifier.createUniform(YOffset.fixed(1), YOffset.fixed(128))
     );
