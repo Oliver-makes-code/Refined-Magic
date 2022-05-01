@@ -28,7 +28,7 @@ public class BaseNecklaceItem extends TrinketItem {
         var effect = getEffect();
         if (effect == null) return;
         cooldown++;
-        cooldown %= 20;
+        cooldown %= 40;
         if (cooldown == 0) {
             var instance = new StatusEffectInstance(effect, 80);
             entity.addStatusEffect(instance);
