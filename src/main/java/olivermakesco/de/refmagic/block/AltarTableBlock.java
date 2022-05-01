@@ -80,16 +80,16 @@ public class AltarTableBlock extends BlockWithEntity {
             entity.catalyst = player.getStackInHand(hand).copy();
             Optional<AltarRecipe> optional = world.getRecipeManager().getFirstMatch(AltarRecipe.Type.INSTANCE, entity, world);
             entity.catalyst = null;
-            if (optional.isEmpty())
-                return ActionResult.PASS;
-            AltarRecipe match = optional.get();
-            player.getStackInHand(hand).decrement(1);
-            player.getInventory().offerOrDrop(match.result().copy());
-            entity.clear();
-            update(pos, serverWorld, (ServerPlayerEntity) player);
-            world.playSound(null, pos, SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE, SoundCategory.BLOCKS, 10, 0);
-            serverWorld.spawnParticles(ParticleTypes.EXPLOSION, pos.getX(), pos.getY()+0.5, pos.getZ(), 15, 1, 1, 1, 1);
-            return ActionResult.SUCCESS;
+            if (optional.isPresent()) {
+                AltarRecipe match = optional.get();
+                player.getStackInHand(hand).decrement(1);
+                player.getInventory().offerOrDrop(match.result().copy());
+                entity.clear();
+                update(pos, serverWorld, (ServerPlayerEntity) player);
+                world.playSound(null, pos, SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE, SoundCategory.BLOCKS, 10, 0);
+                serverWorld.spawnParticles(ParticleTypes.EXPLOSION, pos.getX(), pos.getY()+0.5, pos.getZ(), 15, 1, 1, 1, 1);
+                return ActionResult.SUCCESS;
+            }
         }
 
         var x = hit.getPos().x % 1;
