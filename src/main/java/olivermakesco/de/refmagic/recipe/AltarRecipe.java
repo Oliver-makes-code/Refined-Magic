@@ -6,17 +6,17 @@ import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import olivermakesco.de.refmagic.Mod;
 import olivermakesco.de.refmagic.block.entity.AltarTableBlockEntity;
 import olivermakesco.de.refmagic.recipe.serializer.AltarRecipeSerializer;
-import olivermakesco.de.refmagic.registry.RefinedMagicRecipes;
 
 import java.util.Arrays;
+import java.util.List;
 
-public record AltarRecipe(Identifier id, Ingredient catalyst, Ingredient[] inputs,
-                          ItemStack result) implements Recipe<AltarTableBlockEntity> {
+public record AltarRecipe(Identifier id, Ingredient catalyst, Ingredient[] inputs, ItemStack result) implements Recipe<AltarTableBlockEntity> {
 
     public static Identifier ID = Mod.id("altar");
 
@@ -48,6 +48,13 @@ public record AltarRecipe(Identifier id, Ingredient catalyst, Ingredient[] input
     @Override
     public ItemStack getOutput() {
         return result;
+    }
+
+    @Override
+    public DefaultedList<Ingredient> getIngredients() {
+        DefaultedList<Ingredient> list = DefaultedList.of();
+        list.addAll(Arrays.asList(inputs));
+        return list;
     }
 
     @Override
