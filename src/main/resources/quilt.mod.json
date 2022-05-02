@@ -12,7 +12,7 @@
         "Octal": "Owner",
         "Reoseah": "Artist",
         "Cart3r": "Artist",
-        "acikek": "Translator",
+        "acikek": "Translator / Data driven crafting help",
         "Azagwen": "Translator"
       },
       "contact": {
@@ -28,6 +28,9 @@
       ],
       "client_init": [
         "olivermakesco.de.refmagic.ModClient"
+      ],
+      "rei": [
+        "olivermakesco.de.refmagic.compat.rei.AltarRecipeReiPlugin"
       ]
     },
     "depends": [
