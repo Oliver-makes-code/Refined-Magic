@@ -1,0 +1,23 @@
+{
+  "type": "refmagic:altar",
+  "inputs": [
+    {
+      "item": "minecraft:packed_ice"
+    },
+    {
+      "item": "minecraft:packed_ice"
+    },
+    {
+      "item": "minecraft:packed_ice"
+    },
+    {
+      "item": "minecraft:packed_ice"
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:soul_sand"
+  },
+  "result": {
+    "item": "soul_ice:soul_ice"
+  }
+}
