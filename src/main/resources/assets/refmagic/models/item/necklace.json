@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "refmagic:item/necklace"
+    "layer0": "refmagic:item/necklace_gem",
+    "layer1": "refmagic:item/necklace_base"
   }
 }
