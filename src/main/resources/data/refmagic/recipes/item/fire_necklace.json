@@ -5,13 +5,13 @@
       "item": "refmagic:necklace"
     },
     {
-      "item": "refmagic:bismuth"
+      "tag": "c:bismuths"
     },
     {
-      "item": "refmagic:citrine"
+      "tag": "c:citrines"
     },
     {
-      "item": "refmagic:topaz"
+      "tag": "c:topazes"
     }
   ],
   "result": {

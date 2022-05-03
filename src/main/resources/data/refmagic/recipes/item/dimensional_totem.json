@@ -5,13 +5,13 @@
       "item": "minecraft:totem_of_undying"
     },
     {
-      "item": "refmagic:bismuth"
+      "tag": "c:bismuths"
     },
     {
       "item": "refmagic:kyrite_shard"
     },
     {
-      "item": "refmagic:topaz"
+      "tag": "c:topazes"
     }
   ],
   "result": {

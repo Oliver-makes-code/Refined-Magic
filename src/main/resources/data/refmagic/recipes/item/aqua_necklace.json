@@ -5,13 +5,13 @@
       "item": "refmagic:necklace"
     },
     {
-      "item": "refmagic:bismuth"
+      "tag": "c:bismuths"
     },
     {
-      "item": "refmagic:opal"
+      "tag": "c:opals"
     },
     {
-      "item": "refmagic:rose_quartz"
+      "tag": "c:rose_quartzes"
     }
   ],
   "result": {

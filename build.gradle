@@ -1,6 +1,5 @@
 plugins {
-	id 'dev.architectury.loom' version '0.11.+'
-	id 'org.quiltmc.quilt-mappings-on-loom' version "4.2.0"
+	id 'org.quiltmc.loom' version '0.12.+'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
