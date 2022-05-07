@@ -12,7 +12,10 @@ import net.minecraft.potion.Potions;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import olivermakesco.de.refmagic.Mod;
+import olivermakesco.de.refmagic.augment.Augment;
+import olivermakesco.de.refmagic.augment.AugmentLoader;
 import olivermakesco.de.refmagic.effects.SmeltingAura;
+import olivermakesco.de.refmagic.item.NecklaceItem;
 import olivermakesco.de.refmagic.mixin.invoker.BrewingRecipeRegistryInvoker;
 
 import java.util.ArrayList;
@@ -56,6 +59,12 @@ public class RefinedMagicPotions {
     }
 
     public static void appendStacks(List<ItemStack> stacks) {
+        for (var entry : AugmentLoader.augments.entrySet()) {
+            var id = entry.getKey();
+            var necklace = RefinedMagicItems.baseNecklace.getDefaultStack();
+            NecklaceItem.setAugment(necklace, id);
+            stacks.add(necklace);
+        }
         for (var potion : potionsToAdd) {
             stacks.add(PotionUtil.setPotion(Items.POTION.getDefaultStack(), potion));
             stacks.add(PotionUtil.setPotion(Items.SPLASH_POTION.getDefaultStack(), potion));

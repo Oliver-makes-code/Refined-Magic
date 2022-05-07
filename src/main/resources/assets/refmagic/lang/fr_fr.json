@@ -1,14 +1,12 @@
 {
   "itemGroup.refmagic.items": "Magie Rafinée",
 
-  "block.refmagic.kyrite_ore": "Minerais de Kyrite",
   "block.refmagic.kyrite_block": "Bloc de Kyrite",
   "item.refmagic.kyrite_shard": "Kyrite Shard",
   "item.refmagic.kyrite_powder": "Kyrite Powder",
   "block.refmagic.topaz_ore": "Minerais de Topaz",
   "block.refmagic.topaz_block": "Bloc de Topaz",
   "item.refmagic.topaz": "Topaz",
-  "block.refmagic.bismuth_ore": "Minerais de Bismuth",
   "block.refmagic.bismuth_block": "Bloc de Bismuth",
   "item.refmagic.bismuth": "Bismuth",
   "block.refmagic.citrine_ore": "Minerais de Citrine",
@@ -23,9 +21,9 @@
 
   "block.refmagic.altar": "Autel",
 
-  "item.refmagic.necklace": "Collier",
-  "item.refmagic.fire_necklace": "Collier de Feu",
-  "item.refmagic.aqua_necklace": "Collier Aquatique",
+  "refmagic.necklace.augment.base": "Collier",
+  "refmagic.necklace.augment.fire": "Collier de Feu",
+  "refmagic.necklace.augment.aqua": "Collier Aquatique",
 
   "item.refmagic.dimensional_totem": "Totem Dimensionnel",
 

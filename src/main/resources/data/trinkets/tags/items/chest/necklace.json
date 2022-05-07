@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "refmagic:necklace",
-    "refmagic:fire_necklace",
-    "refmagic:aqua_necklace"
+    "refmagic:necklace"
   ]
 }

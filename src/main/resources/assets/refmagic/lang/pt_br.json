@@ -1,14 +1,12 @@
 {
   "itemGroup.refmagic.items": "Refined Magic",
 
-  "block.refmagic.kyrite_ore": "Minério de kirita",
   "block.refmagic.kyrite_block": "Bloco de kirita",
   "item.refmagic.kyrite_shard": "Fragmento de kirita",
   "item.refmagic.kyrite_powder": "Pó de kirita",
   "block.refmagic.topaz_ore": "Minério de topázio",
   "block.refmagic.topaz_block": "Bloco de topázio",
   "item.refmagic.topaz": "Topázio",
-  "block.refmagic.bismuth_ore": "Minério de bismuto",
   "block.refmagic.bismuth_block": "Bloco de bismuto",
   "item.refmagic.bismuth": "Bismuto",
   "block.refmagic.citrine_ore": "Minério de citrino",
@@ -23,9 +21,9 @@
 
   "block.refmagic.altar": "Altar",
 
-  "item.refmagic.necklace": "Colar",
-  "item.refmagic.fire_necklace": "Colar de fogo",
-  "item.refmagic.aqua_necklace": "Colar de água",
+  "refmagic.necklace.augment.base": "Colar",
+  "refmagic.necklace.augment.fire": "Colar de fogo",
+  "refmagic.necklace.augment.aqua": "Colar de água",
 
   "item.refmagic.dimensional_totem": "Totem dimensional",
 

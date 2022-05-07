@@ -26,9 +26,9 @@
 
   "block.refmagic.altar": "Altar",
 
-  "item.refmagic.necklace": "Necklace",
-  "item.refmagic.fire_necklace": "Fire Necklace",
-  "item.refmagic.aqua_necklace": "Aqua Necklace",
+  "refmagic.necklace.augment.base": "Necklace",
+  "refmagic.necklace.augment.fire": "Fire Necklace",
+  "refmagic.necklace.augment.aqua": "Aqua Necklace",
 
   "item.refmagic.dimensional_totem": "Dimensional Totem",
 
