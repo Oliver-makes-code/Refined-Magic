@@ -8,6 +8,7 @@ import net.minecraft.recipe.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import olivermakesco.de.refmagic.item.NecklaceItem;
 import olivermakesco.de.refmagic.recipe.AltarRecipe;
 import olivermakesco.de.refmagic.registry.RefinedMagicItems;
 import org.quiltmc.qsl.recipe.api.serializer.QuiltRecipeSerializer;
@@ -22,6 +23,7 @@ public class AltarRecipeSerializer implements QuiltRecipeSerializer<AltarRecipe>
         JsonObject catalyst;
         JsonArray inputs;
         JsonObject result;
+        JsonPrimitive augment;
     }
 
     @Override
@@ -36,11 +38,16 @@ public class AltarRecipeSerializer implements QuiltRecipeSerializer<AltarRecipe>
         Ingredient catalyst = recipeJson.catalyst != null
                 ? Ingredient.fromJson(recipeJson.catalyst)
                 : Ingredient.ofStacks(RefinedMagicItems.kyritePowder.getDefaultStack());
+        Identifier augment = recipeJson.augment != null
+                ? new Identifier(recipeJson.augment.getAsString())
+                : null;
         Ingredient[] inputs = new Ingredient[4];
         for (int i = 0; i < inputs.length; i++) {
             inputs[i] = Ingredient.fromJson(recipeJson.inputs.get(i));
         }
         ItemStack result = ShapedRecipe.outputFromJson(recipeJson.result);
+        if (augment != null)
+            NecklaceItem.setAugment(result, augment);
         return new AltarRecipe(id, catalyst, inputs, result);
     }
 

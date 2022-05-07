@@ -15,6 +15,7 @@
     }
   ],
   "result": {
-    "item": "refmagic:aqua_necklace"
-  }
+    "item": "refmagic:necklace"
+  },
+  "augment": "refmagic:aqua"
 }

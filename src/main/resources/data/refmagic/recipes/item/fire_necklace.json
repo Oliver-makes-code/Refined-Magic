@@ -15,6 +15,7 @@
     }
   ],
   "result": {
-    "item": "refmagic:fire_necklace"
-  }
+    "item": "refmagic:necklace"
+  },
+  "augment": "refmagic:fire"
 }
