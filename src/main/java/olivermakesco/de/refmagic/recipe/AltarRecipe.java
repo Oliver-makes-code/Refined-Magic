@@ -59,7 +59,7 @@ public record AltarRecipe(Identifier id, Ingredient catalyst, Ingredient[] input
 
     @Override
     public Identifier getId() {
-        return id;
+        return id();
     }
 
     @Override

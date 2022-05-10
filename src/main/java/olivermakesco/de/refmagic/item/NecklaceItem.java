@@ -2,18 +2,27 @@ package olivermakesco.de.refmagic.item;
 
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.TrinketItem;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.PotionItem;
+import net.minecraft.potion.PotionUtil;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
 import olivermakesco.de.refmagic.Mod;
 import olivermakesco.de.refmagic.augment.Augment;
 import olivermakesco.de.refmagic.augment.AugmentLoader;
+import org.jetbrains.annotations.Nullable;
 import org.lwjgl.system.CallbackI;
 
 import java.util.AbstractMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -72,5 +81,20 @@ public class NecklaceItem extends TrinketItem {
             id = augmentEntry.getKey();
         } catch (Throwable ignored) {}
         return id.getNamespace()+".necklace.augment."+id.getPath();
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        var augments = getAugment(stack);
+        for (Identifier potion : augments.getValue().potion())
+            for (var instance : Registry.POTION.get(potion).getEffects())
+                tooltip.add(
+                        new TranslatableText(
+                                "potion.withAmplifier",
+                                new TranslatableText(instance.getTranslationKey()),
+                                new TranslatableText("potion.potency."+instance.getAmplifier())
+                        ).formatted(instance.getEffectType().getType().getFormatting())
+                );
+        super.appendTooltip(stack, world, tooltip, context);
     }
 }
