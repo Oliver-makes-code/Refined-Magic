@@ -57,10 +57,6 @@ dependencies {
 		exclude group: "net.fabricmc"
 		exclude group: "net.fabricmc.fabric-api"
 	}
-	modRuntimeOnly("me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}") {
-		exclude group: "net.fabricmc"
-		exclude group: "net.fabricmc.fabric-api"
-	}
 }
 
 processResources {

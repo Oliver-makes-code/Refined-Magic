@@ -2,11 +2,8 @@ package olivermakesco.de.refmagic;
 
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.color.item.ItemColorProvider;
-import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
 import olivermakesco.de.refmagic.augment.Augment;
 import olivermakesco.de.refmagic.augment.AugmentLoader;
@@ -16,7 +13,6 @@ import olivermakesco.de.refmagic.registry.RefinedMagicBlockEntities;
 import olivermakesco.de.refmagic.registry.RefinedMagicItems;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
-import org.quiltmc.qsl.networking.api.PacketSender;
 import org.quiltmc.qsl.networking.api.client.ClientPlayNetworking;
 
 import java.util.ArrayList;

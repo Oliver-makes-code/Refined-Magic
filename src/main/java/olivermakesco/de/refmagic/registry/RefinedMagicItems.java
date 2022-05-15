@@ -6,6 +6,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import olivermakesco.de.refmagic.item.*;
 import olivermakesco.de.refmagic.Mod;
+import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
+
+import java.sql.Ref;
 
 public class RefinedMagicItems {
     public static Item kyriteShard = new KyriteShardItem(new Item.Settings().group(RefinedMagicRegistry.group));
@@ -35,6 +38,8 @@ public class RefinedMagicItems {
     public static Item dimensionalTotem = new DimensionalTotemItem(new Item.Settings().group(RefinedMagicRegistry.group).maxCount(1));
     public static Item baseNecklace = new NecklaceItem(new Item.Settings().maxCount(1));
 
+    public static Item blueEnchantedStem = new BlockItem(RefinedMagicBlocks.blueEnchantedStem, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+
     public static void register() {
         register(kyriteShard, Mod.id("kyrite_shard"));
         register(kyritePowder, Mod.id("kyrite_powder"));
@@ -62,6 +67,8 @@ public class RefinedMagicItems {
 
         register(dimensionalTotem, Mod.id("dimensional_totem"));
         register(baseNecklace, Mod.id("necklace"));
+
+        register(blueEnchantedStem, Mod.id("blue_enchanted_stem"));
     }
 
     public static void register(Item item, Identifier id) {

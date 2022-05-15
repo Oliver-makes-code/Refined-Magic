@@ -101,6 +101,8 @@ public class RefinedMagicBlocks {
                     .copyOf(Blocks.SPRUCE_PLANKS)
     );
 
+    public static Block blueEnchantedStem = new EnchantedStemBlock();
+
     public static void register() {
         register(kyriteOreEnd, Mod.id("kyrite_ore_end"));
         register(kyriteOreOverworld, Mod.id("kyrite_ore_overworld"));
@@ -118,6 +120,8 @@ public class RefinedMagicBlocks {
         register(roseQuartzOre, Mod.id("rose_quartz_ore"));
         register(roseQuartzBlock, Mod.id("rose_quartz_block"));
         register(altarBlock, Mod.id("altar"));
+
+        register(blueEnchantedStem, Mod.id("blue_enchanted_stem"));
     }
 
     public static void register(Block block, Identifier id) {

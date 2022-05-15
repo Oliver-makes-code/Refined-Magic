@@ -10,6 +10,7 @@ import net.minecraft.util.math.Vec3f;
 import olivermakesco.de.refmagic.block.entity.AltarTableBlockEntity;
 
 public class AltarTableBlockEntityRenderer implements BlockEntityRenderer<AltarTableBlockEntity> {
+    public int rotation = 0;
 
     public AltarTableBlockEntityRenderer(BlockEntityRendererFactory.Context ctx) {
 
@@ -17,7 +18,7 @@ public class AltarTableBlockEntityRenderer implements BlockEntityRenderer<AltarT
 
     @Override
     public void render(AltarTableBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
-        var time = entity.getWorld().getTime();
+        var time = ++rotation;
         double offset = Math.sin((time + tickDelta) / 8.0) / 8.0;
 
         matrices.push();
