@@ -101,7 +101,11 @@ public class RefinedMagicBlocks {
                     .copyOf(Blocks.SPRUCE_PLANKS)
     );
 
-    public static Block blueEnchantedStem = new EnchantedStemBlock();
+    public static Block enchantedStem = new EnchantedStemBlock();
+
+    public static Block enchantedWart = new Block(QuiltBlockSettings.copyOf(Blocks.NETHER_WART_BLOCK));
+
+    public static Block enchantedShroomlight = new Block(QuiltBlockSettings.copyOf(Blocks.SHROOMLIGHT));
 
     public static void register() {
         register(kyriteOreEnd, Mod.id("kyrite_ore_end"));
@@ -121,7 +125,11 @@ public class RefinedMagicBlocks {
         register(roseQuartzBlock, Mod.id("rose_quartz_block"));
         register(altarBlock, Mod.id("altar"));
 
-        register(blueEnchantedStem, Mod.id("blue_enchanted_stem"));
+        register(enchantedStem, Mod.id("enchanted_stem"));
+
+        register(enchantedShroomlight, Mod.id("enchanted_shroomlight"));
+
+        register(enchantedWart, Mod.id("enchanted_wart"));
     }
 
     public static void register(Block block, Identifier id) {

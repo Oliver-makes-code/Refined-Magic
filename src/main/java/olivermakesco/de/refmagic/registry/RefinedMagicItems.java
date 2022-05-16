@@ -38,7 +38,11 @@ public class RefinedMagicItems {
     public static Item dimensionalTotem = new DimensionalTotemItem(new Item.Settings().group(RefinedMagicRegistry.group).maxCount(1));
     public static Item baseNecklace = new NecklaceItem(new Item.Settings().maxCount(1));
 
-    public static Item blueEnchantedStem = new BlockItem(RefinedMagicBlocks.blueEnchantedStem, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedStem = new BlockItem(RefinedMagicBlocks.enchantedStem, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+
+    public static Item enchantedWart = new BlockItem(RefinedMagicBlocks.enchantedWart, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+
+    public static Item enchantedShroomlight = new BlockItem(RefinedMagicBlocks.enchantedShroomlight, new QuiltItemSettings().group(RefinedMagicRegistry.group));
 
     public static void register() {
         register(kyriteShard, Mod.id("kyrite_shard"));
@@ -68,7 +72,11 @@ public class RefinedMagicItems {
         register(dimensionalTotem, Mod.id("dimensional_totem"));
         register(baseNecklace, Mod.id("necklace"));
 
-        register(blueEnchantedStem, Mod.id("blue_enchanted_stem"));
+        register(enchantedStem, Mod.id("enchanted_stem"));
+
+        register(enchantedShroomlight, Mod.id("enchanted_shroomlight"));
+
+        register(enchantedWart, Mod.id("enchanted_wart"));
     }
 
     public static void register(Item item, Identifier id) {
