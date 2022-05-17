@@ -45,6 +45,11 @@ public class RefinedMagicItems {
 
     public static Item enchantedShroomlight = new BlockItem(RefinedMagicBlocks.enchantedShroomlight, new QuiltItemSettings().group(RefinedMagicRegistry.group));
 
+    public static Item enlium = new BlockItem(RefinedMagicBlocks.enlium, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enliumGrowth = new BlockItem(RefinedMagicBlocks.enliumGrowth, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedFungus = new BlockItem(RefinedMagicBlocks.enchantedFungus, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item hoopvine = new BlockItem(RefinedMagicBlocks.hoopvine, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+
     public static void register() {
         register(kyriteShard, Mod.id("kyrite_shard"));
         register(kyritePowder, Mod.id("kyrite_powder"));
@@ -79,6 +84,11 @@ public class RefinedMagicItems {
         register(enchantedShroomlight, Mod.id("enchanted_shroomlight"));
 
         register(enchantedWart, Mod.id("enchanted_wart"));
+
+        register(enlium, Mod.id("enlium"));
+        register(enliumGrowth, Mod.id("enlium_growth"));
+        register(enchantedFungus, Mod.id("enchanted_fungus"));
+        register(hoopvine, Mod.id("hoopvine"));
     }
 
     public static void register(Item item, Identifier id) {

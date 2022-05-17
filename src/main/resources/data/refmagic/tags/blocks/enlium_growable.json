@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "refmagic:enlium",
+    "minecraft:end_stone",
+    "refmagic:enchanted_wart",
+    "refmagic:enchanted_shroomlight"
+  ]
+}

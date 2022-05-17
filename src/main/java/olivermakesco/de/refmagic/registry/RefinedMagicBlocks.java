@@ -4,6 +4,7 @@ import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
 import olivermakesco.de.refmagic.Mod;
 import olivermakesco.de.refmagic.block.*;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
@@ -108,6 +109,14 @@ public class RefinedMagicBlocks {
 
     public static Block enchantedShroomlight = new Block(QuiltBlockSettings.copyOf(Blocks.SHROOMLIGHT));
 
+    public static Block enlium = new EnliumBlock(QuiltBlockSettings.copyOf(Blocks.END_STONE));
+
+    public static Block enliumGrowth = new EnliumGrowthBlock();
+
+    public static Block enchantedFungus = new MushroomPlantBlock(QuiltBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS), () -> TreeConfiguredFeatures.CRIMSON_FUNGUS_PLANTED);
+
+    public static Block hoopvine = new HoopvineBlock();
+
     public static void register() {
         register(kyriteOreEnd, Mod.id("kyrite_ore_end"));
         register(kyriteOreOverworld, Mod.id("kyrite_ore_overworld"));
@@ -126,11 +135,15 @@ public class RefinedMagicBlocks {
         register(roseQuartzBlock, Mod.id("rose_quartz_block"));
         register(altarBlock, Mod.id("altar"));
 
+
+        register(enlium, Mod.id("enlium"));
+        register(enliumGrowth, Mod.id("enlium_growth"));
+        register(hoopvine, Mod.id("hoopvine"));
+
+        register(enchantedFungus, Mod.id("enchanted_fungus"));
         register(enchantedStem, Mod.id("enchanted_stem"));
         register(strippedEnchantedStem, Mod.id("stripped_enchanted_stem"));
-
         register(enchantedShroomlight, Mod.id("enchanted_shroomlight"));
-
         register(enchantedWart, Mod.id("enchanted_wart"));
     }
 
