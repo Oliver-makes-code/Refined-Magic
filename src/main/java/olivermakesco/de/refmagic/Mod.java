@@ -2,15 +2,12 @@ package olivermakesco.de.refmagic;
 
 import com.google.gson.Gson;
 import net.minecraft.resource.ResourceType;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.network.ServerPlayNetworkHandler;
 import olivermakesco.de.refmagic.augment.AugmentLoader;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 import net.minecraft.util.Identifier;
 import olivermakesco.de.refmagic.registry.RefinedMagicRegistry;
 import org.quiltmc.qsl.networking.api.PacketByteBufs;
-import org.quiltmc.qsl.networking.api.PacketSender;
 import org.quiltmc.qsl.networking.api.ServerPlayConnectionEvents;
 import org.quiltmc.qsl.networking.api.ServerPlayNetworking;
 import org.quiltmc.qsl.resource.loader.api.ResourceLoader;
@@ -24,6 +21,7 @@ public class Mod implements ModInitializer {
 
 	@Override
 	public void onInitialize(ModContainer mod) {
+
 		RefinedMagicRegistry.register();
 		ResourceLoader.get(ResourceType.SERVER_DATA).registerReloader(new AugmentLoader(new Gson(), "augments"));
 		ResourceLoaderEvents.END_DATA_PACK_RELOAD.register((server, resourceManager, error) -> {

@@ -101,7 +101,8 @@ public class RefinedMagicBlocks {
                     .copyOf(Blocks.SPRUCE_PLANKS)
     );
 
-    public static Block enchantedStem = new EnchantedStemBlock();
+    public static Block enchantedStem = new EnchantedStemBlock(false);
+    public static Block strippedEnchantedStem = new EnchantedStemBlock(true);
 
     public static Block enchantedWart = new Block(QuiltBlockSettings.copyOf(Blocks.NETHER_WART_BLOCK));
 
@@ -126,6 +127,7 @@ public class RefinedMagicBlocks {
         register(altarBlock, Mod.id("altar"));
 
         register(enchantedStem, Mod.id("enchanted_stem"));
+        register(strippedEnchantedStem, Mod.id("stripped_enchanted_stem"));
 
         register(enchantedShroomlight, Mod.id("enchanted_shroomlight"));
 

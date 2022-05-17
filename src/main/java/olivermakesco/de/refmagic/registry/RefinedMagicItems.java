@@ -39,6 +39,7 @@ public class RefinedMagicItems {
     public static Item baseNecklace = new NecklaceItem(new Item.Settings().maxCount(1));
 
     public static Item enchantedStem = new BlockItem(RefinedMagicBlocks.enchantedStem, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item strippedEnchantedStem = new BlockItem(RefinedMagicBlocks.strippedEnchantedStem, new QuiltItemSettings().group(RefinedMagicRegistry.group));
 
     public static Item enchantedWart = new BlockItem(RefinedMagicBlocks.enchantedWart, new QuiltItemSettings().group(RefinedMagicRegistry.group));
 
@@ -73,6 +74,7 @@ public class RefinedMagicItems {
         register(baseNecklace, Mod.id("necklace"));
 
         register(enchantedStem, Mod.id("enchanted_stem"));
+        register(strippedEnchantedStem, Mod.id("stripped_enchanted_stem"));
 
         register(enchantedShroomlight, Mod.id("enchanted_shroomlight"));
 
