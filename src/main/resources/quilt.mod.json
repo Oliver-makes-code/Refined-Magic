@@ -51,5 +51,8 @@
   },
   "mixin": [
     "refmagic.mixins.json"
+  ],
+  "access_widener": [
+    "refmagic.accesswidener"
   ]
 }

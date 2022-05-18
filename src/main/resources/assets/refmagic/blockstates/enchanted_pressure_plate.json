@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "refmagic:block/enchanted_pressure_plate"
+    },
+    "powered=true": {
+      "model": "refmagic:block/enchanted_pressure_plate_down"
+    }
+  }
+}

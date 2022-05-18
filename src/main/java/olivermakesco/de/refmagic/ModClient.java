@@ -5,10 +5,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.color.item.ItemColorProvider;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Identifier;
-import olivermakesco.de.refmagic.augment.Augment;
 import olivermakesco.de.refmagic.augment.AugmentEvents;
-import olivermakesco.de.refmagic.augment.AugmentLoader;
 import olivermakesco.de.refmagic.client.AltarTableBlockEntityRenderer;
 import olivermakesco.de.refmagic.item.NecklaceItem;
 import olivermakesco.de.refmagic.registry.RefinedMagicBlockEntities;
@@ -17,10 +14,6 @@ import olivermakesco.de.refmagic.registry.RefinedMagicItems;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
 import org.quiltmc.qsl.block.extensions.api.client.BlockRenderLayerMap;
-import org.quiltmc.qsl.networking.api.client.ClientPlayNetworking;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class ModClient implements ClientModInitializer {
     @Override
@@ -30,6 +23,8 @@ public class ModClient implements ClientModInitializer {
         BlockRenderLayerMap.put(RenderLayer.getCutout(), RefinedMagicBlocks.enliumGrowth);
         BlockRenderLayerMap.put(RenderLayer.getCutout(), RefinedMagicBlocks.enchantedFungus);
         BlockRenderLayerMap.put(RenderLayer.getCutout(), RefinedMagicBlocks.hoopvine);
+        BlockRenderLayerMap.put(RenderLayer.getCutout(), RefinedMagicBlocks.enchantedTrapdoor);
+        BlockRenderLayerMap.put(RenderLayer.getCutout(), RefinedMagicBlocks.enchantedDoor);
         AugmentEvents.registerClient();
     }
     static class Provider implements ItemColorProvider {

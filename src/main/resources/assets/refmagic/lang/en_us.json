@@ -55,5 +55,14 @@
   "item.minecraft.potion.effect.long_levitation_potion": "Potion of Levitation",
   "item.minecraft.splash_potion.effect.long_levitation_potion": "Splash Potion of Levitation",
   "item.minecraft.lingering_potion.effect.long_levitation_potion": "Lingering Potion of Levitation",
-  "item.minecraft.tipped_arrow.effect.long_levitation_potion": "Arrow  of Levitation"
+  "item.minecraft.tipped_arrow.effect.long_levitation_potion": "Arrow  of Levitation",
+
+  "block.refmagic.enchanted_stem": "Enchanted Stem",
+  "block.refmagic.stripped_enchanted_stem": "Stripped Enchanted Stem",
+  "block.refmagic.enchanted_shroomlight": "Enchanted Shroomlight",
+  "block.refmagic.enchanted_wart": "Enchanted Wart",
+  "block.refmagic.enchanted_fungus": "Enchanted Fungus",
+  "block.refmagic.hoopvine": "Hoopvine",
+  "block.refmagic.enlium": "Enlium",
+  "block.refmagic.enlium_growth": "Enlium Growth"
 }

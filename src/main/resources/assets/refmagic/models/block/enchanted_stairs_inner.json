@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "refmagic:block/enchanted_planks",
+    "top": "refmagic:block/enchanted_planks",
+    "side": "refmagic:block/enchanted_planks"
+  }
+}

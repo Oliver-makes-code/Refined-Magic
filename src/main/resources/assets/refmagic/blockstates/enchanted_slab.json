@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "refmagic:block/enchanted_slab"
+    },
+    "type=double": {
+      "model": "refmagic:block/enchanted_planks"
+    },
+    "type=top": {
+      "model": "refmagic:block/enchanted_slab_top"
+    }
+  }
+}

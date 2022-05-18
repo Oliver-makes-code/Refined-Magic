@@ -2,6 +2,7 @@ package olivermakesco.de.refmagic.registry;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.SignItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import olivermakesco.de.refmagic.item.*;
@@ -40,6 +41,18 @@ public class RefinedMagicItems {
 
     public static Item enchantedStem = new BlockItem(RefinedMagicBlocks.enchantedStem, new QuiltItemSettings().group(RefinedMagicRegistry.group));
     public static Item strippedEnchantedStem = new BlockItem(RefinedMagicBlocks.strippedEnchantedStem, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedHyphae = new BlockItem(RefinedMagicBlocks.enchantedHyphae, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item strippedEnchantedHyphae = new BlockItem(RefinedMagicBlocks.strippedEnchantedHyphae, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedPlanks = new BlockItem(RefinedMagicBlocks.enchantedPlanks, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedSlab = new BlockItem(RefinedMagicBlocks.enchantedSlab, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedStairs = new BlockItem(RefinedMagicBlocks.enchantedStairs, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedButton = new BlockItem(RefinedMagicBlocks.enchantedButton, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedPressurePlate = new BlockItem(RefinedMagicBlocks.enchantedPressurePlate, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedTrapdoor = new BlockItem(RefinedMagicBlocks.enchantedTrapdoor, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedDoor = new BlockItem(RefinedMagicBlocks.enchantedDoor, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedFence = new BlockItem(RefinedMagicBlocks.enchantedFence, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedFenceGate = new BlockItem(RefinedMagicBlocks.enchantedFenceGate, new QuiltItemSettings().group(RefinedMagicRegistry.group));
+    public static Item enchantedSign = new SignItem(new QuiltItemSettings().group(RefinedMagicRegistry.group), RefinedMagicBlocks.enchantedSign, RefinedMagicBlocks.enchantedWallSign);
 
     public static Item enchantedWart = new BlockItem(RefinedMagicBlocks.enchantedWart, new QuiltItemSettings().group(RefinedMagicRegistry.group));
 
@@ -80,6 +93,18 @@ public class RefinedMagicItems {
 
         register(enchantedStem, Mod.id("enchanted_stem"));
         register(strippedEnchantedStem, Mod.id("stripped_enchanted_stem"));
+        register(enchantedHyphae, Mod.id("enchanted_hyphae"));
+        register(strippedEnchantedHyphae, Mod.id("stripped_enchanted_hyphae"));
+        register(enchantedPlanks, Mod.id("enchanted_planks"));
+        register(enchantedSlab, Mod.id("enchanted_slab"));
+        register(enchantedStairs, Mod.id("enchanted_stairs"));
+        register(enchantedButton, Mod.id("enchanted_button"));
+        register(enchantedPressurePlate, Mod.id("enchanted_pressure_plate"));
+        register(enchantedTrapdoor, Mod.id("enchanted_trapdoor"));
+        register(enchantedDoor, Mod.id("enchanted_door"));
+        register(enchantedFence, Mod.id("enchanted_fence"));
+        register(enchantedFenceGate, Mod.id("enchanted_fence_gate"));
+        register(enchantedSign, Mod.id("enchanted_sign"));
 
         register(enchantedShroomlight, Mod.id("enchanted_shroomlight"));
 

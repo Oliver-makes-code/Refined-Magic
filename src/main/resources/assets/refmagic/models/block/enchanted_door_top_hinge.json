@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_rh",
+  "textures": {
+    "top": "refmagic:block/enchanted_door_top",
+    "bottom": "refmagic:block/enchanted_door_bottom"
+  }
+}
