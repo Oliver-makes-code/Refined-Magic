@@ -18,9 +18,11 @@ import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class HoopvineBlock extends Block {
     public static final BooleanProperty top = BooleanProperty.of("top");
+    public static final VoxelShape topShape = VoxelShapes.cuboid(6/16f,0,6/16f,10/16f,15/16f,10/16f);
+    public static final VoxelShape bottomShape = VoxelShapes.cuboid(6/16f,0,6/16f,10/16f,1,10/16f);
 
     public HoopvineBlock() {
-        super(QuiltBlockSettings.copyOf(Blocks.GRASS).sounds(BlockSoundGroup.NETHER_SPROUTS));
+        super(QuiltBlockSettings.copyOf(Blocks.GRASS).material(Material.PLANT).sounds(BlockSoundGroup.NETHER_SPROUTS));
         setDefaultState(getStateManager().getDefaultState().with(top, false));
     }
 
@@ -63,5 +65,11 @@ public class HoopvineBlock extends Block {
     @Override
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
         return type == NavigationType.AIR && !this.collidable || super.canPathfindThrough(state, world, pos, type);
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        if (state.get(top)) return topShape;
+        return bottomShape;
     }
 }

@@ -12,6 +12,8 @@ import olivermakesco.de.refmagic.Mod;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class EnliumGrowthBlock extends PlantBlock {
+    public static final VoxelShape shape = VoxelShapes.cuboid(1/16f,0,1/16f,15/16f,1/4f,15/16f);
+
     public EnliumGrowthBlock() {
         super(QuiltBlockSettings.copyOf(Blocks.GRASS).sounds(BlockSoundGroup.NETHER_SPROUTS));
     }
@@ -23,6 +25,6 @@ public class EnliumGrowthBlock extends PlantBlock {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.cuboid(1/16f,0,1/16f,15/16f,1/4f,15/16f);
+        return shape;
     }
 }
