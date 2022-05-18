@@ -2,11 +2,10 @@ package olivermakesco.de.refmagic.registry;
 
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
+import com.terraformersmc.terraform.wood.block.StrippableLogBlock;
 import net.minecraft.block.*;
-import net.minecraft.client.gui.screen.ingame.SignEditScreen;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.SignType;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
 import olivermakesco.de.refmagic.Mod;
@@ -14,19 +13,19 @@ import olivermakesco.de.refmagic.block.*;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class RefinedMagicBlocks {
-    public static Block kyriteOreEnd = new KyriteOreBlock(
+    public static Block kyriteOreEnd = new RefinedMagicOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.END_STONE)
                     .sounds(BlockSoundGroup.STONE)
                     .requiresTool()
     );
-    public static Block kyriteOreOverworld = new KyriteOreBlock(
+    public static Block kyriteOreOverworld = new RefinedMagicOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.STONE)
                     .sounds(BlockSoundGroup.STONE)
                     .requiresTool()
     );
-    public static Block kyriteOreNether = new KyriteOreBlock(
+    public static Block kyriteOreNether = new RefinedMagicOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.NETHERRACK)
                     .sounds(BlockSoundGroup.NETHERRACK)
@@ -37,7 +36,7 @@ public class RefinedMagicBlocks {
                     .copyOf(Blocks.AMETHYST_BLOCK)
                     .requiresTool()
     );
-    public static Block topazOre = new TopazOreBlock(
+    public static Block topazOre = new RefinedMagicOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.GRANITE)
                     .sounds(BlockSoundGroup.STONE)
@@ -48,25 +47,25 @@ public class RefinedMagicBlocks {
                     .copyOf(Blocks.AMETHYST_BLOCK)
                     .requiresTool()
     );
-    public static Block bismuthOreNether = new BismuthOreBlock(
+    public static Block bismuthOreNether = new RefinedMagicOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.BASALT)
                     .sounds(BlockSoundGroup.BASALT)
                     .requiresTool()
     );
-    public static Block bismuthOreOverworld = new BismuthOreBlock(
+    public static Block bismuthOreOverworld = new RefinedMagicOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.DEEPSLATE)
                     .sounds(BlockSoundGroup.DEEPSLATE)
                     .requiresTool()
     );
-    public static Block bismuthBlock = new BismuthOreBlock(
+    public static Block bismuthBlock = new RefinedMagicOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.IRON_BLOCK)
                     .sounds(BlockSoundGroup.METAL)
                     .requiresTool()
     );
-    public static Block citrineOre = new CitrineOreBlock(
+    public static Block citrineOre = new RefinedMagicOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.BLACKSTONE)
                     .sounds(BlockSoundGroup.STONE)
@@ -78,7 +77,7 @@ public class RefinedMagicBlocks {
                     .sounds(BlockSoundGroup.AMETHYST_BLOCK)
                     .requiresTool()
     );
-    public static Block opalOre = new OpalOreBlock(
+    public static Block opalOre = new RefinedMagicOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.END_STONE)
                     .sounds(BlockSoundGroup.STONE)
@@ -89,7 +88,7 @@ public class RefinedMagicBlocks {
                     .copyOf(Blocks.AMETHYST_BLOCK)
                     .requiresTool()
     );
-    public static Block roseQuartzOre = new RoseQuartzOreBlock(
+    public static Block roseQuartzOre = new RefinedMagicOreBlock(
             QuiltBlockSettings
                     .copyOf(Blocks.END_STONE)
                     .sounds(BlockSoundGroup.STONE)
@@ -106,10 +105,10 @@ public class RefinedMagicBlocks {
                     .copyOf(Blocks.SPRUCE_PLANKS)
     );
 
-    public static Block enchantedStem = new EnchantedStemBlock(false);
-    public static Block strippedEnchantedStem = new EnchantedStemBlock(true);
-    public static Block enchantedHyphae = new EnchantedHyphaeBlock(false);
-    public static Block strippedEnchantedHyphae = new EnchantedHyphaeBlock(true);
+    public static Block strippedEnchantedStem = new PillarBlock(QuiltBlockSettings.copyOf(Blocks.CRIMSON_STEM));
+    public static Block enchantedStem = new StrippableLogBlock(() -> strippedEnchantedStem, MapColor.PALE_PURPLE, QuiltBlockSettings.copyOf(Blocks.CRIMSON_STEM));
+    public static Block strippedEnchantedHyphae = new PillarBlock(QuiltBlockSettings.copyOf(Blocks.CRIMSON_STEM));
+    public static Block enchantedHyphae = new StrippableLogBlock(() -> strippedEnchantedHyphae, MapColor.PALE_PURPLE, QuiltBlockSettings.copyOf(Blocks.CRIMSON_STEM));
     public static Block enchantedPlanks = new Block(QuiltBlockSettings.copyOf(Blocks.WARPED_PLANKS));
     public static Block enchantedSlab = new SlabBlock(QuiltBlockSettings.copyOf(Blocks.WARPED_SLAB));
     public static Block enchantedStairs = new StairsBlock(enchantedPlanks.getDefaultState(), QuiltBlockSettings.copyOf(Blocks.WARPED_STAIRS));
