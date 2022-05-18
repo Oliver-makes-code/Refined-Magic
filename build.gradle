@@ -45,14 +45,6 @@ repositories {
 		url 'https://jitpack.io'
 		name "Jitpack"
 	}
-	maven {
-		url 'https://kneelawk.com/maven/'
-		name 'Kneelawk Maven'
-	}
-	maven {
-		name "BuildCraft"
-		url "https://mod-buildcraft.com/maven"
-	}
 }
 
 dependencies {
@@ -67,16 +59,11 @@ dependencies {
 	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
 
 	modImplementation include("org.quiltmc.quilted-fabric-api:quilted-fabric-api:${qfapi_version}-${minecraft_version}-SNAPSHOT")
-	modImplementation include("com.kneelawk:graphlib:${project.graphlib_version}+${project.minecraft_version}")
 	modImplementation("dev.emi:trinkets:${trinkets_version}") {
 		exclude group: "net.fabricmc"
 		exclude group: "net.fabricmc.fabric-api"
 	}
 	modImplementation include("com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.woodapi_version}") {
-		exclude group: 'net.fabricmc'
-		exclude group: 'net.fabricmc.fabric-api'
-	}
-	modImplementation include("alexiil.mc.lib:libmultipart-all:${project.multipart_version}") {
 		exclude group: 'net.fabricmc'
 		exclude group: 'net.fabricmc.fabric-api'
 	}
