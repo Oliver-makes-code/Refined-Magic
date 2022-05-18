@@ -1,5 +1,5 @@
 plugins {
-	id 'org.quiltmc.loom' version '0.12.23'
+	id 'org.quiltmc.loom' version '0.12.+'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -30,15 +30,29 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven {
-		name = "TerraformersMC"
-		url = "https://maven.terraformersmc.com/"
+		name "TerraformersMC"
+		url "https://maven.terraformersmc.com/"
 	}
 	maven {
-		name = "Ladysnake Libs"
-		url = "https://ladysnake.jfrog.io/artifactory/mods"
+		name "Ladysnake Libs"
+		url "https://ladysnake.jfrog.io/artifactory/mods"
 	}
-	maven { url "https://maven.shedaniel.me" }
-	maven { url 'https://jitpack.io' }
+	maven {
+		url "https://maven.shedaniel.me"
+		name "Shedaniel"
+	}
+	maven {
+		url 'https://jitpack.io'
+		name "Jitpack"
+	}
+	maven {
+		url 'https://kneelawk.com/maven/'
+		name 'Kneelawk Maven'
+	}
+	maven {
+		name "BuildCraft"
+		url "https://mod-buildcraft.com/maven"
+	}
 }
 
 dependencies {
@@ -53,14 +67,19 @@ dependencies {
 	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
 
 	modImplementation include("org.quiltmc.quilted-fabric-api:quilted-fabric-api:${qfapi_version}-${minecraft_version}-SNAPSHOT")
+	modImplementation include("com.kneelawk:graphlib:${project.graphlib_version}+${project.minecraft_version}")
 	modImplementation("dev.emi:trinkets:${trinkets_version}") {
 		exclude group: "net.fabricmc"
 		exclude group: "net.fabricmc.fabric-api"
 	}
-	modImplementation(include("com.terraformersmc.terraform-api:terraform-wood-api-v1:3.0.0") {
+	modImplementation include("com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.woodapi_version}") {
 		exclude group: 'net.fabricmc'
 		exclude group: 'net.fabricmc.fabric-api'
-	})
+	}
+	modImplementation include("alexiil.mc.lib:libmultipart-all:${project.multipart_version}") {
+		exclude group: 'net.fabricmc'
+		exclude group: 'net.fabricmc.fabric-api'
+	}
 
 	modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}") {
 		exclude group: "net.fabricmc"
