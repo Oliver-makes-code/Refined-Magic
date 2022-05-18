@@ -119,7 +119,7 @@ public class RefinedMagicBlocks {
     public static Block enchantedDoor = new DoorBlock(QuiltBlockSettings.copyOf(Blocks.WARPED_DOOR));
     public static Block enchantedFence = new FenceBlock(QuiltBlockSettings.copyOf(Blocks.WARPED_FENCE));
     public static Block enchantedFenceGate = new FenceGateBlock(QuiltBlockSettings.copyOf(Blocks.WARPED_FENCE_GATE));
-    public static Block enchantedSign = new TerraformSignBlock(Mod.id("entity/sign/enchanted"), QuiltBlockSettings.copyOf(Blocks.WARPED_SIGN));
+    public static TerraformSignBlock enchantedSign = new TerraformSignBlock(Mod.id("entity/sign/enchanted"), QuiltBlockSettings.copyOf(Blocks.WARPED_SIGN));
     public static Block enchantedWallSign = new TerraformWallSignBlock(Mod.id("entity/sign/enchanted"), QuiltBlockSettings.copyOf(Blocks.WARPED_WALL_SIGN));
 
     public static Block enchantedWart = new Block(QuiltBlockSettings.copyOf(Blocks.NETHER_WART_BLOCK));

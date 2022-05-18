@@ -1,9 +1,12 @@
 package olivermakesco.de.refmagic;
 
+import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.color.item.ItemColorProvider;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.TexturedRenderLayers;
+import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.item.ItemStack;
 import olivermakesco.de.refmagic.augment.AugmentEvents;
 import olivermakesco.de.refmagic.client.AltarTableBlockEntityRenderer;
@@ -25,6 +28,7 @@ public class ModClient implements ClientModInitializer {
         BlockRenderLayerMap.put(RenderLayer.getCutout(), RefinedMagicBlocks.hoopvine);
         BlockRenderLayerMap.put(RenderLayer.getCutout(), RefinedMagicBlocks.enchantedTrapdoor);
         BlockRenderLayerMap.put(RenderLayer.getCutout(), RefinedMagicBlocks.enchantedDoor);
+        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, RefinedMagicBlocks.enchantedSign.getTexture()));
         AugmentEvents.registerClient();
     }
     static class Provider implements ItemColorProvider {
