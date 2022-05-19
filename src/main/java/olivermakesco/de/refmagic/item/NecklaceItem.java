@@ -21,10 +21,7 @@ import olivermakesco.de.refmagic.augment.AugmentLoader;
 import org.jetbrains.annotations.Nullable;
 import org.lwjgl.system.CallbackI;
 
-import java.util.AbstractMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class NecklaceItem extends TrinketItem {
     public NecklaceItem(Settings settings) {
@@ -44,7 +41,7 @@ public class NecklaceItem extends TrinketItem {
         Identifier id = new Identifier((name));
         Augment augment = AugmentLoader.augments.get(id);
         if (augment == null)
-            augment = AugmentLoader.augments.get(Mod.id("base"));
+            augment = new Augment(0xffffff, new ArrayList<>());
         return new AbstractMap.SimpleImmutableEntry<>(id, augment);
     }
     public static void setAugment(ItemStack stack, Identifier id) {
