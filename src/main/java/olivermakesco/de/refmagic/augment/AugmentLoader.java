@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class AugmentLoader extends JsonDataLoader implements IdentifiableResourceReloader {
     public static final Identifier id = Mod.id("augments");
-    public static Map<Identifier, Augment> augments;
+    public static Map<Identifier, Augment> augments = new HashMap<>();
 
     public AugmentLoader(Gson gson, String string) {
         super(gson, string);
