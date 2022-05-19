@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(AnvilBlock.class)
-public class AnvilBlockMixin {
+public class Mixin_AnvilBlock {
     @Inject(at = @At("RETURN"), method = "onLanding")
     private void checkIfItem(World world, BlockPos pos, BlockState fallingBlockState, BlockState currentStateInPos, FallingBlockEntity fallingBlockEntity, CallbackInfo ci) {
         var entities = world.getOtherEntities(fallingBlockEntity, fallingBlockEntity.getBoundingBox());

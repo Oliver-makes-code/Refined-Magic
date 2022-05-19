@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(BrewingRecipeRegistry.class)
-public class BrewingRecipeRegistryMixin {
+public class Mixin_BrewingRecipeRegistry {
     @Inject(at = @At("RETURN"), method = "craft", cancellable = true)
     private static void getStackSize(ItemStack input, ItemStack ingredient, CallbackInfoReturnable<ItemStack> cir) {
         var stack = cir.getReturnValue();

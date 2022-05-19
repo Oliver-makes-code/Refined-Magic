@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PotionItem.class)
-public class PotionItemMixin {
+public class Mixin_PotionItem {
     @ModifyVariable(method = "<init>", at = @At("HEAD"), ordinal = 0, argsOnly = true)
     private static Item.Settings changeStackSize(Item.Settings old) {
         return old.maxCount(16);

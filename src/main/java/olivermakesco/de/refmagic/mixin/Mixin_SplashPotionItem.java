@@ -3,7 +3,7 @@ package olivermakesco.de.refmagic.mixin;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.LingeringPotionItem;
+import net.minecraft.item.SplashPotionItem;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -14,8 +14,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(LingeringPotionItem.class)
-public class LingeringPotionMixin {
+@Mixin(SplashPotionItem.class)
+public class Mixin_SplashPotionItem {
     @ModifyVariable(method = "<init>", at = @At("HEAD"), ordinal = 0, argsOnly = true)
     private static Item.Settings changeStackSize(Item.Settings old) {
         return old.maxCount(16);

@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(targets = {"net/minecraft/screen/BrewingStandScreenHandler$PotionSlot"})
-public class PotionSlotMixin {
+public class Mixin_PotionSlot {
     @Inject(at = @At("RETURN"), method = "getMaxItemCount", cancellable = true)
     private void maxItems(CallbackInfoReturnable<Integer> cir) {
         cir.setReturnValue(64);

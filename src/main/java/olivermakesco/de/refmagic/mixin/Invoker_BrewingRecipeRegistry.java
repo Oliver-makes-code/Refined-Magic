@@ -1,4 +1,4 @@
-package olivermakesco.de.refmagic.mixin.invoker;
+package olivermakesco.de.refmagic.mixin;
 
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(BrewingRecipeRegistry.class)
-public interface BrewingRecipeRegistryInvoker {
+public interface Invoker_BrewingRecipeRegistry {
     @Invoker("registerPotionRecipe")
     static void registerPotionRecipe(Potion input, Item item, Potion output) {
         throw new AssertionError();

@@ -37,7 +37,7 @@ public class AugmentEvents {
                     buffer.writeIdentifier(potion);
                 var players = server.getPlayerManager().getPlayerList();
                 for (var player : players)
-                    ServerPlayNetworking.send(player, id, buffer);
+                    ServerPlayNetworking.send(player, AugmentEvents.id, buffer);
             }
         });
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
@@ -53,7 +53,7 @@ public class AugmentEvents {
                 buffer.writeInt(augment.potion().size());
                 for (Identifier potion : augment.potion())
                     buffer.writeIdentifier(potion);
-                ServerPlayNetworking.send(handler.player, id, buffer);
+                ServerPlayNetworking.send(handler.player, AugmentEvents.id, buffer);
             }
         });
     }

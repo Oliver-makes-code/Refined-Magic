@@ -4,16 +4,16 @@
   "package": "olivermakesco.de.refmagic.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "AnvilBlockMixin",
-    "BlockMixin",
-    "BrewingRecipeRegistryMixin",
-    "LingeringPotionMixin",
-    "PlayerEntityMixin",
-    "PotionItemMixin",
-    "PotionSlotMixin",
-    "ServerPlayerEntityMixin",
-    "SplashPotionItemMixin",
-    "invoker.BrewingRecipeRegistryInvoker"
+    "Mixin_AnvilBlock",
+    "Mixin_Block",
+    "Mixin_BrewingRecipeRegistry",
+    "Mixin_LingeringPotion",
+    "Mixin_PlayerEntity",
+    "Mixin_PotionItem",
+    "Mixin_PotionSlot",
+    "Mixin_ServerPlayerEntity",
+    "Mixin_SplashPotionItem",
+    "Invoker_BrewingRecipeRegistry"
   ],
   "injectors": {
     "defaultRequire": 1

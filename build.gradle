@@ -45,10 +45,6 @@ repositories {
 		url 'https://jitpack.io'
 		name "Jitpack"
 	}
-	maven {
-		url 'https://kneelawk.com/maven/'
-		name 'Kneelawk Maven'
-	}
 }
 
 dependencies {
@@ -64,7 +60,6 @@ dependencies {
 
 	modImplementation include("org.quiltmc.quilted-fabric-api:quilted-fabric-api:${qfapi_version}-${minecraft_version}-SNAPSHOT")
 
-	modImplementation include("com.kneelawk:graphlib:${project.graphlib_version}+${project.minecraft_version}")
 	modImplementation("dev.emi:trinkets:${trinkets_version}") {
 		exclude group: "net.fabricmc"
 		exclude group: "net.fabricmc.fabric-api"
