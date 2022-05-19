@@ -17,10 +17,15 @@ import olivermakesco.de.refmagic.registry.RefinedMagicItems;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
 import org.quiltmc.qsl.block.extensions.api.client.BlockRenderLayerMap;
+import org.quiltmc.qsl.lifecycle.api.client.event.ClientLifecycleEvents;
+import org.quiltmc.qsl.lifecycle.api.client.event.ClientWorldTickEvents;
 
 public class ModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient(ModContainer mod) {
+        ClientWorldTickEvents.END.register((client, world) -> {
+            AltarTableBlockEntityRenderer.rotation += 0.5;
+        });
         BlockEntityRendererRegistry.register(RefinedMagicBlockEntities.altarTableBlockEntity, AltarTableBlockEntityRenderer::new);
         ColorProviderRegistry.ITEM.register(new Provider(), RefinedMagicItems.baseNecklace);
         BlockRenderLayerMap.put(RenderLayer.getCutout(), RefinedMagicBlocks.enliumGrowth);
