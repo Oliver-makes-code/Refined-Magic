@@ -57,20 +57,4 @@ public class AugmentEvents {
             }
         });
     }
-
-    @Environment(EnvType.CLIENT)
-    public static void registerClient() {
-        ClientPlayNetworking.registerGlobalReceiver(id, (client, handler, buf, responseSender) -> {
-            if (client.isInSingleplayer()) return;
-            if (buf.readBoolean())
-                AugmentLoader.augments = new HashMap<>();
-            var id = buf.readIdentifier();
-            var color = buf.readInt();
-            var potionLength = buf.readInt();
-            var potions = new ArrayList<Identifier>();
-            for (int i = 0; i < potionLength; i++)
-                potions.add(buf.readIdentifier());
-            AugmentLoader.augments.put(id, new Augment(color, potions));
-        });
-    }
 }
