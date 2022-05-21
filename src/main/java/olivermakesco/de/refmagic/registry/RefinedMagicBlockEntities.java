@@ -7,16 +7,15 @@ import olivermakesco.de.refmagic.Mod;
 import olivermakesco.de.refmagic.block.entity.AltarTableBlockEntity;
 
 public class RefinedMagicBlockEntities {
-    public static BlockEntityType<AltarTableBlockEntity> altarTableBlockEntity;
+    public static BlockEntityType<AltarTableBlockEntity> altarTableBlockEntity = Registry.register(
+            Registry.BLOCK_ENTITY_TYPE,
+            Mod.id("alter_table"),
+            FabricBlockEntityTypeBuilder.create(
+                    AltarTableBlockEntity::new,
+                    RefinedMagicBlocks.altarBlock
+            ).build()
+    );
 
     public static void register() {
-        altarTableBlockEntity = Registry.register(
-                Registry.BLOCK_ENTITY_TYPE,
-                Mod.id("alter_table"),
-                FabricBlockEntityTypeBuilder.create(
-                        AltarTableBlockEntity::new,
-                        RefinedMagicBlocks.altarBlock
-                ).build()
-        );
     }
 }

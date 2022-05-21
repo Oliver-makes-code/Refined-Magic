@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "rm_powered=false": {
+      "model": "refmagic:block/powerable_copper_off"
+    },
+    "rm_powered=true": {
+      "model": "refmagic:block/powerable_copper_on"
+    }
+  }
+}

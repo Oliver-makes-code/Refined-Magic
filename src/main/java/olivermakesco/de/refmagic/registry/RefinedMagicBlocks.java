@@ -119,7 +119,7 @@ public class RefinedMagicBlocks {
     public static Block enchantedFence = new FenceBlock(QuiltBlockSettings.copyOf(Blocks.WARPED_FENCE));
     public static Block enchantedFenceGate = new FenceGateBlock(QuiltBlockSettings.copyOf(Blocks.WARPED_FENCE_GATE));
     public static TerraformSignBlock enchantedSign = new TerraformSignBlock(Mod.id("entity/sign/enchanted"), QuiltBlockSettings.copyOf(Blocks.WARPED_SIGN));
-    public static Block enchantedWallSign = new TerraformWallSignBlock(Mod.id("entity/sign/enchanted"), QuiltBlockSettings.copyOf(Blocks.WARPED_WALL_SIGN));
+    public static Block enchantedWallSign = new TerraformWallSignBlock(Mod.id("entity/sign/enchanted"), QuiltBlockSettings.copyOf(Blocks.WARPED_WALL_SIGN).dropsLike(enchantedSign));
 
     public static Block enchantedWart = new Block(QuiltBlockSettings.copyOf(Blocks.NETHER_WART_BLOCK));
 
@@ -132,6 +132,8 @@ public class RefinedMagicBlocks {
     public static Block enchantedFungus = new MushroomPlantBlock(QuiltBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS), () -> TreeConfiguredFeatures.CRIMSON_FUNGUS_PLANTED);
 
     public static Block hoopvine = new HoopvineBlock();
+
+    public static Block powerableCopper = new PowerableCopperBlock(QuiltBlockSettings.copyOf(Blocks.COPPER_BLOCK));
 
     public static void register() {
         register(kyriteOreEnd, Mod.id("kyrite_ore_end"));
@@ -175,6 +177,8 @@ public class RefinedMagicBlocks {
 
         register(enchantedShroomlight, Mod.id("enchanted_shroomlight"));
         register(enchantedWart, Mod.id("enchanted_wart"));
+
+        register(powerableCopper, Mod.id("powerable_copper"));
     }
 
     public static void register(Block block, Identifier id) {
