@@ -18,7 +18,7 @@ public class GiantMushroomFeature extends Feature<DefaultFeatureConfig> {
         BlockPos pos = context.getOrigin();
         ServerWorld world = context.getWorld().toServerWorld();
 
-        world.setBlockState(pos, RefinedMagicBlocks.enchantedFungus.getDefaultState());
+        world.setBlockState(pos, RefinedMagicBlocks.enchantedStem.getDefaultState());
 
         return true;
     }

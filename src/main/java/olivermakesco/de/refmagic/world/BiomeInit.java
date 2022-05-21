@@ -44,7 +44,7 @@ public final class BiomeInit {
     public static Biome createMushroomIsles() {
         GenerationSettings.Builder builder = new GenerationSettings.Builder()
                 .feature(GenerationStep.Feature.SURFACE_STRUCTURES, EndPlacedFeatures.END_GATEWAY_RETURN)
-                .feature(GenerationStep.Feature.SURFACE_STRUCTURES,GIANT_MUSHROOM_FEATURE_PLACED);
+                .feature(GenerationStep.Feature.VEGETAL_DECORATION,GIANT_MUSHROOM_FEATURE_PLACED);
         return createBaseEndBiome(builder);
     }
 

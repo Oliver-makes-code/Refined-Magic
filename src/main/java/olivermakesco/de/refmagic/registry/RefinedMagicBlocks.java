@@ -10,6 +10,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
 import olivermakesco.de.refmagic.Mod;
 import olivermakesco.de.refmagic.block.*;
+import olivermakesco.de.refmagic.world.BiomeInit;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class RefinedMagicBlocks {
@@ -129,7 +130,7 @@ public class RefinedMagicBlocks {
 
     public static Block enliumGrowth = new EnliumGrowthBlock();
 
-    public static Block enchantedFungus = new MushroomPlantBlock(QuiltBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS), () -> TreeConfiguredFeatures.CRIMSON_FUNGUS_PLANTED);
+    public static Block enchantedFungus = new MushroomPlantBlock(QuiltBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS), () -> BiomeInit.GIANT_MUSHROOM_FEATURE_CONFIGURED);
 
     public static Block hoopvine = new HoopvineBlock();
 
