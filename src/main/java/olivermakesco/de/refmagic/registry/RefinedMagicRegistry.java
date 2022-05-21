@@ -1,5 +1,6 @@
 package olivermakesco.de.refmagic.registry;
 
+import olivermakesco.de.refmagic.world.BiomeInit;
 import org.quiltmc.qsl.item.group.api.QuiltItemGroup;
 
 import static olivermakesco.de.refmagic.Mod.id;
@@ -11,6 +12,7 @@ public class RefinedMagicRegistry {
         RefinedMagicBlocks.register();
         RefinedMagicBlockEntities.register();
         RefinedMagicItems.register();
+        BiomeInit.register();
         RefinedMagicWorldgen.register();
         RefinedMagicRecipes.register();
     }
