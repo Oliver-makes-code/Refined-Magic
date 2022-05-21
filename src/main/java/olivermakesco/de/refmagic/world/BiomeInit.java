@@ -1,5 +1,7 @@
 package olivermakesco.de.refmagic.world;
 
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.TheEndBiomes;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.util.Holder;
@@ -14,13 +16,16 @@ import net.minecraft.world.gen.feature.util.ConfiguredFeatureUtil;
 import net.minecraft.world.gen.feature.util.PlacedFeatureUtil;
 import olivermakesco.de.refmagic.Mod;
 
+import java.util.function.Predicate;
+
 public final class BiomeInit {
 
-    public static final RegistryKey<Biome> MUSHROOM_ISLES = RegistryKey.of(Registry.BIOME_KEY, new Identifier(Mod.modid, "mushroom_isles"));
+    public static final RegistryKey<Biome> MUSHROOM_ISLES = RegistryKey.of(Registry.BIOME_KEY,Mod.id("mushroom_isles"));
 
-    public static final Feature<DefaultFeatureConfig> GIANT_MUSHROOM_FEATURE = Registry.register(Registry.FEATURE, "giant_mushroom", new GiantMushroomFeature());
-    public static final Holder<ConfiguredFeature<DefaultFeatureConfig, ?>> GIANT_MUSHROOM_FEATURE_CONFIGURED = ConfiguredFeatureUtil.register("giant_mushroom", GIANT_MUSHROOM_FEATURE);
-    public static final Holder<PlacedFeature> GIANT_MUSHROOM_FEATURE_PLACED = PlacedFeatureUtil.register("giant_mushroom", GIANT_MUSHROOM_FEATURE_CONFIGURED);
+    public static final Feature<DefaultFeatureConfig> GIANT_MUSHROOM_FEATURE = Registry.register(Registry.FEATURE, Mod.id("giant_mushroom"), new GiantMushroomFeature());
+    public static final Holder<ConfiguredFeature<DefaultFeatureConfig, ?>> GIANT_MUSHROOM_FEATURE_CONFIGURED = ConfiguredFeatureUtil.register(Mod.id("giant_mushroom").toString(), GIANT_MUSHROOM_FEATURE);
+    public static final Holder<PlacedFeature> GIANT_MUSHROOM_FEATURE_PLACED = PlacedFeatureUtil.register(Mod.id("giant_mushroom").toString(), GIANT_MUSHROOM_FEATURE_CONFIGURED);
+    public static final Biome mushroomIslesBiome = createMushroomIsles();
 
     private static Biome createBaseEndBiome(GenerationSettings.Builder builder) {
         SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
@@ -49,7 +54,7 @@ public final class BiomeInit {
     }
 
     public static void register() {
-        Registry.register(BuiltinRegistries.BIOME, MUSHROOM_ISLES.getValue(), createMushroomIsles());
+        Registry.register(BuiltinRegistries.BIOME, MUSHROOM_ISLES.getValue(), mushroomIslesBiome);
         TheEndBiomes.addHighlandsBiome(MUSHROOM_ISLES, 5.0);
     }
 
