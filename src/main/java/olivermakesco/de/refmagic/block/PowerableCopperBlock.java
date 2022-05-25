@@ -79,10 +79,10 @@ public class PowerableCopperBlock extends Block implements Powerable {
         boolean powered = serverWorld.isReceivingRedstonePower(pos);
         if (powered && !state.get(Mod.copperPowerSource)) {
             state = state.with(Mod.copperPowerSource, true);
-            PowerableBlockNode.deferUpdate(pos);
+            GraphLib.getController(serverWorld).onChanged(pos);
         } else if (!powered && state.get(Mod.copperPowerSource)) {
             state = state.with(Mod.copperPowerSource, false);
-            PowerableBlockNode.deferUpdate(pos);
+            GraphLib.getController(serverWorld).onChanged(pos);
         }
         return state;
     }

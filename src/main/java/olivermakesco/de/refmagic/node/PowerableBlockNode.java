@@ -44,7 +44,7 @@ public class PowerableBlockNode implements FullWireBlockNode {
 
     @Override
     public boolean canConnect(@NotNull ServerWorld world, @NotNull NodeView nodeView, @NotNull BlockPos pos, @NotNull Node<BlockNodeWrapper<?>> other) {
-        return true;
+        return world.getBlockState(pos).getBlock() instanceof Powerable;
     }
 
     @Override
@@ -54,6 +54,7 @@ public class PowerableBlockNode implements FullWireBlockNode {
         var powered = false;
         for (BlockPos blockPos : blockCollection) {
             var state = world.getBlockState(blockPos);
+            if (!(state.getBlock() instanceof Powerable)) continue;
             if (state.get(Mod.copperPowerSource)) {
                 powered = true;
                 break;
@@ -61,40 +62,22 @@ public class PowerableBlockNode implements FullWireBlockNode {
         }
         for (BlockPos blockPos : blockCollection) {
             var state = world.getBlockState(blockPos);
+            if (!(state.getBlock() instanceof Powerable)) continue;
             world.setBlockState(blockPos, state.with(Mod.copperPoweredProperty, powered));
         }
     }
 
     public static Collection<BlockPos> getConnectedBlockNodes(ServerWorld world, BlockPos pos) {
-        return GraphLib.getController(world).getNodesAt(pos).flatMap(node -> node.connections().stream().map(link -> link.other(node).data().pos())).distinct().toList();
-    }
-
-    public static List<BlockPos> deferredUpdates = new ArrayList<>();
-
-    public static void deferUpdate(BlockPos pos) {
-        deferredUpdates.add(pos);
-    }
-
-    public static void updateAll(ServerWorld world) {
-        for (BlockPos pos : deferredUpdates) {
-            var nodes = getConnectedBlockNodes(world, pos);
-            boolean powered = false;
-            for (var node : nodes) {
-                if (world.getBlockState(node).get(Mod.copperPowerSource)) {
-                    powered = true;
-                    break;
-                }
-            }
-            for (var node : nodes) {
-                world.setBlockState(node, world.getBlockState(node).with(Mod.copperPoweredProperty, powered));
-            }
-        }
-        deferredUpdates.clear();
+        var nodes = GraphLib.getController(world).getNodesAt(pos);
+        var out = new ArrayList<BlockPos>();
+        nodes.forEach((node) -> {
+            out.add(node.data().pos());
+        });
+        return out;
     }
 
     public static void register() {
         GraphLib.registerDiscoverer(new PowerableDiscoverer());
         Registry.register(GraphLib.BLOCK_NODE_DECODER, Mod.id("powerable_copper"), new PowerableDiscoverer.Decoder());
-        ServerWorldTickEvents.END.register((server, world) -> updateAll(world));
     }
 }
