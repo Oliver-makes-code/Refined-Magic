@@ -5,6 +5,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
+import olivermakesco.de.refmagic.Mod;
 import olivermakesco.de.refmagic.registry.RefinedMagicBlocks;
 
 public class GiantMushroomFeature extends Feature<DefaultFeatureConfig> {

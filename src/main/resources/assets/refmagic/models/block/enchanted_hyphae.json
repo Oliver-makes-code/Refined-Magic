@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_column",
   "textures": {
-    "end": "refmagic:block/enchanted_stem_side",
-    "side": "refmagic:block/enchanted_stem_side"
+    "end": "refmagic:block/enchanted_stem",
+    "side": "refmagic:block/enchanted_stem"
   }
 }
