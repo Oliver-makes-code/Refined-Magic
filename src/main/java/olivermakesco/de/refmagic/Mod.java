@@ -8,8 +8,6 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.registry.Registry;
 import olivermakesco.de.refmagic.augment.AugmentEvents;
-import olivermakesco.de.refmagic.node.PowerableBlockNode;
-import olivermakesco.de.refmagic.node.PowerableDiscoverer;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 import net.minecraft.util.Identifier;
@@ -28,7 +26,6 @@ public class Mod implements ModInitializer {
 	public void onInitialize(ModContainer mod) {
 		RefinedMagicRegistry.register();
 		AugmentEvents.register();
-		PowerableBlockNode.register();
 	}
 
 	public static Identifier id(String name) {

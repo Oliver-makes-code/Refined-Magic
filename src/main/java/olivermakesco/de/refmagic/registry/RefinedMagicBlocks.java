@@ -134,8 +134,6 @@ public class RefinedMagicBlocks {
 
     public static Block hoopvine = new HoopvineBlock();
 
-    public static Block powerableCopper = new PowerableCopperBlock(QuiltBlockSettings.copyOf(Blocks.COPPER_BLOCK));
-
     public static void register() {
         register(kyriteOreEnd, Mod.id("kyrite_ore_end"));
         register(kyriteOreOverworld, Mod.id("kyrite_ore_overworld"));
@@ -178,8 +176,6 @@ public class RefinedMagicBlocks {
 
         register(enchantedShroomlight, Mod.id("enchanted_shroomlight"));
         register(enchantedWart, Mod.id("enchanted_wart"));
-
-        register(powerableCopper, Mod.id("powerable_copper"));
     }
 
     public static void register(Block block, Identifier id) {

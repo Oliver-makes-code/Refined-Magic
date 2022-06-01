@@ -8,6 +8,8 @@
     "Mixin_AnvilBlock",
     "Mixin_Block",
     "Mixin_BrewingRecipeRegistry",
+    "Mixin_ChorusFlowerBlock",
+    "Mixin_ChorusPlantBlock",
     "Mixin_LingeringPotion",
     "Mixin_PlayerEntity",
     "Mixin_PotionItem",
