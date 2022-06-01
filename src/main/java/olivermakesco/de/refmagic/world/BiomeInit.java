@@ -1,6 +1,7 @@
 package olivermakesco.de.refmagic.world;
 
 import net.fabricmc.fabric.api.biome.v1.TheEndBiomes;
+import net.minecraft.block.Blocks;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.util.Holder;
 import net.minecraft.util.math.BlockPos;
@@ -27,7 +28,7 @@ public final class BiomeInit {
     public static final RegistryKey<Biome> mushroomIsles = RegistryKey.of(Registry.BIOME_KEY,Mod.id("mushroom_isles"));
 
     public static final Holder<ConfiguredFeature<HugeFungusFeatureConfig, ?>> enchantedFungusPlanted = ConfiguredFeatureUtil.register(
-            Mod.id("encahnted_mushroom_planted").toString(),
+            Mod.id("enchanted_mushroom_planted").toString(),
             Feature.HUGE_FUNGUS,
             new HugeFungusFeatureConfig(
                     RefinedMagicBlocks.enlium.getDefaultState(),
@@ -45,7 +46,7 @@ public final class BiomeInit {
     private static Biome createBaseEndBiome(GenerationSettings.Builder builder) {
         SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
         DefaultBiomeFeatures.addEndMobs(spawnSettings);
-        return (new Biome.Builder())
+        return new Biome.Builder()
                 .precipitation(Biome.Precipitation.NONE)
                 .category(Biome.Category.THEEND)
                 .temperature(0.5F)
