@@ -16,7 +16,7 @@
     "Mixin_PotionSlot",
     "Mixin_ServerPlayerEntity",
     "Mixin_SplashPotionItem",
-    "VanillaSurfaceRulesMixin"
+    "Mixin_VanillaSurfaceRules"
   ],
   "injectors": {
     "defaultRequire": 1

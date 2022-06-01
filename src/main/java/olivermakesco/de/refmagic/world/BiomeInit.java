@@ -30,6 +30,7 @@ import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacerType;
 import olivermakesco.de.refmagic.Mod;
+import olivermakesco.de.refmagic.registry.RefinedMagicBlocks;
 
 import java.util.List;
 import java.util.Random;
@@ -38,18 +39,22 @@ import java.util.function.Predicate;
 
 public final class BiomeInit {
 
-    public static final RegistryKey<Biome> MUSHROOM_ISLES = RegistryKey.of(Registry.BIOME_KEY,Mod.id("mushroom_isles"));
+    public static final RegistryKey<Biome> mushroomIsles = RegistryKey.of(Registry.BIOME_KEY,Mod.id("mushroom_isles"));
 
-    public static final Feature<TreeFeatureConfig> GIANT_MUSHROOM_FEATURE = Registry.register(Registry.FEATURE, Mod.id("giant_mushroom"), new GiantMushroomFeature());
-    public static final Holder<ConfiguredFeature<TreeFeatureConfig, ?>> GIANT_MUSHROOM_FEATURE_CONFIGURED = BuiltinRegistries.registerExact(
-            BuiltinRegistries.CONFIGURED_FEATURE,
-            Mod.id("giant_mushroom").toString(),
-            new ConfiguredFeature<>(
-                    GIANT_MUSHROOM_FEATURE,
-                    TreeConfiguredFeatures.builder(Blocks.AIR,Blocks.AIR,1,1,1,1).build()
+    public static final Holder<ConfiguredFeature<HugeFungusFeatureConfig, ?>> enchantedFungusPlanted = ConfiguredFeatureUtil.register(
+            Mod.id("encahnted_mushroom_planted").toString(),
+            Feature.HUGE_FUNGUS,
+            new HugeFungusFeatureConfig(
+                    RefinedMagicBlocks.enlium.getDefaultState(),
+                    RefinedMagicBlocks.enchantedStem.getDefaultState(),
+                    RefinedMagicBlocks.enchantedWart.getDefaultState(),
+                    RefinedMagicBlocks.enchantedShroomlight.getDefaultState(),
+                    false
             )
     );
-    public static final Holder<PlacedFeature> GIANT_MUSHROOM_FEATURE_PLACED = PlacedFeatureUtil.register(Mod.id("giant_mushroom").toString(), GIANT_MUSHROOM_FEATURE_CONFIGURED);
+
+    public static final Holder<PlacedFeature> enchantedFungusPlaced = PlacedFeatureUtil.register(Mod.id("enchanted_fungus_placed").toString(), enchantedFungusPlanted);
+
     public static final Biome mushroomIslesBiome = createMushroomIsles();
 
     private static Biome createBaseEndBiome(GenerationSettings.Builder builder) {
@@ -74,13 +79,13 @@ public final class BiomeInit {
     public static Biome createMushroomIsles() {
         GenerationSettings.Builder builder = new GenerationSettings.Builder()
                 .feature(GenerationStep.Feature.SURFACE_STRUCTURES, EndPlacedFeatures.END_GATEWAY_RETURN)
-                .feature(GenerationStep.Feature.VEGETAL_DECORATION,GIANT_MUSHROOM_FEATURE_PLACED);
+                .feature(GenerationStep.Feature.VEGETAL_DECORATION, enchantedFungusPlaced);
         return createBaseEndBiome(builder);
     }
 
     public static void register() {
-        Registry.register(BuiltinRegistries.BIOME, MUSHROOM_ISLES.getValue(), mushroomIslesBiome);
-        TheEndBiomes.addHighlandsBiome(MUSHROOM_ISLES, 5.0);
+        Registry.register(BuiltinRegistries.BIOME, mushroomIsles.getValue(), mushroomIslesBiome);
+        TheEndBiomes.addHighlandsBiome(mushroomIsles, 5.0);
     }
 
 }

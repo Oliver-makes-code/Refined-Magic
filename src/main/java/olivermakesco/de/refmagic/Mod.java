@@ -1,6 +1,5 @@
 package olivermakesco.de.refmagic;
 
-import com.kneelawk.graphlib.GraphLib;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.server.MinecraftServer;

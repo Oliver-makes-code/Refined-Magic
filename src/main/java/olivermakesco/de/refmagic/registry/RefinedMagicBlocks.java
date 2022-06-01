@@ -130,7 +130,7 @@ public class RefinedMagicBlocks {
 
     public static Block enliumGrowth = new EnliumGrowthBlock();
 
-    public static Block enchantedFungus = new MushroomPlantBlock(QuiltBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS), () -> BiomeInit.GIANT_MUSHROOM_FEATURE_CONFIGURED);
+    public static Block enchantedFungus = new MushroomPlantBlock(QuiltBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS),() -> BiomeInit.enchantedFungusPlanted);
 
     public static Block hoopvine = new HoopvineBlock();
 
