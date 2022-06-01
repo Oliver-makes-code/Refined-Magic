@@ -3,16 +3,24 @@ package olivermakesco.de.refmagic.world;
 import net.fabricmc.fabric.api.biome.v1.TheEndBiomes;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.util.Holder;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.*;
 import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.decorator.BiomePlacementModifier;
+import net.minecraft.world.gen.decorator.CountOnEveryLayerPlacementModifier;
+import net.minecraft.world.gen.decorator.DecoratorContext;
+import net.minecraft.world.gen.decorator.PlacementModifierType;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.util.ConfiguredFeatureUtil;
 import net.minecraft.world.gen.feature.util.PlacedFeatureUtil;
 import olivermakesco.de.refmagic.Mod;
 import olivermakesco.de.refmagic.registry.RefinedMagicBlocks;
+
+import java.util.Random;
+import java.util.stream.Stream;
 
 public final class BiomeInit {
 
@@ -30,7 +38,7 @@ public final class BiomeInit {
             )
     );
 
-    public static final Holder<PlacedFeature> enchantedFungusPlaced = PlacedFeatureUtil.register(Mod.id("enchanted_fungus_placed").toString(), enchantedFungusPlanted);
+    public static final Holder<PlacedFeature> enchantedFungusPlaced = PlacedFeatureUtil.register(Mod.id("enchanted_fungus_placed").toString(), enchantedFungusPlanted, CountOnEveryLayerPlacementModifier.create(8), BiomePlacementModifier.getInstance());
 
     public static final Biome mushroomIslesBiome = createMushroomIsles();
 
