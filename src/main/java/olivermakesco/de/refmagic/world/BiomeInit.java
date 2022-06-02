@@ -39,7 +39,7 @@ public final class BiomeInit {
             )
     );
 
-    public static final Holder<PlacedFeature> enchantedFungusPlaced = PlacedFeatureUtil.register(Mod.id("enchanted_fungus_placed").toString(), enchantedFungusPlanted, CountOnEveryLayerPlacementModifier.create(8), BiomePlacementModifier.getInstance());
+    public static final Holder<PlacedFeature> enchantedFungusPlaced = PlacedFeatureUtil.register(Mod.id("enchanted_fungus_placed").toString(), enchantedFungusPlanted, CountOnEveryLayerPlacementModifier.create(8), PlacedFeatureUtil.OCEAN_FLOOR_HEIGHTMAP);
 
     public static final Biome mushroomIslesBiome = createMushroomIsles();
 

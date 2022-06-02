@@ -12,7 +12,7 @@ public class RefinedMagicRegistry {
         RefinedMagicBlocks.register();
         RefinedMagicBlockEntities.register();
         RefinedMagicItems.register();
-        BiomeInit.register();
+        //BiomeInit.register();
         RefinedMagicWorldgen.register();
         RefinedMagicRecipes.register();
     }
