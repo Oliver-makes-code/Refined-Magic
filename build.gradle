@@ -39,15 +39,11 @@ repositories {
 	}
 	maven {
 		url "https://maven.shedaniel.me"
-		name "Shedaniel"
+		name "BikeShedaniel"
 	}
 	maven {
-		url 'https://jitpack.io'
-		name "Jitpack"
-	}
-	maven {
-		url 'https://kneelawk.com/maven/'
-		name 'Kneelawk Maven'
+		url "https://maven.minecraftforge.net/"
+		name "Forge"
 	}
 }
 
@@ -72,6 +68,11 @@ dependencies {
 	}
 
 	modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}") {
+		exclude group: "net.fabricmc"
+		exclude group: "net.fabricmc.fabric-api"
+	}
+
+	modImplementation include("com.github.glitchfiend:TerraBlender-fabric:${minecraft_version}-${project.terrablender_version}") {
 		exclude group: "net.fabricmc"
 		exclude group: "net.fabricmc.fabric-api"
 	}

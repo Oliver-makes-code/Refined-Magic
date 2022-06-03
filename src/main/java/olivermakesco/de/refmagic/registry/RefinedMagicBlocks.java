@@ -7,10 +7,8 @@ import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
 import olivermakesco.de.refmagic.Mod;
 import olivermakesco.de.refmagic.block.*;
-import olivermakesco.de.refmagic.world.BiomeInit;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class RefinedMagicBlocks {
@@ -130,7 +128,7 @@ public class RefinedMagicBlocks {
 
     public static Block enliumGrowth = new EnliumGrowthBlock();
 
-    public static Block enchantedFungus = new MushroomPlantBlock(QuiltBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS),() -> BiomeInit.enchantedFungusPlanted);
+    public static Block enchantedFungus = new MushroomPlantBlock(QuiltBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS),() -> RefinedMagicWorldgen.enchantedFungusPlanted);
 
     public static Block hoopvine = new HoopvineBlock();
 
