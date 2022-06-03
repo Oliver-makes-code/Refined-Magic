@@ -18,8 +18,6 @@ import org.slf4j.LoggerFactory;
 public class Mod implements ModInitializer {
 	public static final String modid = "refmagic";
 	public static final Logger logger = LoggerFactory.getLogger(modid);
-	public static final BooleanProperty copperPoweredProperty = BooleanProperty.of("rm_powered");
-	public static final BooleanProperty copperPowerSource = BooleanProperty.of("rm_source");
 
 	@Override
 	public void onInitialize(ModContainer mod) {

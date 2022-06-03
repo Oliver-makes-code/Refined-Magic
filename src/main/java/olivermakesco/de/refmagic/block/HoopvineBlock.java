@@ -11,10 +11,15 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
+import olivermakesco.de.refmagic.Mod;
+import olivermakesco.de.refmagic.registry.RefinedMagicBlocks;
 import org.jetbrains.annotations.Nullable;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
+
+import java.util.Random;
 
 public class HoopvineBlock extends Block {
     public static final BooleanProperty top = BooleanProperty.of("top");
@@ -23,7 +28,20 @@ public class HoopvineBlock extends Block {
 
     public HoopvineBlock() {
         super(QuiltBlockSettings.copyOf(Blocks.GRASS).material(Material.PLANT).sounds(BlockSoundGroup.NETHER_SPROUTS));
-        setDefaultState(getStateManager().getDefaultState().with(top, false));
+        setDefaultState(getStateManager().getDefaultState().with(top, true));
+    }
+
+    public static void grow(StructureWorldAccess world, BlockPos pos, Random random) {
+        var height = random.nextInt(1,5);
+        var npos = pos;
+        for (int i = 0; i < height; i++) {
+            if (!world.getBlockState(npos).isAir()) break;
+            world.setBlockState(npos, RefinedMagicBlocks.hoopvine.getDefaultState(), Block.NOTIFY_ALL);
+            if (i > 0)
+                world.setBlockState(npos.down(), RefinedMagicBlocks.hoopvine.getDefaultState().with(HoopvineBlock.top, false), Block.NOTIFY_ALL);
+            npos = npos.up();
+
+        }
     }
 
     @Override

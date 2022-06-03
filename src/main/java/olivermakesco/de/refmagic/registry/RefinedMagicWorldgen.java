@@ -3,11 +3,17 @@ package olivermakesco.de.refmagic.registry;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.biome.v1.TheEndBiomes;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Holder;
+import net.minecraft.util.collection.DataPool;
+import net.minecraft.util.math.VerticalSurfaceType;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
@@ -24,7 +30,10 @@ import net.minecraft.world.gen.decorator.InSquarePlacementModifier;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.util.ConfiguredFeatureUtil;
 import net.minecraft.world.gen.feature.util.PlacedFeatureUtil;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import olivermakesco.de.refmagic.Mod;
+import olivermakesco.de.refmagic.worldgen.EnliumVegetation;
 
 public class RefinedMagicWorldgen {
     static RuleTest END_STONE_RULE_TEST = new BlockMatchRuleTest(Blocks.END_STONE);
@@ -168,6 +177,60 @@ public class RefinedMagicWorldgen {
     public static final Holder<PlacedFeature> enchantedFungusPlaced = PlacedFeatureUtil.register(Mod.id("enchanted_fungus_placed").toString(), enchantedFungusPlanted, CountOnEveryLayerPlacementModifier.create(8), PlacedFeatureUtil.OCEAN_FLOOR_HEIGHTMAP);
 
     public static final Biome mushroomIslesBiome = createMushroomIsles();
+    public static <FC extends FeatureConfig, F extends Feature<FC>> Holder<ConfiguredFeature<SimpleBlockFeatureConfig, ?>> register(String id, F feature, FC featureConfig) {
+        return BuiltinRegistries.registerExact(BuiltinRegistries.CONFIGURED_FEATURE, id, new ConfiguredFeature(feature, featureConfig));
+    }
+    public static final EnliumVegetation enliumFeature = Registry.register(Registry.FEATURE, Mod.id("enlium_feature"), new EnliumVegetation(SimpleBlockFeatureConfig.CODEC));
+    public static final Holder<ConfiguredFeature<SimpleBlockFeatureConfig, ?>> enliumVegetation = register(
+            Mod.id("enlium_vegetation").toString(),
+            enliumFeature,
+            new SimpleBlockFeatureConfig(
+                    new WeightedBlockStateProvider(
+                            new DataPool.Builder<BlockState>()
+                                    .add(Blocks.AIR.getDefaultState(), 50)
+                                    .add(RefinedMagicBlocks.enliumGrowth.getDefaultState(), 10)
+                                    .add(RefinedMagicBlocks.enchantedFungus.getDefaultState(), 5)
+                                    .add(RefinedMagicBlocks.hoopvine.getDefaultState(), 5)
+                                    .build()
+                    )
+            )
+    );
+    public static final Holder<ConfiguredFeature<VegetationPatchFeatureConfig, ?>> enliumPatch = ConfiguredFeatureUtil.register(
+            Mod.id("enlium_patch").toString(),
+            Feature.VEGETATION_PATCH,
+            new VegetationPatchFeatureConfig(
+                    TagKey.of(Registry.BLOCK_KEY, Mod.id("enlium_replaceable")),
+                    BlockStateProvider.of(RefinedMagicBlocks.enlium),
+                    PlacedFeatureUtil.placedInline(enliumVegetation),
+                    VerticalSurfaceType.FLOOR,
+                    ConstantIntProvider.create(1),
+                    0.0F,
+                    5,
+                    0.8F,
+                    UniformIntProvider.create(4, 7),
+                    0.3F
+            )
+    );
+
+    public static final Holder<ConfiguredFeature<VegetationPatchFeatureConfig, ?>> enliumBase = ConfiguredFeatureUtil.register(
+            Mod.id("enlium_base").toString(),
+            Feature.VEGETATION_PATCH,
+            new VegetationPatchFeatureConfig(
+                    TagKey.of(Registry.BLOCK_KEY, Mod.id("enlium_base")),
+                    BlockStateProvider.of(RefinedMagicBlocks.enlium),
+                    PlacedFeatureUtil.placedInline(enliumVegetation),
+                    VerticalSurfaceType.FLOOR,
+                    ConstantIntProvider.create(1),
+                    0.0F,
+                    5,
+                    0.8F,
+                    UniformIntProvider.create(4, 7),
+                    0.3F
+            )
+    );
+
+    public static final Holder<PlacedFeature> enliumPatchPlaced = PlacedFeatureUtil.register(Mod.id("enlium_patch_placed").toString(), enliumBase, CountOnEveryLayerPlacementModifier.create(8), PlacedFeatureUtil.OCEAN_FLOOR_HEIGHTMAP);
+
 
     private static Biome createBaseEndBiome(GenerationSettings.Builder builder) {
         SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
@@ -271,6 +334,7 @@ public class RefinedMagicWorldgen {
         );
         Registry.register(BuiltinRegistries.BIOME, mushroomIsles.getValue(), mushroomIslesBiome);
         TheEndBiomes.addHighlandsBiome(mushroomIsles, 5.0);
-        BiomeModifications.addFeature((a) -> a.getBiomeKey().toString().contains("refmagic"), GenerationStep.Feature.VEGETAL_DECORATION, RegistryKey.of(Registry.PLACED_FEATURE_KEY, Mod.id("enchanted_fungus_placed")));
+        BiomeModifications.addFeature((a) -> true, GenerationStep.Feature.VEGETAL_DECORATION, RegistryKey.of(Registry.PLACED_FEATURE_KEY, Mod.id("enchanted_fungus_placed")));
+        BiomeModifications.addFeature((a) -> true, GenerationStep.Feature.VEGETAL_DECORATION, RegistryKey.of(Registry.PLACED_FEATURE_KEY, Mod.id("enlium_patch_placed")));
     }
 }

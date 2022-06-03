@@ -9,6 +9,8 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import olivermakesco.de.refmagic.Mod;
+import olivermakesco.de.refmagic.registry.RefinedMagicRegistry;
+import olivermakesco.de.refmagic.registry.RefinedMagicWorldgen;
 
 import java.util.Random;
 
@@ -36,6 +38,7 @@ public class EnliumBlock extends Block implements Fertilizable {
 
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
+        RefinedMagicWorldgen.enliumPatch.value().generate(world, world.getChunkManager().getChunkGenerator(), random, pos);
     }
 
     @Override
