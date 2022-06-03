@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "refmagic:enchanted_stem",
+    "refmagic:enchatned_hyphae",
+    "refmagic:stripped_enchanted_stem",
+    "refmagic:stripped_enchatned_hyphae"
+  ]
+}

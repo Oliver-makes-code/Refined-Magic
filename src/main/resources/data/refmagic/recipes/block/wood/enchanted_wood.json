@@ -7,11 +7,11 @@
   ],
   "key": {
     "#": {
-      "item": "refmagic:enchanted_log"
+      "item": "refmagic:enchanted_stem"
     }
   },
   "result": {
-    "item": "refmagic:enchanted_wood",
+    "item": "refmagic:enchanted_hyphae",
     "count": 3
   }
 }

@@ -31,6 +31,11 @@ public class EnliumVegetation extends SimpleBlockFeature {
         StructureWorldAccess structureWorldAccess = context.getWorld();
         BlockPos blockPos = context.getOrigin();
         BlockState blockState = simpleBlockFeatureConfig.toPlace().getBlockState(context.getRandom(), blockPos);
+
+        return tryPlace(blockState, structureWorldAccess, blockPos, context);
+    }
+
+    public boolean tryPlace(BlockState blockState, StructureWorldAccess structureWorldAccess, BlockPos blockPos, FeatureContext<?> context) {
         if (blockState.canPlaceAt(structureWorldAccess, blockPos)) {
             if (blockState.getBlock() instanceof TallPlantBlock) {
                 if (!structureWorldAccess.isAir(blockPos.up())) {
