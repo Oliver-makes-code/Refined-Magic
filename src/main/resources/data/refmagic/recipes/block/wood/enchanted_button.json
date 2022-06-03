@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "refmagic:enchanted_planks"
+    }
+  ],
+  "result": {
+    "item": "refmagic:enchanted_button"
+  }
+}

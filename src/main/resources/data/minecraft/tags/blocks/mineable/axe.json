@@ -1,6 +1,21 @@
 {
   "replace": false,
   "values": [
-    "refmagic:altar"
+    "refmagic:altar",
+    "refmagic:enchanted_stem",
+    "refmagic:enchanted_hyphae",
+    "refmagic:stripped_enchanted_stem",
+    "refmagic:stripped_enchanted_hyphae",
+    "refmagic:enchanted_planks",
+    "refmagic:enchanted_door",
+    "refmagic:enchanted_trapdoor",
+    "refmagic:enchanted_button",
+    "refmagic:enchanted_pressure_plate",
+    "refmagic:enchanted_fence",
+    "refmagic:enchanted_fence_gate",
+    "refmagic:enchanted_sign",
+    "refmagic:enchanted_wall_sign",
+    "refmagic:enchanted_slab",
+    "refmagic:enchanted_stairs"
   ]
 }
