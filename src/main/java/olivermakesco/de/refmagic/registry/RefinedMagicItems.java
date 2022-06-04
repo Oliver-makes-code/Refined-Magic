@@ -65,27 +65,30 @@ public class RefinedMagicItems {
 
     public static void register() {
         register(kyriteShard, Mod.id("kyrite_shard"));
+        register(topaz, Mod.id("topaz"));
+        register(bismuth, Mod.id("bismuth"));
+        register(citrine, Mod.id("citrine"));
+        register(opal, Mod.id("opal"));
+        register(roseQuartz, Mod.id("rose_quartz"));
         register(kyritePowder, Mod.id("kyrite_powder"));
+
         register(kyriteOreOverworld, Mod.id("kyrite_ore_overworld"));
         register(kyriteOreNether, Mod.id("kyrite_ore_nether"));
         register(kyriteOreEnd, Mod.id("kyrite_ore_end"));
-        register(kyriteBlock, Mod.id("kyrite_block"));
-        register(topaz, Mod.id("topaz"));
         register(topazOre, Mod.id("topaz_ore"));
-        register(topazBlock, Mod.id("topaz_block"));
-        register(bismuth, Mod.id("bismuth"));
         register(bismuthOreOverworld, Mod.id("bismuth_ore_overworld"));
         register(bismuthOreNether, Mod.id("bismuth_ore_nether"));
-        register(bismuthBlock, Mod.id("bismuth_block"));
-        register(citrine, Mod.id("citrine"));
         register(citrineOre, Mod.id("citrine_ore"));
-        register(citrineBlock, Mod.id("citrine_block"));
-        register(opal, Mod.id("opal"));
         register(opalOre, Mod.id("opal_ore"));
-        register(opalBlock, Mod.id("opal_block"));
-        register(roseQuartz, Mod.id("rose_quartz"));
         register(roseQuartzOre, Mod.id("rose_quartz_ore"));
+
+        register(kyriteBlock, Mod.id("kyrite_block"));
+        register(topazBlock, Mod.id("topaz_block"));
+        register(bismuthBlock, Mod.id("bismuth_block"));
+        register(citrineBlock, Mod.id("citrine_block"));
+        register(opalBlock, Mod.id("opal_block"));
         register(roseQuartzBlock, Mod.id("rose_quartz_block"));
+
         register(altarBlock, Mod.id("altar"));
 
         register(dimensionalTotem, Mod.id("dimensional_totem"));
