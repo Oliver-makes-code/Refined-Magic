@@ -12,209 +12,174 @@ import olivermakesco.de.refmagic.block.*
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings
 
 object RefinedMagicBlocks {
-    @JvmField
     var kyriteOreEnd: Block = RefinedMagicOreBlock(
         QuiltBlockSettings
             .copyOf(Blocks.END_STONE)
             .sounds(BlockSoundGroup.STONE)
             .requiresTool()
     )
-    @JvmField
     var kyriteOreOverworld: Block = RefinedMagicOreBlock(
         QuiltBlockSettings
             .copyOf(Blocks.STONE)
             .sounds(BlockSoundGroup.STONE)
             .requiresTool()
     )
-    @JvmField
     var kyriteOreNether: Block = RefinedMagicOreBlock(
         QuiltBlockSettings
             .copyOf(Blocks.NETHERRACK)
             .sounds(BlockSoundGroup.NETHERRACK)
             .requiresTool()
     )
-    @JvmField
     var kyriteBlock = Block(
         QuiltBlockSettings
             .copyOf(Blocks.AMETHYST_BLOCK)
             .requiresTool()
     )
-    @JvmField
     var topazOre: Block = RefinedMagicOreBlock(
         QuiltBlockSettings
             .copyOf(Blocks.GRANITE)
             .sounds(BlockSoundGroup.STONE)
             .requiresTool()
     )
-    @JvmField
     var topazBlock = Block(
         QuiltBlockSettings
             .copyOf(Blocks.AMETHYST_BLOCK)
             .requiresTool()
     )
-    @JvmField
     var bismuthOreNether: Block = RefinedMagicOreBlock(
         QuiltBlockSettings
             .copyOf(Blocks.BASALT)
             .sounds(BlockSoundGroup.BASALT)
             .requiresTool()
     )
-    @JvmField
     var bismuthOreOverworld: Block = RefinedMagicOreBlock(
         QuiltBlockSettings
             .copyOf(Blocks.DEEPSLATE)
             .sounds(BlockSoundGroup.DEEPSLATE)
             .requiresTool()
     )
-    @JvmField
     var bismuthBlock: Block = RefinedMagicOreBlock(
         QuiltBlockSettings
             .copyOf(Blocks.IRON_BLOCK)
             .sounds(BlockSoundGroup.METAL)
             .requiresTool()
     )
-    @JvmField
     var citrineOre: Block = RefinedMagicOreBlock(
         QuiltBlockSettings
             .copyOf(Blocks.BLACKSTONE)
             .sounds(BlockSoundGroup.STONE)
             .requiresTool()
     )
-    @JvmField
     var citrineBlock = Block(
         QuiltBlockSettings
             .copyOf(Blocks.AMETHYST_BLOCK)
             .sounds(BlockSoundGroup.AMETHYST_BLOCK)
             .requiresTool()
     )
-    @JvmField
     var opalOre: Block = RefinedMagicOreBlock(
         QuiltBlockSettings
             .copyOf(Blocks.END_STONE)
             .sounds(BlockSoundGroup.STONE)
             .requiresTool()
     )
-    @JvmField
     var opalBlock = Block(
         QuiltBlockSettings
             .copyOf(Blocks.AMETHYST_BLOCK)
             .requiresTool()
     )
-    @JvmField
     var roseQuartzOre: Block = RefinedMagicOreBlock(
         QuiltBlockSettings
             .copyOf(Blocks.END_STONE)
             .sounds(BlockSoundGroup.STONE)
             .requiresTool()
     )
-    @JvmField
     var roseQuartzBlock = Block(
         QuiltBlockSettings
             .copyOf(Blocks.QUARTZ_BLOCK)
             .sounds(BlockSoundGroup.AMETHYST_BLOCK)
             .requiresTool()
     )
-    @JvmField
     var infestedNetherrack: Block = RefinedMagicOreBlock(
         QuiltBlockSettings
             .copyOf(Blocks.ANCIENT_DEBRIS)
             .sounds(BlockSoundGroup.NETHERRACK)
             .requiresTool()
     )
-    @JvmField
     var altarBlock: Block = AltarTableBlock(
         QuiltBlockSettings
             .copyOf(Blocks.SPRUCE_PLANKS)
     )
-    @JvmField
     var strippedEnchantedStem: Block = PillarBlock(
         QuiltBlockSettings
             .copyOf(Blocks.CRIMSON_STEM)
     )
-    @JvmField
     var enchantedStem: Block = StrippableLogBlock(
         { strippedEnchantedStem },
         MapColor.PALE_PURPLE,
         QuiltBlockSettings.copyOf(Blocks.CRIMSON_STEM)
     )
-    @JvmField
     var strippedEnchantedHyphae: Block = PillarBlock(
         QuiltBlockSettings
             .copyOf(Blocks.CRIMSON_STEM)
     )
-    @JvmField
     var enchantedHyphae: Block = StrippableLogBlock(
         { strippedEnchantedHyphae },
         MapColor.PALE_PURPLE,
         QuiltBlockSettings.copyOf(Blocks.CRIMSON_STEM)
     )
-    @JvmField
     var enchantedPlanks = Block(
         QuiltBlockSettings
             .copyOf(Blocks.WARPED_PLANKS)
     )
-    @JvmField
     var enchantedSlab: Block = SlabBlock(
         QuiltBlockSettings
             .copyOf(Blocks.WARPED_SLAB)
     )
-    @JvmField
     var enchantedStairs: Block = StairsBlock(
         enchantedPlanks.defaultState,
         QuiltBlockSettings
             .copyOf(Blocks.WARPED_STAIRS)
     )
-    @JvmField
     var enchantedButton: Block = WoodenButtonBlock(
         QuiltBlockSettings
             .copyOf(Blocks.WARPED_BUTTON)
     )
-    @JvmField
     var enchantedPressurePlate: Block = PressurePlateBlock(
         PressurePlateBlock.ActivationRule.EVERYTHING,
         QuiltBlockSettings
             .copyOf(Blocks.WARPED_PRESSURE_PLATE)
     )
-    @JvmField
     var enchantedTrapdoor: Block = TrapdoorBlock(
         QuiltBlockSettings
             .copyOf(Blocks.WARPED_TRAPDOOR)
     )
-    @JvmField
     var enchantedDoor: Block = DoorBlock(
         QuiltBlockSettings
             .copyOf(Blocks.WARPED_DOOR)
     )
-    @JvmField
     var enchantedFence: Block = FenceBlock(
         QuiltBlockSettings
             .copyOf(Blocks.WARPED_FENCE)
     )
-    @JvmField
     var enchantedFenceGate: Block = FenceGateBlock(
         QuiltBlockSettings
             .copyOf(Blocks.WARPED_FENCE_GATE)
     )
-    @JvmField
-    var enchantedSign =
-        TerraformSignBlock(
-            Mod.id("entity/sign/enchanted"),
-            QuiltBlockSettings
-                .copyOf(Blocks.WARPED_SIGN)
-        )
-    @JvmField
+    var enchantedSign = TerraformSignBlock(
+        Mod.id("entity/sign/enchanted"),
+        QuiltBlockSettings
+            .copyOf(Blocks.WARPED_SIGN)
+    )
     var enchantedWallSign: Block = TerraformWallSignBlock(
         Mod.id("entity/sign/enchanted"),
         QuiltBlockSettings
             .copyOf(Blocks.WARPED_WALL_SIGN)
             .dropsLike(enchantedSign)
     )
-    @JvmField
     var enchantedWart = Block(
         QuiltBlockSettings
             .copyOf(Blocks.NETHER_WART_BLOCK)
     )
-    @JvmField
     var enchantedShroomlight = Block(
         QuiltBlockSettings
             .copyOf(Blocks.SHROOMLIGHT)
@@ -224,16 +189,13 @@ object RefinedMagicBlocks {
         QuiltBlockSettings
             .copyOf(Blocks.END_STONE)
     )
-    @JvmField
     var enliumGrowth: Block = EnliumGrowthBlock()
-    @JvmField
     var enchantedFungus: Block = MushroomPlantBlock(
         QuiltBlockSettings
             .copyOf(Blocks.CRIMSON_FUNGUS)
     ) {
         RefinedMagicWorldgen.enchantedFungusPlanted
     }
-    @JvmField
     var hoopvine: Block = HoopvineBlock()
 
     fun register() {

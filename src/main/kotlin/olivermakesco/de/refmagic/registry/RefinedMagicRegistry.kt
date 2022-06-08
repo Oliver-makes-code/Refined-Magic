@@ -9,7 +9,6 @@ object RefinedMagicRegistry {
         .icon { RefinedMagicItems.kyriteShard.defaultStack }
         .build()
 
-    @JvmStatic
     fun register() {
         RefinedMagicPotions.register()
         RefinedMagicBlocks.register()

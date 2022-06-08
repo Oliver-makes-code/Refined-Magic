@@ -47,8 +47,9 @@ object RefinedMagicItems {
     var roseQuartzBlock: Item =
         BlockItem(RefinedMagicBlocks.roseQuartzBlock, Item.Settings().group(RefinedMagicRegistry.items))
     var altarBlock: Item = BlockItem(RefinedMagicBlocks.altarBlock, Item.Settings().group(RefinedMagicRegistry.items))
-    var dimensionalTotem: Item = DimensionalTotemItem(Item.Settings().group(RefinedMagicRegistry.items).maxCount(1))
-    @JvmField
+    var dimensionalTotem: Item = DimensionalTotemItem(
+        Item.Settings().group(RefinedMagicRegistry.items).maxCount(1)
+    )
     var baseNecklace: Item = NecklaceItem(Item.Settings().maxCount(1))
     var enchantedStem: Item =
         BlockItem(RefinedMagicBlocks.enchantedStem, QuiltItemSettings().group(RefinedMagicRegistry.items))
@@ -91,19 +92,30 @@ object RefinedMagicItems {
     var enchantedFungus: Item =
         BlockItem(RefinedMagicBlocks.enchantedFungus, QuiltItemSettings().group(RefinedMagicRegistry.items))
     var hoopvine: Item = BlockItem(RefinedMagicBlocks.hoopvine, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    @JvmField
     var witheredHeart = Item(QuiltItemSettings().group(RefinedMagicRegistry.items))
     var witheriteBlob = Item(QuiltItemSettings().group(RefinedMagicRegistry.items))
     var infestedNetherrackBlock: Item =
         BlockItem(RefinedMagicBlocks.infestedNetherrack, QuiltItemSettings().group(RefinedMagicRegistry.items))
     var witheriteHelmet: Item =
-        WitheriteArmorItem(EquipmentSlot.HEAD, QuiltItemSettings().group(RefinedMagicRegistry.items))
+        WitheriteArmorItem(
+            EquipmentSlot.HEAD,
+            QuiltItemSettings().group(RefinedMagicRegistry.items)
+        )
     var witheriteChestplate: Item =
-        WitheriteArmorItem(EquipmentSlot.CHEST, QuiltItemSettings().group(RefinedMagicRegistry.items))
+        WitheriteArmorItem(
+            EquipmentSlot.CHEST,
+            QuiltItemSettings().group(RefinedMagicRegistry.items)
+        )
     var witheriteLeggings: Item =
-        WitheriteArmorItem(EquipmentSlot.LEGS, QuiltItemSettings().group(RefinedMagicRegistry.items))
+        WitheriteArmorItem(
+            EquipmentSlot.LEGS,
+            QuiltItemSettings().group(RefinedMagicRegistry.items)
+        )
     var witheriteBoots: Item =
-        WitheriteArmorItem(EquipmentSlot.FEET, QuiltItemSettings().group(RefinedMagicRegistry.items))
+        WitheriteArmorItem(
+            EquipmentSlot.FEET,
+            QuiltItemSettings().group(RefinedMagicRegistry.items)
+        )
 
     fun register() {
         register(kyriteShard, Mod.id("kyrite_shard"))

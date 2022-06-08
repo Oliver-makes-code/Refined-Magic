@@ -218,7 +218,6 @@ object RefinedMagicWorldgen {
             )
         )
     )
-    @JvmField
     val enliumPatch = ConfiguredFeatureUtil.register(
         Mod.id("enlium_patch").toString(),
         Feature.VEGETATION_PATCH,

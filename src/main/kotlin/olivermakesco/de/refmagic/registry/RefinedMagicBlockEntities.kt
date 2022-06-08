@@ -9,16 +9,15 @@ import olivermakesco.de.refmagic.Mod
 import olivermakesco.de.refmagic.block.entity.AltarTableBlockEntity
 
 object RefinedMagicBlockEntities {
-    @JvmField
     var altarTableBlockEntity: BlockEntityType<AltarTableBlockEntity> =
         Registry.register<BlockEntityType<*>, BlockEntityType<AltarTableBlockEntity>>(
             Registry.BLOCK_ENTITY_TYPE,
             Mod.id("alter_table"),
             FabricBlockEntityTypeBuilder.create({blockPos: BlockPos?, blockState: BlockState? ->
-                    AltarTableBlockEntity(
-                        blockPos,
-                        blockState
-                    )
+                AltarTableBlockEntity(
+                    blockPos,
+                    blockState
+                )
                 },
                 RefinedMagicBlocks.altarBlock
             ).build()
