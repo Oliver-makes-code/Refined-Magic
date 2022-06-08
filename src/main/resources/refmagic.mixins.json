@@ -6,10 +6,12 @@
   "mixins": [
     "Invoker_BrewingRecipeRegistry",
     "Mixin_AnvilBlock",
+    "Mixin_ArmorFeatureRenderer",
     "Mixin_Block",
     "Mixin_BrewingRecipeRegistry",
     "Mixin_ChorusFlowerBlock",
     "Mixin_ChorusPlantBlock",
+    "Mixin_LivingEntity",
     "Mixin_LingeringPotion",
     "Mixin_PlayerEntity",
     "Mixin_PotionItem",
