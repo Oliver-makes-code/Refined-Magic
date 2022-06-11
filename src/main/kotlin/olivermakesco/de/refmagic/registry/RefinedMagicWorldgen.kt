@@ -260,12 +260,11 @@ object RefinedMagicWorldgen {
     private fun createBaseEndBiome(builder: GenerationSettings.Builder): Biome {
         val spawnSettings = SpawnSettings.Builder()
         DefaultBiomeFeatures.addEndMobs(spawnSettings)
-        return Biome.Builder()
-            .precipitation(Biome.Precipitation.NONE)
-            .category(Biome.Category.THEEND)
-            .temperature(0.5f)
-            .downfall(0.5f)
-            .effects(
+        return Biome.Builder().apply {
+            precipitation(Biome.Precipitation.NONE)
+            temperature(0.5f)
+            downfall(0.5f)
+            effects(
                 BiomeEffects.Builder()
                     .waterColor(4159204)
                     .waterFogColor(329011)
@@ -273,9 +272,9 @@ object RefinedMagicWorldgen {
                     .moodSound(BiomeMoodSound.CAVE)
                     .build()
             )
-            .spawnSettings(spawnSettings.build())
-            .generationSettings(builder.build())
-            .build()
+            spawnSettings(spawnSettings.build())
+            generationSettings(builder.build())
+        }.build()
     }
 
     fun createMushroomIsles(): Biome {

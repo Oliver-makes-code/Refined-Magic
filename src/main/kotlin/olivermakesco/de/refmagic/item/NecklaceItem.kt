@@ -7,7 +7,6 @@ import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.item.ItemStack
 import net.minecraft.text.Text
-import net.minecraft.text.TranslatableText
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 import net.minecraft.world.World
@@ -53,10 +52,10 @@ class NecklaceItem(settings: Settings?) : TrinketItem(settings) {
     override fun appendTooltip(stack: ItemStack, world: World?, tooltip: MutableList<Text>, context: TooltipContext) {
         val (_, value) = getAugment(stack)
         for (potion in value.potion) for (instance in Registry.POTION[potion].effects) tooltip.add(
-            TranslatableText(
+            Text.translatable(
                 "potion.withAmplifier",
-                TranslatableText(instance.translationKey),
-                TranslatableText("potion.potency." + instance.amplifier)
+                Text.translatable(instance.translationKey),
+                Text.translatable("potion.potency." + instance.amplifier)
             ).formatted(instance.effectType.type.formatting)
         )
         super.appendTooltip(stack, world, tooltip, context)

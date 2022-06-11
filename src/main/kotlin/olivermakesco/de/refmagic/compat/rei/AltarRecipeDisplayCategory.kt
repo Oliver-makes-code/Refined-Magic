@@ -10,7 +10,6 @@ import me.shedaniel.rei.api.client.registry.display.DisplayCategory
 import me.shedaniel.rei.api.common.category.CategoryIdentifier
 import me.shedaniel.rei.api.common.util.EntryStacks
 import net.minecraft.text.Text
-import net.minecraft.text.TranslatableText
 import olivermakesco.de.refmagic.registry.RefinedMagicBlocks
 
 class AltarRecipeDisplayCategory : DisplayCategory<AltarRecipeDisplay> {
@@ -50,6 +49,6 @@ class AltarRecipeDisplayCategory : DisplayCategory<AltarRecipeDisplay> {
 
     companion object {
         val icon: Renderer = EntryStacks.of(RefinedMagicBlocks.altarBlock)
-        val title: Text = TranslatableText("refmagic.rei.altar")
+        val title: Text = Text.translatable("refmagic.rei.altar")
     }
 }

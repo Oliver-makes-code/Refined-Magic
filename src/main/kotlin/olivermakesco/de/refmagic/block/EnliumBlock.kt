@@ -7,6 +7,7 @@ import net.minecraft.block.Fertilizable
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.tag.TagKey
 import net.minecraft.util.math.BlockPos
+import net.minecraft.util.random.RandomGenerator
 import net.minecraft.util.registry.Registry
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
@@ -16,7 +17,7 @@ import olivermakesco.de.refmagic.registry.RefinedMagicWorldgen
 import java.util.*
 
 class EnliumBlock(settings: Settings?) : Block(settings), Fertilizable {
-    override fun randomTick(state: BlockState, world: ServerWorld, pos: BlockPos, random: Random) {
+    override fun randomTick(state: BlockState, world: ServerWorld, pos: BlockPos, random: RandomGenerator?) {
         if (solid(world, pos)) world.setBlockState(pos, Blocks.END_STONE.defaultState)
     }
 
@@ -24,16 +25,16 @@ class EnliumBlock(settings: Settings?) : Block(settings), Fertilizable {
         return true
     }
 
-    override fun grow(world: ServerWorld, random: Random, pos: BlockPos, state: BlockState) {
-        RefinedMagicWorldgen.enliumPatch.value().generate(world, world.chunkManager.chunkGenerator, random, pos)
-    }
-
     override fun isFertilizable(world: BlockView, pos: BlockPos, state: BlockState, isClient: Boolean): Boolean {
         return world.getBlockState(pos.up()).isAir
     }
 
-    override fun canGrow(world: World, random: Random, pos: BlockPos, state: BlockState): Boolean {
+    override fun canGrow(world: World?, random: RandomGenerator?, pos: BlockPos?, state: BlockState?): Boolean {
         return true
+    }
+
+    override fun grow(world: ServerWorld, random: RandomGenerator, pos: BlockPos?, state: BlockState?) {
+        RefinedMagicWorldgen.enliumPatch.value().generate(world, world.chunkManager.chunkGenerator, random, pos)
     }
 
     companion object {

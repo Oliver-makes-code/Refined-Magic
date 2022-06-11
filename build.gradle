@@ -1,6 +1,6 @@
 plugins {
 	id 'org.quiltmc.loom' version '0.12.+'
-	id 'org.jetbrains.kotlin.jvm' version '1.6.21'
+	id 'org.jetbrains.kotlin.jvm' version '1.7.0'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -60,7 +60,10 @@ dependencies {
 
 	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
 
+	modImplementation "org.quiltmc.quilt-kotlin-libraries:quilt-kotlin-libraries-core:0.1.0-SNAPSHOT"
+
 	modImplementation include("org.quiltmc.quilted-fabric-api:quilted-fabric-api:${qfapi_version}-${minecraft_version}-SNAPSHOT")
+	modImplementation include("org.quiltmc.quilted-fabric-api:quilted-fabric-api-deprecated:${qfapi_version}-${minecraft_version}-SNAPSHOT")
 	modImplementation("dev.emi:trinkets:${trinkets_version}") {
 		exclude group: "net.fabricmc"
 		exclude group: "net.fabricmc.fabric-api"
@@ -71,11 +74,6 @@ dependencies {
 	}
 
 	modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}") {
-		exclude group: "net.fabricmc"
-		exclude group: "net.fabricmc.fabric-api"
-	}
-
-	modImplementation include("com.github.glitchfiend:TerraBlender-fabric:${minecraft_version}-${project.terrablender_version}") {
 		exclude group: "net.fabricmc"
 		exclude group: "net.fabricmc.fabric-api"
 	}

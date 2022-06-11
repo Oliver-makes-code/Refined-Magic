@@ -8,6 +8,7 @@ import net.minecraft.state.StateManager
 import net.minecraft.state.property.BooleanProperty
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Direction
+import net.minecraft.util.random.RandomGenerator
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
@@ -18,8 +19,12 @@ import olivermakesco.de.refmagic.registry.RefinedMagicBlocks
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings
 import java.util.*
 
-class HoopvineBlock :
-    Block(QuiltBlockSettings.copyOf(Blocks.GRASS).material(Material.PLANT).sounds(BlockSoundGroup.NETHER_SPROUTS)) {
+class HoopvineBlock : PlantBlock(
+    QuiltBlockSettings
+        .copyOf(Blocks.GRASS)
+        .material(Material.PLANT)
+        .sounds(BlockSoundGroup.NETHER_SPROUTS)
+) {
     init {
         defaultState = getStateManager().defaultState.with(top, true)
     }
@@ -95,8 +100,8 @@ class HoopvineBlock :
             (10 / 16f).toDouble()
         )
 
-        fun grow(world: StructureWorldAccess, pos: BlockPos, random: Random) {
-            val height = random.nextInt(1, 5)
+        fun grow(world: StructureWorldAccess, pos: BlockPos, random: RandomGenerator) {
+            val height = random.nextInt(5)
             var npos = pos
             for (i in 0 until height) {
                 if (!world.getBlockState(npos).isAir) break
