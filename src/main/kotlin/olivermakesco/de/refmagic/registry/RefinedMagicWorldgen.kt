@@ -1,9 +1,5 @@
 package olivermakesco.de.refmagic.registry
 
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors
-import net.fabricmc.fabric.api.biome.v1.TheEndBiomes
 import net.minecraft.block.BlockState
 import net.minecraft.block.Blocks
 import net.minecraft.sound.BiomeMoodSound
@@ -35,6 +31,10 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider
 import olivermakesco.de.refmagic.Mod
 import olivermakesco.de.refmagic.worldgen.EnliumVegetation
+import org.quiltmc.qsl.worldgen.biome.api.BiomeModifications
+import org.quiltmc.qsl.worldgen.biome.api.BiomeSelectionContext
+import org.quiltmc.qsl.worldgen.biome.api.BiomeSelectors
+import org.quiltmc.qsl.worldgen.biome.api.TheEndBiomes
 
 object RefinedMagicWorldgen {
     var END_STONE_RULE_TEST: RuleTest = BlockMatchRuleTest(Blocks.END_STONE)
@@ -186,10 +186,10 @@ object RefinedMagicWorldgen {
     val enchantedFungusPlaced = PlacedFeatureUtil.register(
         Mod.id("enchanted_fungus_placed").toString(),
         enchantedFungusPlanted,
-        CountOnEveryLayerPlacementModifier.create(8),
+        CountOnEveryLayerPlacementModifier.create(16),
         PlacedFeatureUtil.OCEAN_FLOOR_HEIGHTMAP
     )
-    val mushroomIslesBiome = createMushroomIsles()
+
     fun <FC : FeatureConfig?, F : Feature<FC>?> register(
         id: String?,
         feature: F,
@@ -234,28 +234,14 @@ object RefinedMagicWorldgen {
             0.3f
         )
     )
-    val enliumBase = ConfiguredFeatureUtil.register(
-        Mod.id("enlium_base").toString(),
-        Feature.VEGETATION_PATCH,
-        VegetationPatchFeatureConfig(
-            TagKey.of(Registry.BLOCK_KEY, Mod.id("enlium_base")),
-            BlockStateProvider.of(RefinedMagicBlocks.enlium),
-            PlacedFeatureUtil.placedInline(enliumVegetation),
-            VerticalSurfaceType.FLOOR,
-            ConstantIntProvider.create(1),
-            0.0f,
-            5,
-            0.8f,
-            UniformIntProvider.create(4, 7),
-            0.3f
-        )
-    )
     val enliumPatchPlaced = PlacedFeatureUtil.register(
         Mod.id("enlium_patch_placed").toString(),
-        enliumBase,
-        CountOnEveryLayerPlacementModifier.create(8),
+        enliumPatch,
+        CountOnEveryLayerPlacementModifier.create(4),
         PlacedFeatureUtil.OCEAN_FLOOR_HEIGHTMAP
     )
+
+    val mushroomIslesBiome = createMushroomIsles()
 
     private fun createBaseEndBiome(builder: GenerationSettings.Builder): Biome {
         val spawnSettings = SpawnSettings.Builder()
@@ -280,6 +266,8 @@ object RefinedMagicWorldgen {
     fun createMushroomIsles(): Biome {
         val builder = GenerationSettings.Builder()
             .feature(GenerationStep.Feature.SURFACE_STRUCTURES, EndPlacedFeatures.END_GATEWAY_RETURN)
+            .feature(GenerationStep.Feature.VEGETAL_DECORATION, enchantedFungusPlaced)
+            .feature(GenerationStep.Feature.SURFACE_STRUCTURES, enliumPatchPlaced)
         return createBaseEndBiome(builder)
     }
 
@@ -358,15 +346,5 @@ object RefinedMagicWorldgen {
         )
         Registry.register(BuiltinRegistries.BIOME, mushroomIsles.value, mushroomIslesBiome)
         TheEndBiomes.addHighlandsBiome(mushroomIsles, 5.0)
-        BiomeModifications.addFeature(
-            { a: BiomeSelectionContext? -> true }, GenerationStep.Feature.VEGETAL_DECORATION, RegistryKey.of(
-                Registry.PLACED_FEATURE_KEY, Mod.id("enchanted_fungus_placed")
-            )
-        )
-        BiomeModifications.addFeature(
-            { a: BiomeSelectionContext? -> true }, GenerationStep.Feature.VEGETAL_DECORATION, RegistryKey.of(
-                Registry.PLACED_FEATURE_KEY, Mod.id("enlium_patch_placed")
-            )
-        )
     }
 }

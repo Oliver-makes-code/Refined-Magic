@@ -2,6 +2,7 @@ package olivermakesco.de.refmagic.registry
 
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock
+import com.terraformersmc.terraform.wood.block.StrippableLogBlock
 import net.minecraft.block.*
 import net.minecraft.sound.BlockSoundGroup
 import net.minecraft.util.Identifier
