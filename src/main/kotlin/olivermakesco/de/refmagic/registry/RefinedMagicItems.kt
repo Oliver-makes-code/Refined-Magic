@@ -4,175 +4,270 @@ import net.minecraft.entity.EquipmentSlot
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.minecraft.item.SignItem
-import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 import olivermakesco.de.refmagic.Mod
 import olivermakesco.de.refmagic.item.DimensionalTotemItem
 import olivermakesco.de.refmagic.item.NecklaceItem
 import olivermakesco.de.refmagic.item.WitheriteArmorItem
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings
+import org.quiltmc.qkl.wrapper.minecraft.registry.*
 
 object RefinedMagicItems {
+    val baseItemSettings = QuiltItemSettings().group(RefinedMagicRegistry.items)
+
     @JvmField
-    var kyriteShard = Item(Item.Settings().group(RefinedMagicRegistry.items))
+    var kyriteShard = Item(baseItemSettings)
     @JvmField
-    var kyritePowder = Item(Item.Settings().group(RefinedMagicRegistry.items))
-    var kyriteOreEnd: Item =
-        BlockItem(RefinedMagicBlocks.kyriteOreEnd, Item.Settings().group(RefinedMagicRegistry.items))
-    var kyriteOreOverworld: Item =
-        BlockItem(RefinedMagicBlocks.kyriteOreOverworld, Item.Settings().group(RefinedMagicRegistry.items))
-    var kyriteOreNether: Item =
-        BlockItem(RefinedMagicBlocks.kyriteOreNether, Item.Settings().group(RefinedMagicRegistry.items))
-    var kyriteBlock: Item = BlockItem(RefinedMagicBlocks.kyriteBlock, Item.Settings().group(RefinedMagicRegistry.items))
-    var topaz = Item(Item.Settings().group(RefinedMagicRegistry.items))
-    var topazOre: Item = BlockItem(RefinedMagicBlocks.topazOre, Item.Settings().group(RefinedMagicRegistry.items))
-    var topazBlock: Item = BlockItem(RefinedMagicBlocks.topazBlock, Item.Settings().group(RefinedMagicRegistry.items))
-    var bismuth = Item(Item.Settings().group(RefinedMagicRegistry.items))
-    var bismuthOreNether: Item =
-        BlockItem(RefinedMagicBlocks.bismuthOreNether, Item.Settings().group(RefinedMagicRegistry.items))
-    var bismuthOreOverworld: Item =
-        BlockItem(RefinedMagicBlocks.bismuthOreOverworld, Item.Settings().group(RefinedMagicRegistry.items))
-    var bismuthBlock: Item =
-        BlockItem(RefinedMagicBlocks.bismuthBlock, Item.Settings().group(RefinedMagicRegistry.items))
-    var citrine = Item(Item.Settings().group(RefinedMagicRegistry.items))
-    var citrineOre: Item = BlockItem(RefinedMagicBlocks.citrineOre, Item.Settings().group(RefinedMagicRegistry.items))
-    var citrineBlock: Item =
-        BlockItem(RefinedMagicBlocks.citrineBlock, Item.Settings().group(RefinedMagicRegistry.items))
-    var opal = Item(Item.Settings().group(RefinedMagicRegistry.items))
-    var opalOre: Item = BlockItem(RefinedMagicBlocks.opalOre, Item.Settings().group(RefinedMagicRegistry.items))
-    var opalBlock: Item = BlockItem(RefinedMagicBlocks.opalBlock, Item.Settings().group(RefinedMagicRegistry.items))
-    var roseQuartz = Item(Item.Settings().group(RefinedMagicRegistry.items))
-    var roseQuartzOre: Item =
-        BlockItem(RefinedMagicBlocks.roseQuartzOre, Item.Settings().group(RefinedMagicRegistry.items))
-    var roseQuartzBlock: Item =
-        BlockItem(RefinedMagicBlocks.roseQuartzBlock, Item.Settings().group(RefinedMagicRegistry.items))
-    var altarBlock: Item = BlockItem(RefinedMagicBlocks.altarBlock, Item.Settings().group(RefinedMagicRegistry.items))
-    var dimensionalTotem: Item = DimensionalTotemItem(
-        Item.Settings().group(RefinedMagicRegistry.items).maxCount(1)
+    var kyritePowder = Item(baseItemSettings)
+    var kyriteOreEnd: Item = BlockItem(
+        RefinedMagicBlocks.kyriteOreEnd,
+        baseItemSettings
     )
-    var baseNecklace: Item = NecklaceItem(Item.Settings().maxCount(1))
-    var enchantedStem: Item =
-        BlockItem(RefinedMagicBlocks.enchantedStem, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var strippedEnchantedStem: Item =
-        BlockItem(RefinedMagicBlocks.strippedEnchantedStem, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enchantedHyphae: Item =
-        BlockItem(RefinedMagicBlocks.enchantedHyphae, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var strippedEnchantedHyphae: Item =
-        BlockItem(RefinedMagicBlocks.strippedEnchantedHyphae, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enchantedPlanks: Item =
-        BlockItem(RefinedMagicBlocks.enchantedPlanks, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enchantedSlab: Item =
-        BlockItem(RefinedMagicBlocks.enchantedSlab, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enchantedStairs: Item =
-        BlockItem(RefinedMagicBlocks.enchantedStairs, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enchantedButton: Item =
-        BlockItem(RefinedMagicBlocks.enchantedButton, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enchantedPressurePlate: Item =
-        BlockItem(RefinedMagicBlocks.enchantedPressurePlate, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enchantedTrapdoor: Item =
-        BlockItem(RefinedMagicBlocks.enchantedTrapdoor, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enchantedDoor: Item =
-        BlockItem(RefinedMagicBlocks.enchantedDoor, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enchantedFence: Item =
-        BlockItem(RefinedMagicBlocks.enchantedFence, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enchantedFenceGate: Item =
-        BlockItem(RefinedMagicBlocks.enchantedFenceGate, QuiltItemSettings().group(RefinedMagicRegistry.items))
+    var kyriteOreOverworld: Item = BlockItem(
+        RefinedMagicBlocks.kyriteOreOverworld,
+        baseItemSettings
+    )
+    var kyriteOreNether: Item = BlockItem(
+        RefinedMagicBlocks.kyriteOreNether,
+        baseItemSettings
+    )
+    var kyriteBlock: Item = BlockItem(
+        RefinedMagicBlocks.kyriteBlock,
+        baseItemSettings
+    )
+    var topaz = Item(
+        baseItemSettings
+    )
+    var topazOre: Item = BlockItem(
+        RefinedMagicBlocks.topazOre,
+        baseItemSettings
+    )
+    var topazBlock: Item = BlockItem(
+        RefinedMagicBlocks.topazBlock,
+        baseItemSettings
+    )
+    var bismuth = Item(
+        baseItemSettings
+    )
+    var bismuthOreNether: Item = BlockItem(
+        RefinedMagicBlocks.bismuthOreNether,
+        baseItemSettings
+    )
+    var bismuthOreOverworld: Item = BlockItem(
+        RefinedMagicBlocks.bismuthOreOverworld,
+        baseItemSettings
+    )
+    var bismuthBlock: Item = BlockItem(
+        RefinedMagicBlocks.bismuthBlock,
+        baseItemSettings
+    )
+    var citrine = Item(
+        baseItemSettings
+    )
+    var citrineOre: Item = BlockItem(
+        RefinedMagicBlocks.citrineOre,
+        baseItemSettings
+    )
+    var citrineBlock: Item = BlockItem(
+        RefinedMagicBlocks.citrineBlock,
+        baseItemSettings
+    )
+    var opal = Item(
+        baseItemSettings
+    )
+    var opalOre: Item = BlockItem(
+        RefinedMagicBlocks.opalOre,
+        baseItemSettings
+    )
+    var opalBlock: Item = BlockItem(
+        RefinedMagicBlocks.opalBlock,
+        baseItemSettings
+    )
+    var roseQuartz = Item(
+        baseItemSettings
+    )
+    var roseQuartzOre: Item = BlockItem(
+        RefinedMagicBlocks.roseQuartzOre,
+        baseItemSettings
+    )
+    var roseQuartzBlock: Item = BlockItem(
+        RefinedMagicBlocks.roseQuartzBlock,
+        baseItemSettings
+    )
+    var altarBlock: Item = BlockItem(
+        RefinedMagicBlocks.altarBlock,
+        baseItemSettings
+    )
+    var dimensionalTotem: Item = DimensionalTotemItem(
+        QuiltItemSettings()
+            .group(RefinedMagicRegistry.items)
+            .maxCount(1)
+    )
+    var baseNecklace: Item = NecklaceItem(
+        QuiltItemSettings()
+            .maxCount(1)
+    )
+    var enchantedStem: Item = BlockItem(
+        RefinedMagicBlocks.enchantedStem,
+        baseItemSettings
+    )
+    var strippedEnchantedStem: Item = BlockItem(
+        RefinedMagicBlocks.strippedEnchantedStem,
+        baseItemSettings
+    )
+    var enchantedHyphae: Item = BlockItem(
+        RefinedMagicBlocks.enchantedHyphae,
+        baseItemSettings
+    )
+    var strippedEnchantedHyphae: Item = BlockItem(
+        RefinedMagicBlocks.strippedEnchantedHyphae,
+        baseItemSettings
+    )
+    var enchantedPlanks: Item = BlockItem(
+        RefinedMagicBlocks.enchantedPlanks,
+        baseItemSettings
+    )
+    var enchantedSlab: Item = BlockItem(
+        RefinedMagicBlocks.enchantedSlab,
+        baseItemSettings
+    )
+    var enchantedStairs: Item = BlockItem(
+        RefinedMagicBlocks.enchantedStairs,
+        baseItemSettings
+    )
+    var enchantedButton: Item = BlockItem(
+        RefinedMagicBlocks.enchantedButton,
+        baseItemSettings
+    )
+    var enchantedPressurePlate: Item = BlockItem(
+        RefinedMagicBlocks.enchantedPressurePlate,
+        baseItemSettings
+    )
+    var enchantedTrapdoor: Item = BlockItem(
+        RefinedMagicBlocks.enchantedTrapdoor,
+        baseItemSettings
+    )
+    var enchantedDoor: Item = BlockItem(
+        RefinedMagicBlocks.enchantedDoor,
+        baseItemSettings
+    )
+    var enchantedFence: Item = BlockItem(
+        RefinedMagicBlocks.enchantedFence,
+        baseItemSettings
+    )
+    var enchantedFenceGate: Item = BlockItem(
+        RefinedMagicBlocks.enchantedFenceGate,
+        baseItemSettings
+    )
     var enchantedSign: Item = SignItem(
-        QuiltItemSettings().group(RefinedMagicRegistry.items),
+        baseItemSettings,
         RefinedMagicBlocks.enchantedSign,
         RefinedMagicBlocks.enchantedWallSign
     )
-    var enchantedWart: Item =
-        BlockItem(RefinedMagicBlocks.enchantedWart, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enchantedShroomlight: Item =
-        BlockItem(RefinedMagicBlocks.enchantedShroomlight, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enlium: Item = BlockItem(RefinedMagicBlocks.enlium, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enliumGrowth: Item =
-        BlockItem(RefinedMagicBlocks.enliumGrowth, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var enchantedFungus: Item =
-        BlockItem(RefinedMagicBlocks.enchantedFungus, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var hoopvine: Item = BlockItem(RefinedMagicBlocks.hoopvine, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var witheredHeart = Item(QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var witheriteBlob = Item(QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var infestedNetherrackBlock: Item =
-        BlockItem(RefinedMagicBlocks.infestedNetherrack, QuiltItemSettings().group(RefinedMagicRegistry.items))
-    var witheriteHelmet: Item =
-        WitheriteArmorItem(
+    var enchantedWart: Item = BlockItem(RefinedMagicBlocks.enchantedWart,
+        baseItemSettings
+    )
+    var enchantedShroomlight: Item = BlockItem(
+        RefinedMagicBlocks.enchantedShroomlight,
+        baseItemSettings
+    )
+    var enlium: Item = BlockItem(
+        RefinedMagicBlocks.enlium,
+        baseItemSettings
+    )
+    var enliumGrowth: Item = BlockItem(
+        RefinedMagicBlocks.enliumGrowth,
+        baseItemSettings
+    )
+    var enchantedFungus: Item = BlockItem(
+        RefinedMagicBlocks.enchantedFungus,
+        baseItemSettings
+    )
+    var hoopvine: Item = BlockItem(
+        RefinedMagicBlocks.hoopvine,
+        baseItemSettings
+    )
+    var witheredHeart = Item(
+        QuiltItemSettings().
+        group(RefinedMagicRegistry.items)
+    )
+    var witheriteBlob = Item(
+        baseItemSettings
+    )
+    var infestedNetherrackBlock: Item = BlockItem(
+        RefinedMagicBlocks.infestedNetherrack,
+        baseItemSettings
+    )
+    var witheriteHelmet: Item = WitheriteArmorItem(
             EquipmentSlot.HEAD,
-            QuiltItemSettings().group(RefinedMagicRegistry.items)
+            baseItemSettings
         )
-    var witheriteChestplate: Item =
-        WitheriteArmorItem(
-            EquipmentSlot.CHEST,
-            QuiltItemSettings().group(RefinedMagicRegistry.items)
-        )
-    var witheriteLeggings: Item =
-        WitheriteArmorItem(
-            EquipmentSlot.LEGS,
-            QuiltItemSettings().group(RefinedMagicRegistry.items)
-        )
-    var witheriteBoots: Item =
-        WitheriteArmorItem(
-            EquipmentSlot.FEET,
-            QuiltItemSettings().group(RefinedMagicRegistry.items)
-        )
-
+    var witheriteChestplate: Item = WitheriteArmorItem(
+        EquipmentSlot.CHEST,
+        baseItemSettings
+    )
+    var witheriteLeggings: Item = WitheriteArmorItem(
+        EquipmentSlot.LEGS,
+        baseItemSettings
+    )
+    var witheriteBoots: Item = WitheriteArmorItem(
+        EquipmentSlot.FEET,
+        baseItemSettings
+    )
     fun register() {
-        register(kyriteShard, Mod.id("kyrite_shard"))
-        register(topaz, Mod.id("topaz"))
-        register(bismuth, Mod.id("bismuth"))
-        register(citrine, Mod.id("citrine"))
-        register(opal, Mod.id("opal"))
-        register(roseQuartz, Mod.id("rose_quartz"))
-        register(kyritePowder, Mod.id("kyrite_powder"))
-        register(kyriteOreOverworld, Mod.id("kyrite_ore_overworld"))
-        register(kyriteOreNether, Mod.id("kyrite_ore_nether"))
-        register(kyriteOreEnd, Mod.id("kyrite_ore_end"))
-        register(topazOre, Mod.id("topaz_ore"))
-        register(bismuthOreOverworld, Mod.id("bismuth_ore_overworld"))
-        register(bismuthOreNether, Mod.id("bismuth_ore_nether"))
-        register(citrineOre, Mod.id("citrine_ore"))
-        register(opalOre, Mod.id("opal_ore"))
-        register(roseQuartzOre, Mod.id("rose_quartz_ore"))
-        register(kyriteBlock, Mod.id("kyrite_block"))
-        register(topazBlock, Mod.id("topaz_block"))
-        register(bismuthBlock, Mod.id("bismuth_block"))
-        register(citrineBlock, Mod.id("citrine_block"))
-        register(opalBlock, Mod.id("opal_block"))
-        register(roseQuartzBlock, Mod.id("rose_quartz_block"))
-        register(altarBlock, Mod.id("altar"))
-        register(dimensionalTotem, Mod.id("dimensional_totem"))
-        register(witheredHeart, Mod.id("withered_heart"))
-        register(witheriteBlob, Mod.id("witherite_blob"))
-        register(infestedNetherrackBlock, Mod.id("infested_netherrack"))
-        register(witheriteHelmet, Mod.id("witherite_helmet"))
-        register(witheriteChestplate, Mod.id("witherite_chestplate"))
-        register(witheriteLeggings, Mod.id("witherite_leggings"))
-        register(witheriteBoots, Mod.id("witherite_boots"))
-        register(baseNecklace, Mod.id("necklace"))
-        register(enchantedStem, Mod.id("enchanted_stem"))
-        register(strippedEnchantedStem, Mod.id("stripped_enchanted_stem"))
-        register(enchantedHyphae, Mod.id("enchanted_hyphae"))
-        register(strippedEnchantedHyphae, Mod.id("stripped_enchanted_hyphae"))
-        register(enchantedPlanks, Mod.id("enchanted_planks"))
-        register(enchantedSlab, Mod.id("enchanted_slab"))
-        register(enchantedStairs, Mod.id("enchanted_stairs"))
-        register(enchantedButton, Mod.id("enchanted_button"))
-        register(enchantedPressurePlate, Mod.id("enchanted_pressure_plate"))
-        register(enchantedTrapdoor, Mod.id("enchanted_trapdoor"))
-        register(enchantedDoor, Mod.id("enchanted_door"))
-        register(enchantedFence, Mod.id("enchanted_fence"))
-        register(enchantedFenceGate, Mod.id("enchanted_fence_gate"))
-        register(enchantedSign, Mod.id("enchanted_sign"))
-        register(enchantedShroomlight, Mod.id("enchanted_shroomlight"))
-        register(enchantedWart, Mod.id("enchanted_wart"))
-        register(enlium, Mod.id("enlium"))
-        register(enliumGrowth, Mod.id("enlium_growth"))
-        register(enchantedFungus, Mod.id("enchanted_fungus"))
-        register(hoopvine, Mod.id("hoopvine"))
-    }
-
-    fun register(item: Item, id: Identifier?) {
-        Registry.register(Registry.ITEM, id, item)
+        Registry.ITEM(Mod.modid) {
+            kyriteShard             withName "kyrite_shard"
+            topaz                   withName "topaz"
+            bismuth                 withName "bismuth"
+            citrine                 withName "citrine"
+            opal                    withName "opal"
+            roseQuartz              withName "rose_quartz"
+            kyritePowder            withName "kyrite_powder"
+            kyriteOreOverworld      withName "kyrite_ore_overworld"
+            kyriteOreNether         withName "kyrite_ore_nether"
+            kyriteOreEnd            withName "kyrite_ore_end"
+            topazOre                withName "topaz_ore"
+            bismuthOreOverworld     withName "bismuth_ore_overworld"
+            bismuthOreNether        withName "bismuth_ore_nether"
+            citrineOre              withName "citrine_ore"
+            opalOre                 withName "opal_ore"
+            roseQuartzOre           withName "rose_quartz_ore"
+            kyriteBlock             withName "kyrite_block"
+            topazBlock              withName "topaz_block"
+            bismuthBlock            withName "bismuth_block"
+            citrineBlock            withName "citrine_block"
+            opalBlock               withName "opal_block"
+            roseQuartzBlock         withName "rose_quartz_block"
+            altarBlock              withName "altar"
+            dimensionalTotem        withName "dimensional_totem"
+            witheredHeart           withName "withered_heart"
+            witheriteBlob           withName "witherite_blob"
+            infestedNetherrackBlock withName "infested_netherrack"
+            witheriteHelmet         withName "witherite_helmet"
+            witheriteChestplate     withName "witherite_chestplate"
+            witheriteLeggings       withName "witherite_leggings"
+            witheriteBoots          withName "witherite_boots"
+            baseNecklace            withName "necklace"
+            enchantedStem           withName "enchanted_stem"
+            strippedEnchantedStem   withName "stripped_enchanted_stem"
+            enchantedHyphae         withName "enchanted_hyphae"
+            strippedEnchantedHyphae withName "stripped_enchanted_hyphae"
+            enchantedPlanks         withName "enchanted_planks"
+            enchantedSlab           withName "enchanted_slab"
+            enchantedStairs         withName "enchanted_stairs"
+            enchantedButton         withName "enchanted_button"
+            enchantedPressurePlate  withName "enchanted_pressure_plate"
+            enchantedTrapdoor       withName "enchanted_trapdoor"
+            enchantedDoor           withName "enchanted_door"
+            enchantedFence          withName "enchanted_fence"
+            enchantedFenceGate      withName "enchanted_fence_gate"
+            enchantedSign           withName "enchanted_sign"
+            enchantedShroomlight    withName "enchanted_shroomlight"
+            enchantedWart           withName "enchanted_wart"
+            enlium                  withName "enlium"
+            enliumGrowth            withName "enlium_growth"
+            enchantedFungus         withName "enchanted_fungus"
+            hoopvine                withName "hoopvine"
+        }
     }
 }

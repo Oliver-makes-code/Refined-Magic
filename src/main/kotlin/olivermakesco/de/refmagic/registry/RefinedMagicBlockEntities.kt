@@ -7,21 +7,21 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.registry.Registry
 import olivermakesco.de.refmagic.Mod
 import olivermakesco.de.refmagic.block.entity.AltarTableBlockEntity
+import org.quiltmc.qkl.wrapper.minecraft.registry.*
 
 object RefinedMagicBlockEntities {
-    var altarTableBlockEntity: BlockEntityType<AltarTableBlockEntity> =
-        Registry.register<BlockEntityType<*>, BlockEntityType<AltarTableBlockEntity>>(
-            Registry.BLOCK_ENTITY_TYPE,
-            Mod.id("alter_table"),
-            FabricBlockEntityTypeBuilder.create({blockPos: BlockPos?, blockState: BlockState? ->
-                AltarTableBlockEntity(
-                    blockPos,
-                    blockState
-                )
-                },
-                RefinedMagicBlocks.altarBlock
-            ).build()
-        )
+    var altarTableBlockEntity: BlockEntityType<AltarTableBlockEntity> = FabricBlockEntityTypeBuilder.create({blockPos: BlockPos?, blockState: BlockState? ->
+            AltarTableBlockEntity(
+                blockPos,
+                blockState
+            )
+        },
+        RefinedMagicBlocks.altarBlock
+    ).build()
 
-    fun register() {}
+    fun register() {
+        Registry.BLOCK_ENTITY_TYPE(Mod.modid) {
+            altarTableBlockEntity withName "alter_table"
+        }
+    }
 }

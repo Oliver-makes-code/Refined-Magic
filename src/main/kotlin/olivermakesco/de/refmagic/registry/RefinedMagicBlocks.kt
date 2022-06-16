@@ -5,11 +5,11 @@ import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock
 import com.terraformersmc.terraform.wood.block.StrippableLogBlock
 import net.minecraft.block.*
 import net.minecraft.sound.BlockSoundGroup
-import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 import olivermakesco.de.refmagic.Mod
 import olivermakesco.de.refmagic.block.*
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings
+import org.quiltmc.qkl.wrapper.minecraft.registry.*
 
 object RefinedMagicBlocks {
     var kyriteOreEnd: Block = RefinedMagicOreBlock(
@@ -199,47 +199,45 @@ object RefinedMagicBlocks {
     var hoopvine: Block = HoopvineBlock()
 
     fun register() {
-        register(kyriteOreEnd, Mod.id("kyrite_ore_end"))
-        register(kyriteOreOverworld, Mod.id("kyrite_ore_overworld"))
-        register(kyriteOreNether, Mod.id("kyrite_ore_nether"))
-        register(kyriteBlock, Mod.id("kyrite_block"))
-        register(topazOre, Mod.id("topaz_ore"))
-        register(topazBlock, Mod.id("topaz_block"))
-        register(bismuthOreNether, Mod.id("bismuth_ore_nether"))
-        register(bismuthOreOverworld, Mod.id("bismuth_ore_overworld"))
-        register(bismuthBlock, Mod.id("bismuth_block"))
-        register(citrineOre, Mod.id("citrine_ore"))
-        register(citrineBlock, Mod.id("citrine_block"))
-        register(opalOre, Mod.id("opal_ore"))
-        register(opalBlock, Mod.id("opal_block"))
-        register(roseQuartzOre, Mod.id("rose_quartz_ore"))
-        register(roseQuartzBlock, Mod.id("rose_quartz_block"))
-        register(infestedNetherrack, Mod.id("infested_netherrack"))
-        register(altarBlock, Mod.id("altar"))
-        register(enlium, Mod.id("enlium"))
-        register(enliumGrowth, Mod.id("enlium_growth"))
-        register(hoopvine, Mod.id("hoopvine"))
-        register(enchantedFungus, Mod.id("enchanted_fungus"))
-        register(enchantedStem, Mod.id("enchanted_stem"))
-        register(strippedEnchantedStem, Mod.id("stripped_enchanted_stem"))
-        register(enchantedHyphae, Mod.id("enchanted_hyphae"))
-        register(strippedEnchantedHyphae, Mod.id("stripped_enchanted_hyphae"))
-        register(enchantedPlanks, Mod.id("enchanted_planks"))
-        register(enchantedSlab, Mod.id("enchanted_slab"))
-        register(enchantedStairs, Mod.id("enchanted_stairs"))
-        register(enchantedButton, Mod.id("enchanted_button"))
-        register(enchantedPressurePlate, Mod.id("enchanted_pressure_plate"))
-        register(enchantedTrapdoor, Mod.id("enchanted_trapdoor"))
-        register(enchantedDoor, Mod.id("enchanted_door"))
-        register(enchantedFence, Mod.id("enchanted_fence"))
-        register(enchantedFenceGate, Mod.id("enchanted_fence_gate"))
-        register(enchantedSign, Mod.id("enchanted_sign"))
-        register(enchantedWallSign, Mod.id("enchanted_wall_sign"))
-        register(enchantedShroomlight, Mod.id("enchanted_shroomlight"))
-        register(enchantedWart, Mod.id("enchanted_wart"))
-    }
-
-    fun register(block: Block, id: Identifier?) {
-        Registry.register(Registry.BLOCK, id, block)
+        Registry.BLOCK(Mod.modid) {
+            kyriteOreEnd            withName "kyrite_ore_end"
+            kyriteOreOverworld      withName "kyrite_ore_overworld"
+            kyriteOreNether         withName "kyrite_ore_nether"
+            kyriteBlock             withName "kyrite_block"
+            topazOre                withName "topaz_ore"
+            topazBlock              withName "topaz_block"
+            bismuthOreNether        withName "bismuth_ore_nether"
+            bismuthOreOverworld     withName "bismuth_ore_overworld"
+            bismuthBlock            withName "bismuth_block"
+            citrineOre              withName "citrine_ore"
+            citrineBlock            withName "citrine_block"
+            opalOre                 withName "opal_ore"
+            opalBlock               withName "opal_block"
+            roseQuartzOre           withName "rose_quartz_ore"
+            roseQuartzBlock         withName "rose_quartz_block"
+            infestedNetherrack      withName "infested_netherrack"
+            altarBlock              withName "altar"
+            enlium                  withName "enlium"
+            enliumGrowth            withName "enlium_growth"
+            hoopvine                withName "hoopvine"
+            enchantedFungus         withName "enchanted_fungus"
+            enchantedStem           withName "enchanted_stem"
+            strippedEnchantedStem   withName "stripped_enchanted_stem"
+            enchantedHyphae         withName "enchanted_hyphae"
+            strippedEnchantedHyphae withName "stripped_enchanted_hyphae"
+            enchantedPlanks         withName "enchanted_planks"
+            enchantedSlab           withName "enchanted_slab"
+            enchantedStairs         withName "enchanted_stairs"
+            enchantedButton         withName "enchanted_button"
+            enchantedPressurePlate  withName "enchanted_pressure_plate"
+            enchantedTrapdoor       withName "enchanted_trapdoor"
+            enchantedDoor           withName "enchanted_door"
+            enchantedFence          withName "enchanted_fence"
+            enchantedFenceGate      withName "enchanted_fence_gate"
+            enchantedSign           withName "enchanted_sign"
+            enchantedWallSign       withName "enchanted_wall_sign"
+            enchantedShroomlight    withName "enchanted_shroomlight"
+            enchantedWart           withName "enchanted_wart"
+        }
     }
 }
